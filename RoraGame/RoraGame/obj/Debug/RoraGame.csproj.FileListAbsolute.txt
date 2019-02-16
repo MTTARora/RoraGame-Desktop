@@ -13,3 +13,13 @@ E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.csproj.GenerateResourc
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.csproj.CoreCompileInputs.cache
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.exe
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.pdb
+E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\UserControlCreate.g.cs
+E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\UserControlHome.g.cs
+E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\MaterialDesignColors.dll
+E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\UserControlCreate.baml
+E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\UserControlHome.baml
+E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.csproj.CopyComplete
+E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\App.baml
