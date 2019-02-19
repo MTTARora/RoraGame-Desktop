@@ -4,9 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RoraGame"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              >
-    <Grid Background="Red">
-            
+    <Grid Background="White">
+        <Button
+    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+    Width="100"
+    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton">
+            _LOGIN
+        </Button>
     </Grid>
 </UserControl>
