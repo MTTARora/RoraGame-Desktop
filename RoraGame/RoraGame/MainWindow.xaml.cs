@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,30 +21,36 @@ namespace RoraGame
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
 
-            // Minimize to system tray
+
+            // Start Minimize to system tray when applicaiton is closed
             System.Windows.Forms.NotifyIcon ni = new System.Windows.Forms.NotifyIcon();
             ni.Icon = new System.Drawing.Icon("favicon.ico");
             ni.Visible = true;
-            ni.DoubleClick +=
-                delegate (object sender, EventArgs args)
-                {
-                    this.Show();
-                    this.WindowState = WindowState.Normal;
-                };
+            ni.DoubleClick += 
+            delegate(object sender, EventArgs args)
+            {
+                this.Show();
+                this.WindowState = WindowState.Normal;
+            };
         }
 
-        protected override void OnStateChanged(EventArgs e)
+        protected override void OnClosing(CancelEventArgs e)
         {
-            if (WindowState == System.Windows.WindowState.Minimized)
-                this.Hide();
+        
+            // setting cancel to true will cancel the close request
+            // so the application is not closed
+            e.Cancel = true;
 
-            base.OnStateChanged(e);
-            // End Minimize to system tray
+            this.Hide();
+
+            base.OnClosing(e);
         }
+        // End Minimize to tray system
 
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
         {
@@ -129,7 +136,5 @@ namespace RoraGame
             }
 
         }
-
-
     }
 }
