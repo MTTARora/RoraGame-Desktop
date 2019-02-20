@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace RoraGame
 {
     /// <summary>
-    /// Interação lógica para UserControlCreate.xam
+    /// Interaction logic for UserControlGameList.xaml
     /// </summary>
-    public partial class UserControlCreate : UserControl
+    public partial class UserControlGameList : UserControl
     {
-        public UserControlCreate()
+        public UserControlGameList()
         {
             InitializeComponent();
         }

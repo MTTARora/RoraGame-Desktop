@@ -48,13 +48,33 @@ namespace RoraGame
                     usc = new UserControlHome();
                     GridMain.Children.Add(usc);
                     break;
-                case "ItemCreate":
-                    usc = new UserControlCreate();
+                case "ItemAccount":
+                    usc = new UserControlAccount();
+                    GridMain.Children.Add(usc);
+                    break;
+                case "ItemGameList":
+                    usc = new UserControlGameList();
+                    GridMain.Children.Add(usc);
+                    break;
+                case "ItemGuide":
+                    usc = new UserControlGuide();
                     GridMain.Children.Add(usc);
                     break;
                 default:
                     break;
             }
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void GridOfWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var move = sender as System.Windows.Controls.Grid;
+            var win = Window.GetWindow(move);
+            win.DragMove();
         }
     }
 }

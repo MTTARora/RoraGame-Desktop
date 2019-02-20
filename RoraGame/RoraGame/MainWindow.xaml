@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="MainWindow" Height="600" Width="1024">
+        Title="RoraGame" Height="600" Width="1024" WindowStyle="None" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Storyboard x:Key="OpenMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
@@ -37,16 +37,16 @@
         </EventTrigger>
     </Window.Triggers>
     <Grid>
-        <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" MinWidth="954" MinHeight="510"/>
-        <Grid Height="60" Width="auto"  VerticalAlignment="Top">
+        <Grid x:Name="GridMain" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="62,45,0,0"/>
+        <Grid Height="40" Width="auto" VerticalAlignment="Top" MouseLeftButtonDown="GridOfWindow_MouseLeftButtonDown">
             <materialDesign:ColorZone
             Mode="PrimaryDark"
-            Padding="16"
-            CornerRadius="3"
+            Padding="7"
             materialDesign:ShadowAssist.ShadowDepth="Depth3">
                 <DockPanel>
                     <materialDesign:PopupBox
                     DockPanel.Dock="Right"
+                    Margin="0,0,40,0"
                     PlacementMode="BottomAndAlignRightEdges">
                         <ListBox>
                             <ListBoxItem Content="Hello World"/>
@@ -55,10 +55,13 @@
                         </ListBox>
                     </materialDesign:PopupBox>
                     <StackPanel HorizontalAlignment="Center">
-                        <TextBlock VerticalAlignment="Center" FontWeight="Bold" FontSize="22" Margin="62 0 0 0"><Run Text="RORAGAME"/></TextBlock>
+                        <TextBlock VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="62 4 0 0">RORAGAME</TextBlock>
                     </StackPanel>
                 </DockPanel>
             </materialDesign:ColorZone>
+            <StackPanel HorizontalAlignment="Right">
+                <Button Name="CloseButton" Content="x" FontSize="20" HorizontalAlignment="Right" Margin="0,4,4,0" Click="CloseButton_Click" />
+            </StackPanel>
         </Grid>
         <Grid x:Name="GridMenu" Width="62" Height="auto" HorizontalAlignment="Left" Background="#FF512DA8">
             <Grid.Effect>
@@ -86,30 +89,29 @@
                     <ListViewItem x:Name="ItemHome" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="ViewDashboard" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Home" VerticalAlignment="Center" Margin="20 10"/>
+                            <TextBlock Text="Trang chủ" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="ItemCreate" Height="60">
+                    <ListViewItem x:Name="ItemAccount" Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Pencil" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Create" VerticalAlignment="Center" Margin="20 10"/>
+                            <materialDesign:PackIcon Kind="AccountCircle" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Tài khoản" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="ItemHuongDan" Height="60">
+                    <ListViewItem x:Name="ItemGameList" Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Ticket" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Tickets" VerticalAlignment="Center"  Margin="20 10"/>
+                            <materialDesign:PackIcon Kind="GamepadVariant" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Thuê Game" VerticalAlignment="Center"  Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="60">
+                    <ListViewItem x:Name="ItemGuide" Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Message" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Messages" VerticalAlignment="Center"  Margin="20 10"/>
+                            <materialDesign:PackIcon Kind="QuestionMarkCircle" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Hướng dẫn" VerticalAlignment="Center"  Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>
             </StackPanel>
         </Grid>
     </Grid>
-
 </Window>

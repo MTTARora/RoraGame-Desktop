@@ -5,8 +5,61 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RoraGame"
              mc:Ignorable="d" 
-             Background="Aquamarine">
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
     <Grid>
-            
+        <materialDesign:Card
+  Background="{DynamicResource PrimaryHueDarkBrush}"
+  Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+  Width="200"
+  Padding="8">
+            <StackPanel>
+                <TextBlock
+      Margin="16 16 12 8"
+      FontSize="16">
+    Notes
+                </TextBlock>
+                <CheckBox
+      Margin="16 4 16 0"
+      Style="{StaticResource MaterialDesignUserForegroundCheckBox}">
+                    Do something good
+                </CheckBox>
+                <CheckBox
+      Margin="16 4 16 0"
+      Style="{StaticResource MaterialDesignUserForegroundCheckBox}">
+                    Take a breather
+                </CheckBox>
+                <CheckBox
+      Margin="16 4 16 0"
+      Style="{StaticResource MaterialDesignUserForegroundCheckBox}">
+                    And go create
+                </CheckBox>
+                <RadioButton
+      Margin="16 4 16 0"
+      Style="{DynamicResource MaterialDesignUserForegroundRadioButton}">
+                    This?
+                </RadioButton>
+                <RadioButton
+      Margin="16 4 16 0"
+      Style="{DynamicResource MaterialDesignUserForegroundRadioButton}">
+                    Or This?
+                </RadioButton>
+                <Separator
+      Style="{StaticResource MaterialDesignLightSeparator}" />
+                <StackPanel
+      Margin="8 0 8 8"
+      Orientation="Horizontal"
+      HorizontalAlignment="Right">
+                    <Button
+        HorizontalAlignment="Right"
+        Style="{StaticResource MaterialDesignToolForegroundButton}"
+        Width="30"
+        Padding="2 0 0 0"
+        materialDesign:RippleAssist.IsCentered="True">
+                        <materialDesign:PackIcon
+          Kind="CheckAll" />
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </materialDesign:Card>
     </Grid>
 </UserControl>

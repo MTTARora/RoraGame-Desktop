@@ -61,8 +61,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="UserControlCreate.xaml.cs">
-      <DependentUpon>UserControlCreate.xaml</DependentUpon>
+    <Compile Include="UserControlAccount.xaml.cs">
+      <DependentUpon>UserControlAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlGameList.xaml.cs">
+      <DependentUpon>UserControlGameList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlGuide.xaml.cs">
+      <DependentUpon>UserControlGuide.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlHome.xaml.cs">
       <DependentUpon>UserControlHome.xaml</DependentUpon>
@@ -79,9 +85,17 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UserControlCreate.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="UserControlAccount.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlGameList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlGuide.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlHome.xaml">
       <Generator>MSBuild:Compile</Generator>
