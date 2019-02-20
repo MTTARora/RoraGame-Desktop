@@ -25,33 +25,20 @@ namespace RoraGame
         public MainWindow()
         {
             InitializeComponent();
-
-
-            // Start Minimize to system tray when applicaiton is closed
-            System.Windows.Forms.NotifyIcon ni = new System.Windows.Forms.NotifyIcon();
-            ni.Icon = new System.Drawing.Icon("favicon.ico");
-            ni.Visible = true;
-            ni.DoubleClick += 
-            delegate(object sender, EventArgs args)
-            {
-                this.Show();
-                this.WindowState = WindowState.Normal;
-            };
         }
 
+         // Start Minimize to system tray when applicaiton is closed
         protected override void OnClosing(CancelEventArgs e)
         {
-        
             // setting cancel to true will cancel the close request
             // so the application is not closed
             e.Cancel = true;
-
             this.Hide();
-
             base.OnClosing(e);
         }
-        // End Minimize to tray system
+        //End Minimize to tray system
 
+        //Start Left Side Menu
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
         {
             ButtonCloseMenu.Visibility = Visibility.Visible;
@@ -91,7 +78,9 @@ namespace RoraGame
                     break;
             }
         }
+        //End Left Side Menu
 
+        //Start Close Button
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             Close();
@@ -113,8 +102,9 @@ namespace RoraGame
         {
             this.WindowState = System.Windows.WindowState.Minimized;
         }
+        //End Close Button
 
-
+        //Start Click to move window
         private void GridOfWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left && e.ClickCount == 2)
@@ -136,5 +126,7 @@ namespace RoraGame
             }
 
         }
+        //End Click to move window
+
     }
 }

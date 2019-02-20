@@ -26,7 +26,8 @@
     ToolTip="Resource name: MaterialDesignRaisedLightDarkButton">
             _Đăng nhập
         </Button>
-        <Button Grid.Row="3"
+        
+        <Button Grid.Row="4"
     Style="{StaticResource MaterialDesignRaisedDarkButton}"
 
     ToolTip="Resource name: MaterialDesignRaisedLightDarkButton">
