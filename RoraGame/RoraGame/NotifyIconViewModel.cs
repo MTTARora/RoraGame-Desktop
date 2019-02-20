@@ -18,6 +18,7 @@ namespace RoraGame
         {
             get
             {
+                Application.Current.MainWindow.Focus();
                 return new DelegateCommand
                 {
                     CommandAction = () =>

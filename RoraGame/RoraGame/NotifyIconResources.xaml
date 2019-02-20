@@ -12,17 +12,17 @@
         <MenuItem Header="RoraGame" Command="{Binding ShowWindowCommand}" />
         <!--<MenuItem Header="Hide Window" Command="{Binding HideWindowCommand}" />-->
         <Separator />
-        <MenuItem Header="Ngừng thuê" />
+        <MenuItem Header="Dừng thuê" />
         <MenuItem Header="Đăng xuất" />
         <Separator />
-        <MenuItem Header="Exit" Command="{Binding ExitApplicationCommand}" />
+        <MenuItem Header="Thoát" Command="{Binding ExitApplicationCommand}" />
     </ContextMenu>
 
 
     <!-- the application's NotifyIcon - started from App.xaml.cs. Declares its own view model. -->
     <tb:TaskbarIcon x:Key="NotifyIcon"
                     IconSource="/Red.ico"
-                    ToolTipText="Double-click for window, right-click for menu"
+                    ToolTipText="RoraGame"
                     DoubleClickCommand="{Binding ShowWindowCommand}"
                     ContextMenu="{StaticResource SysTrayMenu}">
 

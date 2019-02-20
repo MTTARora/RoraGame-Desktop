@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -13,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfSingleInstanceByEventWaitHandle;
 
 namespace RoraGame
 {
@@ -21,13 +21,33 @@ namespace RoraGame
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region 1 Single Instance
+        internal delegate void ProcessArgDelegate(String arg);
+        internal static ProcessArgDelegate ProcessArg;
+        internal class ArgsRun
+        {
+            internal static string Text;
+        }
+        #endregion 1Single Instance
 
         public MainWindow()
         {
             InitializeComponent();
+
+            #region 2 Single Instance
+            ProcessArg = delegate (String arg)
+            {
+                ArgsRun.Text = arg;
+            };
+
+            this.Initialized += delegate (object sender, EventArgs e) {
+                ArgsRun.Text = (String)Application.Current.Resources[WpfSingleInstance.StartArgKey];
+                Application.Current.Resources.Remove(WpfSingleInstance.StartArgKey);
+            };
+            #endregion 2 Single Instance
         }
 
-         // Start Minimize to system tray when applicaiton is closed
+        #region Minimize to system tray when applicaiton is closed
         protected override void OnClosing(CancelEventArgs e)
         {
             // setting cancel to true will cancel the close request
@@ -36,9 +56,9 @@ namespace RoraGame
             this.Hide();
             base.OnClosing(e);
         }
-        //End Minimize to tray system
+        #endregion Minimize to tray system
 
-        //Start Left Side Menu
+        #region Left Side Menu
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
         {
             ButtonCloseMenu.Visibility = Visibility.Visible;
@@ -78,9 +98,9 @@ namespace RoraGame
                     break;
             }
         }
-        //End Left Side Menu
+        #endregion Left Side Menu
 
-        //Start Close Button
+        #region Close Button
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             Close();
@@ -102,9 +122,9 @@ namespace RoraGame
         {
             this.WindowState = System.Windows.WindowState.Minimized;
         }
-        //End Close Button
+        #endregion Close Button
 
-        //Start Click to move window
+        #region Click to move window
         private void GridOfWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left && e.ClickCount == 2)
@@ -126,7 +146,8 @@ namespace RoraGame
             }
 
         }
-        //End Click to move window
+        #endregion Click to move window
 
     }
+
 }
