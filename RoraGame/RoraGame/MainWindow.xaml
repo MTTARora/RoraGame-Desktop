@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="RoraGame" Height="600" Width="1024" MinWidth="400" MinHeight="400" WindowStyle="None" WindowStartupLocation="CenterScreen">
+        Title="RoraGame" Height="600" Width="1024" MinWidth="420" MinHeight="400" WindowStyle="None" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Storyboard x:Key="OpenMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
@@ -37,7 +37,7 @@
         </EventTrigger>
     </Window.Triggers>
     <Grid>
-        <Grid x:Name="GridMain" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="62,45,0,0"/>
+        <Grid x:Name="GridMain" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="62,40,0,0"/>
         <Grid Height="40" Width="auto" VerticalAlignment="Top" MouseLeftButtonDown="GridOfWindow_MouseLeftButtonDown">
             <materialDesign:ColorZone 
             Mode="PrimaryDark"
@@ -61,7 +61,7 @@
             </materialDesign:ColorZone>
             <DockPanel HorizontalAlignment="Right">
                 <Button Name="MinimizeButton" HorizontalAlignment="Right" Margin="0,0,4,0" Click="MinimizeButton_Click">
-                    <materialDesign:PackIcon Kind="WindowMinimize"></materialDesign:PackIcon>
+                    <materialDesign:PackIcon Kind="WindowMinimize" Margin="0,8,0,0"></materialDesign:PackIcon>
                 </Button>
                 <Button Name="MaximizeButton" HorizontalAlignment="Right" Margin="0,0,4,0" Click="MaximizeButton_Click">
                     <materialDesign:PackIcon Kind="WindowMaximize"></materialDesign:PackIcon>
@@ -115,7 +115,7 @@
                     <ListViewItem x:Name="ItemGuide" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="QuestionMarkCircle" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Hướng dẫn" VerticalAlignment="Center"  Margin="20 10"/>
+                            <TextBlock Text="Hướng dẫn" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>

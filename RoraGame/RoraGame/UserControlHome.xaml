@@ -7,59 +7,32 @@
              mc:Ignorable="d" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
     <Grid>
-        <materialDesign:Card
-  Background="{DynamicResource PrimaryHueDarkBrush}"
-  Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
-  Width="200"
-  Padding="8">
-            <StackPanel>
-                <TextBlock
-      Margin="16 16 12 8"
-      FontSize="16">
-    Notes
-                </TextBlock>
-                <CheckBox
-      Margin="16 4 16 0"
-      Style="{StaticResource MaterialDesignUserForegroundCheckBox}">
-                    Do something good
-                </CheckBox>
-                <CheckBox
-      Margin="16 4 16 0"
-      Style="{StaticResource MaterialDesignUserForegroundCheckBox}">
-                    Take a breather
-                </CheckBox>
-                <CheckBox
-      Margin="16 4 16 0"
-      Style="{StaticResource MaterialDesignUserForegroundCheckBox}">
-                    And go create
-                </CheckBox>
-                <RadioButton
-      Margin="16 4 16 0"
-      Style="{DynamicResource MaterialDesignUserForegroundRadioButton}">
-                    This?
-                </RadioButton>
-                <RadioButton
-      Margin="16 4 16 0"
-      Style="{DynamicResource MaterialDesignUserForegroundRadioButton}">
-                    Or This?
-                </RadioButton>
-                <Separator
-      Style="{StaticResource MaterialDesignLightSeparator}" />
-                <StackPanel
-      Margin="8 0 8 8"
-      Orientation="Horizontal"
-      HorizontalAlignment="Right">
-                    <Button
-        HorizontalAlignment="Right"
-        Style="{StaticResource MaterialDesignToolForegroundButton}"
-        Width="30"
-        Padding="2 0 0 0"
-        materialDesign:RippleAssist.IsCentered="True">
-                        <materialDesign:PackIcon
-          Kind="CheckAll" />
-                    </Button>
-                </StackPanel>
-            </StackPanel>
-        </materialDesign:Card>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Source="https://media01.gameloft.com/layout/support/revamp/assets/images/game-banner/banner_CC_Windows.jpg" />
+        <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,0,0">
+                Các bước để vào chơi games tại RoraGame
+        </TextBlock>
+        <ListView Grid.Row="2" Margin="30,0,0,0">
+            <ListViewItem>
+                ● Không cần xác minh để sử dụng
+            </ListViewItem>
+            <ListViewItem>
+                ● Tải ứng dụng RoraGame và Tạo tài khoản
+            </ListViewItem>
+            <ListViewItem>
+                ● Nạp tiền vào tài khoản RoraGame
+            </ListViewItem>
+            <ListViewItem>
+                ● Tìm games muốn thuê và chơi
+            </ListViewItem>
+        </ListView>
     </Grid>
 </UserControl>
