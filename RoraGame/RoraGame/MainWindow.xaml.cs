@@ -23,6 +23,26 @@ namespace RoraGame
         public MainWindow()
         {
             InitializeComponent();
+
+            // Minimize to system tray
+            System.Windows.Forms.NotifyIcon ni = new System.Windows.Forms.NotifyIcon();
+            ni.Icon = new System.Drawing.Icon("favicon.ico");
+            ni.Visible = true;
+            ni.DoubleClick +=
+                delegate (object sender, EventArgs args)
+                {
+                    this.Show();
+                    this.WindowState = WindowState.Normal;
+                };
+        }
+
+        protected override void OnStateChanged(EventArgs e)
+        {
+            if (WindowState == System.Windows.WindowState.Minimized)
+                this.Hide();
+
+            base.OnStateChanged(e);
+            // End Minimize to system tray
         }
 
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
@@ -64,7 +84,7 @@ namespace RoraGame
                     break;
             }
         }
-        
+
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             Close();
