@@ -28,4 +28,3 @@ E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\UserControlAccount.baml
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\UserControlGameList.baml
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\UserControlLogin.g.cs
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\UserControlLogin.baml
-E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.csprojAssemblyReference.cache

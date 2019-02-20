@@ -9,7 +9,7 @@
              >
     <Grid>
         <!-- Web Browser Control that hosts a web page. -->
-        <WebBrowser x:Name="webBrowser" Source="http://msdn.com"   
+        <WebBrowser x:Name="webBrowser" Source="http://google.com.vn"   
   Width="auto" Height="auto"  />
     </Grid>
 </UserControl>

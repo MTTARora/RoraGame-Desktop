@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
         <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Source="https://media01.gameloft.com/layout/support/revamp/assets/images/game-banner/banner_CC_Windows.jpg" />
         <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,0,0">
-                Các bước để vào chơi games tại RoraGame
+                Các bước để chơi games tại RoraGame
         </TextBlock>
         <ListView Grid.Row="2" Margin="30,0,0,0">
             <ListViewItem>

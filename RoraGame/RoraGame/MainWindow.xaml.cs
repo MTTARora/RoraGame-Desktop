@@ -64,7 +64,7 @@ namespace RoraGame
                     break;
             }
         }
-
+        
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             Close();

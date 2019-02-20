@@ -37,7 +37,7 @@
         </EventTrigger>
     </Window.Triggers>
     <Grid>
-        <Grid x:Name="GridMain" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="62,40,0,0"/>
+        <Grid x:Name="GridMain" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="63,40,0,0"/>
         <Grid Height="40" Width="auto" VerticalAlignment="Top" MouseLeftButtonDown="GridOfWindow_MouseLeftButtonDown">
             <materialDesign:ColorZone 
             Mode="PrimaryDark"
@@ -49,9 +49,9 @@
                     Margin="0,0,160,0"
                     PlacementMode="BottomAndAlignRightEdges">
                         <ListBox>
-                            <ListBoxItem Content="Hello World"/>
-                            <ListBoxItem Content="Nice Popup"/>
-                            <ListBoxItem Content="Goodbye."/>
+                            <ListBoxItem Content="Cài đặt"/>
+                            <ListBoxItem Content="Thông tin"/>
+                            <ListBoxItem Content="Đăng xuất" Foreground="Red"/>
                         </ListBox>
                     </materialDesign:PopupBox>
                     <StackPanel HorizontalAlignment="Center">
@@ -91,7 +91,7 @@
                     <Button x:Name="ButtonCloseMenu" Visibility="Collapsed" Height="35" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF512DA8" Click="ButtonCloseMenu_Click">
                         <materialDesign:PackIcon Kind="ArrowLeft" Width="25" Height="25"/>
                     </Button>
-                    <Image Height="80" VerticalAlignment="Bottom"/>
+                    <Image Height="80" VerticalAlignment="Bottom" Source="E:\Projects\RoraGame\RoraGame\RoraGame\logo.png"/>
                 </Grid>
                 <ListView x:Name="ListViewMenu" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged" Foreground="#DDFFFFFF">
                     <ListViewItem x:Name="ItemHome" Height="60">
