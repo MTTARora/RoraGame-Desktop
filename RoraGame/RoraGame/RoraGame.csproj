@@ -82,6 +82,9 @@
     <Compile Include="UserControlHome.xaml.cs">
       <DependentUpon>UserControlHome.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlInformation.xaml.cs">
+      <DependentUpon>UserControlInformation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlLogin.xaml.cs">
       <DependentUpon>UserControlLogin.xaml</DependentUpon>
     </Compile>
@@ -117,6 +120,10 @@
     <Page Include="UserControlHome.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControlInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlLogin.xaml">
       <SubType>Designer</SubType>
@@ -154,6 +161,7 @@
     <Resource Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Application\Current\" />
     <Folder Include="System\Drawing\" />
     <Folder Include="System\Windows\" />
   </ItemGroup>

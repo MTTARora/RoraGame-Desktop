@@ -94,6 +94,10 @@ namespace RoraGame
                     usc = new UserControlGuide();
                     GridMain.Children.Add(usc);
                     break;
+                case "ItemInformation":
+                    usc = new UserControlInformation();
+                    GridMain.Children.Add(usc);
+                    break;
                 default:
                     break;
             }

@@ -18,7 +18,6 @@ namespace RoraGame
         {
             get
             {
-                Application.Current.MainWindow.Focus();
                 return new DelegateCommand
                 {
                     CommandAction = () =>
@@ -40,7 +39,6 @@ namespace RoraGame
                 return new DelegateCommand
                 {
                     CommandAction = () => Application.Current.MainWindow.Close(),
-                    CanExecuteFunc = () => Application.Current.MainWindow != null
                 };
             }
         }
