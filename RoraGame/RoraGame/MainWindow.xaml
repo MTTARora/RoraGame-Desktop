@@ -39,7 +39,7 @@
         </EventTrigger>
     </Window.Triggers>
     <Grid>
-        <Grid x:Name="GridMain" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="63,37,0,0">
+        <Grid x:Name="GridMain" Margin="63,37,0,0">
             <local:UserControlHome></local:UserControlHome>
         </Grid>
         <Grid Height="40" Width="auto" VerticalAlignment="Top" MouseLeftButtonDown="GridOfWindow_MouseLeftButtonDown">

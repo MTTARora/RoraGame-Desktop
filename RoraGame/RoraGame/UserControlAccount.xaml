@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:RoraGame"
              mc:Ignorable="d" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
-    <materialDesign:Card Margin="20">
+    <materialDesign:Card Width="250" VerticalAlignment="Center" HorizontalAlignment="Center">
     <Grid Width="200" Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>

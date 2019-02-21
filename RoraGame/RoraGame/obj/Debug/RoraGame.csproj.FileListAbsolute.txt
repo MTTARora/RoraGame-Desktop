@@ -1,3 +1,4 @@
+E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.csproj.CopyComplete
 E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\RoraGame.exe.config
 E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\RoraGame.exe
 E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\RoraGame.pdb
@@ -14,8 +15,6 @@ E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\UserControlGameList.g.cs
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\UserControlGuide.g.cs
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\UserControlHome.g.cs
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\UserControlInformation.g.cs
-E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\UserControlLogin.g.cs
-E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\WindowHome.g.cs
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\App.g.cs
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\GeneratedInternalTypeHelper.g.cs
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame_MarkupCompile.cache
@@ -28,12 +27,9 @@ E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\UserControlGameList.baml
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\UserControlGuide.baml
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\UserControlHome.baml
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\UserControlInformation.baml
-E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\UserControlLogin.baml
-E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\WindowHome.baml
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.g.resources
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.Properties.Resources.resources
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.csproj.GenerateResource.cache
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.csproj.CoreCompileInputs.cache
-E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.csproj.CopyComplete
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.exe
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.pdb

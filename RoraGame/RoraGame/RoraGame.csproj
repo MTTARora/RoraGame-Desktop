@@ -85,12 +85,6 @@
     <Compile Include="UserControlInformation.xaml.cs">
       <DependentUpon>UserControlInformation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlLogin.xaml.cs">
-      <DependentUpon>UserControlLogin.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WindowHome.xaml.cs">
-      <DependentUpon>WindowHome.xaml</DependentUpon>
-    </Compile>
     <Compile Include="WpfSingleInstance.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -125,14 +119,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControlInformation.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControlLogin.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WindowHome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
