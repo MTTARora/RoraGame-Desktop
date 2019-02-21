@@ -1,4 +1,3 @@
-E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.csproj.CopyComplete
 E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\RoraGame.exe.config
 E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\RoraGame.exe
 E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\RoraGame.pdb
@@ -31,5 +30,6 @@ E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.g.resources
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.Properties.Resources.resources
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.csproj.GenerateResource.cache
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.csproj.CoreCompileInputs.cache
+E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.csproj.CopyComplete
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.exe
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.pdb
