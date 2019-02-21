@@ -30,8 +30,23 @@ namespace RoraGame
             List<Games> items = new List<Games>();
             items.Add(new Games() { No = 1 , Name = "Assassin's Creed", Platform = "Steam", Description= "https://www.assassinscreed.com" });
             items.Add(new Games() { No = 2, Name = "Battlefield ", Platform = "Steam", Description = "https://www.ea.com/games/battlefield" });
-            items.Add(new Games() { No = 3, Name = "Call of Duty", Platform = "Steam", Description = "https://www.callofduty.com/" });
-            items.Add(new Games() { No = 4, Name = "PlayerUnknown's Battlegrounds", Platform = "Steam", Description = "https://www.pubg.com/" });
+            items.Add(new Games() { No = 3, Name = "Call of Duty", Platform = "Steam", Description = "https://www.callofduty.com" });
+            items.Add(new Games() { No = 4, Name = "PlayerUnknown's Battlegrounds", Platform = "Steam", Description = "https://www.pubg.com" });
+            items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
+            items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
+            items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
+            items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
+            items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
+            items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
+            items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
+            items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
+            items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
+            items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
+            items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
+            items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
+            items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
+            items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
+            items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
 
             LsGames.ItemsSource = items;
         }

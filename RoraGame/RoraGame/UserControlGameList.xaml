@@ -6,17 +6,9 @@
              xmlns:local="clr-namespace:RoraGame"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" >
-    <StackPanel>
-        <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 10 0 0">
-            <TextBlock Style="{StaticResource MaterialDesignSubheadingTextBlock}" Margin="0 20 20 10">
-            <Bold>THUÊ GAME BẢN QUYỀN</Bold>
-            </TextBlock>
-            <Button Content="Thuê Game" Width="130"></Button>
-        </WrapPanel>
-        <DockPanel>
-        <ListView Name ="LsGames">
-            <ListView.View>
-                <GridView>
+    <ListView Name ="LsGames">
+        <ListView.View>
+            <GridView>
                     <GridViewColumn
                         DisplayMemberBinding="{Binding No}"
                         Header="STT" />
@@ -32,6 +24,4 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        </DockPanel>
-    </StackPanel>
 </UserControl>

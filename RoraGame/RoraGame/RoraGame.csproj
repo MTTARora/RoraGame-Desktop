@@ -88,6 +88,9 @@
     <Compile Include="UserControlLogin.xaml.cs">
       <DependentUpon>UserControlLogin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowHome.xaml.cs">
+      <DependentUpon>WindowHome.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WpfSingleInstance.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -126,6 +129,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowHome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -176,6 +183,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Red.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\banner_CC_Windows.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

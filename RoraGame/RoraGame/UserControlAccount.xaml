@@ -5,34 +5,22 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RoraGame"
              mc:Ignorable="d" 
-             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             >
-    <Grid Width="200">
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <materialDesign:Card Margin="20">
+    <Grid Width="200" Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="47"></RowDefinition>
+            <RowDefinition Height="47"></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBox  Grid.Row="0"
-  materialDesign:HintAssist.Hint="Tài khoản"
-  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-        <TextBox Grid.Row="1"
-  materialDesign:HintAssist.Hint="Mật khẩu"
-  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-        <Button Grid.Row="2"
-    Style="{StaticResource MaterialDesignRaisedDarkButton}"
-
-    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton">
-            _Đăng nhập
-        </Button>
-        
-        <Button Grid.Row="4"
-    Style="{StaticResource MaterialDesignRaisedDarkButton}"
-
-    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton">
-            _Quên mật khẩu
-        </Button>
-
-    </Grid>
+        <TextBox  Grid.Row="0" materialDesign:HintAssist.Hint="Tài khoản" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <PasswordBox Grid.Row="1" materialDesign:HintAssist.Hint="Mật khẩu" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+            <CheckBox Grid.Row="2" Style="{StaticResource MaterialDesignCheckBox}">Nhớ mật khẩu</CheckBox>
+            <Button Grid.Row="3" Style="{StaticResource MaterialDesignRaisedDarkButton}" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton">_Đăng nhập</Button>
+            <TextBlock Grid.Row="4" Margin="10 15 0 0"><Hyperlink>Quên mật khẩu</Hyperlink></TextBlock>
+            <TextBlock Grid.Row="4" Margin="110 15 0 0"><Hyperlink>Tạo tài khoản</Hyperlink></TextBlock>
+        </Grid>
+    </materialDesign:Card>
 </UserControl>
