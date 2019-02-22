@@ -39,3 +39,5 @@ E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\PageLogIn.baml
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\PageSignUp.baml
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\PageAccountInformation.g.cs
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\PageAccountInformation.baml
+E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\PageLostPassword.g.cs
+E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\PageLostPassword.baml

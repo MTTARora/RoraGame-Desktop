@@ -8,7 +8,7 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
     <Grid HorizontalAlignment="Center">
         <StackPanel>
-            <Image VerticalAlignment="Top" Source="E:\Projects\RoraGame\RoraGame\RoraGame\Resources\banner_CC_Windows.jpg" />
+            <Image VerticalAlignment="Top" Source="E:\Projects\RoraGame\RoraGame\RoraGame\Resources\splashBanner_magic.jpg" />
         <WrapPanel HorizontalAlignment="Center">
                 <materialDesign:Card Margin="0 20 30 0" Width="440" Height="254">
                     <StackPanel>

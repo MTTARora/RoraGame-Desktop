@@ -10,21 +10,25 @@
     <materialDesign:Card Width="250" VerticalAlignment="Center" HorizontalAlignment="Center">
         <Grid Width="200" Margin="20">
             <Grid.RowDefinitions>
+                <RowDefinition  Height="20"></RowDefinition>
                 <RowDefinition></RowDefinition>
+                <RowDefinition Height="47"></RowDefinition>
                 <RowDefinition Height="47"></RowDefinition>
                 <RowDefinition Height="47"></RowDefinition>
                 <RowDefinition Height="47"></RowDefinition>
                 <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition Height="35"></RowDefinition>
+                <RowDefinition Height="33"></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBox  Grid.Row="0" materialDesign:HintAssist.Hint="Tài khoản" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-            <TextBox Grid.Row="1" materialDesign:HintAssist.Hint="Số điện thoại" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-            <PasswordBox Grid.Row="2" materialDesign:HintAssist.Hint="Mật khẩu" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
-            <PasswordBox Grid.Row="3" materialDesign:HintAssist.Hint="Nhập lại mật khẩu" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
-
-            <Button Grid.Row="4" Style="{StaticResource MaterialDesignRaisedDarkButton}" VerticalAlignment="Bottom">_Đăng ký</Button>
-            <TextBlock Grid.Row="5" Margin="10 15 0 0"><Hyperlink>Quên mật khẩu</Hyperlink></TextBlock>
-            <TextBlock Grid.Row="5" Margin="110 15 0 0"><Hyperlink>Đăng nhập</Hyperlink></TextBlock>
+            <TextBlock Grid.Row="0" Style="{StaticResource MaterialDesignCaptionTextBlock}">Hãy điền thông tin để đăng ký</TextBlock>
+            <TextBox  Grid.Row="1" materialDesign:HintAssist.Hint="Tài khoản" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox  Grid.Row="2" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox Grid.Row="3" materialDesign:HintAssist.Hint="Số điện thoại xác nhận" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <PasswordBox Grid.Row="4" materialDesign:HintAssist.Hint="Mật khẩu" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+            <PasswordBox Grid.Row="5" materialDesign:HintAssist.Hint="Nhập lại mật khẩu" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+            <Button Grid.Row="6" Style="{StaticResource MaterialDesignRaisedDarkButton}" VerticalAlignment="Bottom">_Đăng ký</Button>
+            <TextBlock Grid.Row="7" HorizontalAlignment="Center" Margin="0 20 0 0">Bạn đã có tài khoản? <Hyperlink>Đăng nhập</Hyperlink></TextBlock>
+            <TextBlock Grid.Row="8" HorizontalAlignment="Center" Margin="0 15 0 0">Bạn quên mật khẩu? <Hyperlink>Lấy mật khẩu</Hyperlink></TextBlock>
         </Grid>
     </materialDesign:Card>
 </Page>

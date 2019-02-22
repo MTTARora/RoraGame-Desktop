@@ -76,6 +76,9 @@
     <Compile Include="PageLogIn.xaml.cs">
       <DependentUpon>PageLogIn.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageLostPassword.xaml.cs">
+      <DependentUpon>PageLostPassword.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageSignUp.xaml.cs">
       <DependentUpon>PageSignUp.xaml</DependentUpon>
     </Compile>
@@ -116,6 +119,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageLogIn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageLostPassword.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -193,6 +200,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\banner_CC_Windows.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\splashBanner_magic.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

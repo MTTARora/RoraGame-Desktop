@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\Projects\RoraGame\RoraGame\RoraGame\App.xaml
-10354353409
+11-1805703574
 
-151460686913
+16850849068
 18-134052109
-MainWindow.xaml;NotifyIconResources.xaml;PageAccountInformation.xaml;PageLogIn.xaml;PageSignUp.xaml;UserControlAccount.xaml;UserControlGameList.xaml;UserControlGuide.xaml;UserControlHome.xaml;UserControlInformation.xaml;
+MainWindow.xaml;NotifyIconResources.xaml;PageAccountInformation.xaml;PageLogIn.xaml;PageLostPassword.xaml;PageSignUp.xaml;UserControlAccount.xaml;UserControlGameList.xaml;UserControlGuide.xaml;UserControlHome.xaml;UserControlInformation.xaml;
 
 False
 

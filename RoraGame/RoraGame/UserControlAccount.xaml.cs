@@ -39,5 +39,11 @@ namespace RoraGame
         {
             Main.Content = new PageAccountInformation();
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new PageLostPassword();
+        }
+
     }
 }
