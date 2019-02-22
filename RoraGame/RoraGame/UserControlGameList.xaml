@@ -6,7 +6,20 @@
              xmlns:local="clr-namespace:RoraGame"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" >
-    <ListView Name ="LsGames" Margin="10 0 0 0">
+    <Grid ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" HorizontalAlignment="Left" Margin="20">
+            <DockPanel>
+                <TextBlock
+    Style="{StaticResource MaterialDesignSubheadingTextBlock}">Tài khoản hết tiền? </TextBlock>
+            <Button Style="{StaticResource MaterialDesignRaisedDarkButton}" Width="auto">Nạp tiền</Button>
+            </DockPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+        <ListView Name ="LsGames" Margin="10 0 0 0">
         <ListView.View>
             <GridView>
                     <GridViewColumn
@@ -32,4 +45,6 @@
             </GridView>
             </ListView.View>
         </ListView>
+        </Grid>
+    </Grid>
 </UserControl>

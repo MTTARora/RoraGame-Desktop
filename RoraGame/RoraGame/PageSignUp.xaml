@@ -26,7 +26,7 @@
             <TextBox Grid.Row="3" materialDesign:HintAssist.Hint="Số điện thoại xác nhận" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
             <PasswordBox Grid.Row="4" materialDesign:HintAssist.Hint="Mật khẩu" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
             <PasswordBox Grid.Row="5" materialDesign:HintAssist.Hint="Nhập lại mật khẩu" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
-            <Button Grid.Row="6" Style="{StaticResource MaterialDesignRaisedDarkButton}" VerticalAlignment="Bottom">_Đăng ký</Button>
+            <Button Grid.Row="6" Style="{StaticResource MaterialDesignRaisedDarkButton}" VerticalAlignment="Bottom">Đăng ký</Button>
             <TextBlock Grid.Row="7" HorizontalAlignment="Center" Margin="0 20 0 0">Bạn đã có tài khoản? <Hyperlink>Đăng nhập</Hyperlink></TextBlock>
             <TextBlock Grid.Row="8" HorizontalAlignment="Center" Margin="0 15 0 0">Bạn quên mật khẩu? <Hyperlink>Lấy mật khẩu</Hyperlink></TextBlock>
         </Grid>

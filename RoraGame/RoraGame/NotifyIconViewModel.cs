@@ -23,6 +23,7 @@ namespace RoraGame
                     CommandAction = () =>
                     {
                         Application.Current.MainWindow.Show();
+                        Application.Current.MainWindow.Activate();
                         Application.Current.MainWindow.Focus();
                     }
                 };
