@@ -23,6 +23,21 @@ namespace RoraGame
         public UserControlHome()
         {
             InitializeComponent();
+
+            List<Games> items = new List<Games>();
+            items.Add(new Games() { Dates = "29/12/1999", Name = "Assassin's Creed", Description = "https://www.assassinscreed.com" });
+            items.Add(new Games() { Dates = "29/12/1999", Name = "Call Of Duty", Description = "https://www.assassinscreed.com" });
+            items.Add(new Games() { Dates = "29/12/1999", Name = "Fornite", Description = "https://www.assassinscreed.com" });
+            items.Add(new Games() { Dates = "29/12/1999", Name = "Battlefield", Description = "qweqwádfádf ăè ăè adfăè ăe ăè ăèád fa ewf ăè ádf" });
+
+            GameNew.ItemsSource = items;
         }
+    }
+
+    public class Games
+    {
+        public string Dates { get; internal set; }
+        public string Name { get; internal set; }
+        public string Description { get; internal set; }
     }
 }

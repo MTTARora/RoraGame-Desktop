@@ -70,6 +70,15 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="NotifyIconViewModel.cs" />
+    <Compile Include="PageAccountInformation.xaml.cs">
+      <DependentUpon>PageAccountInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageLogIn.xaml.cs">
+      <DependentUpon>PageLogIn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageSignUp.xaml.cs">
+      <DependentUpon>PageSignUp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlAccount.xaml.cs">
       <DependentUpon>UserControlAccount.xaml</DependentUpon>
     </Compile>
@@ -101,6 +110,18 @@
     <Page Include="NotifyIconResources.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PageAccountInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageLogIn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageSignUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlAccount.xaml">
       <SubType>Designer</SubType>

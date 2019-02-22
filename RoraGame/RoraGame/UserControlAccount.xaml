@@ -6,21 +6,12 @@
              xmlns:local="clr-namespace:RoraGame"
              mc:Ignorable="d" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
-    <materialDesign:Card Width="250" VerticalAlignment="Center" HorizontalAlignment="Center">
-    <Grid Width="200" Margin="20">
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition Height="47"></RowDefinition>
-            <RowDefinition Height="47"></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <TextBox  Grid.Row="0" materialDesign:HintAssist.Hint="Tài khoản" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-            <PasswordBox Grid.Row="1" materialDesign:HintAssist.Hint="Mật khẩu" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
-            <CheckBox Grid.Row="2" Style="{StaticResource MaterialDesignCheckBox}">Nhớ mật khẩu</CheckBox>
-            <Button Grid.Row="3" Style="{StaticResource MaterialDesignRaisedDarkButton}" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton">_Đăng nhập</Button>
-            <TextBlock Grid.Row="4" Margin="10 15 0 0"><Hyperlink>Quên mật khẩu</Hyperlink></TextBlock>
-            <TextBlock Grid.Row="4" Margin="110 15 0 0"><Hyperlink>Tạo tài khoản</Hyperlink></TextBlock>
-        </Grid>
-    </materialDesign:Card>
+    <Grid>
+        <DockPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20">
+            <Button Content="Login" Width="100" Click="Button_Click" Margin="0 0 20 0"></Button>
+            <Button Content="Sign Up" Width="100" Click="Button_Click_1" Margin="0 0 20 0"></Button>
+            <Button Content="Account Information" Width="200" Click="Button_Click_2"/>
+        </DockPanel>
+            <Frame x:Name="Main" Margin="10" NavigationUIVisibility="Hidden"></Frame>
+    </Grid>
 </UserControl>

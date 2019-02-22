@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"        
         FontFamily="{DynamicResource MaterialDesignFont}"
         Background="{DynamicResource MaterialDesignPaper}"
-        Title="RoraGame" Height="600" Width="1024" MinWidth="390" MinHeight="400" WindowStyle="None" WindowStartupLocation="CenterScreen"
+        Title="RoraGame" Height="600" Width="1024" MinWidth="530" MinHeight="500" WindowStyle="None" WindowStartupLocation="CenterScreen"
         ResizeMode="CanResizeWithGrip"
         AllowsTransparency="True">
     <Window.Resources>
@@ -57,19 +57,18 @@
                     </Button>
                 </DockPanel>
         </Grid>
-        <StackPanel x:Name="GridMenu" Width="62" Height="auto" HorizontalAlignment="Left" Background="#FF512DA8">
+        <StackPanel x:Name="GridMenu" Width="62" Height="auto" HorizontalAlignment="Left" Background="#FF512DA8" Margin="0 1 0 0">
                 <StackPanel.Style>
                     <Style TargetType="StackPanel">
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
                             </Trigger>
-                            <EventTrigger RoutedEvent="MouseEnter">
-                                <EventTrigger.Actions>
-                                    <BeginStoryboard Storyboard="{StaticResource OpenMenu}"/>
-                                </EventTrigger.Actions>
-                            </EventTrigger>
-
-                            <EventTrigger RoutedEvent="MouseLeave">
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard Storyboard="{StaticResource OpenMenu}"/>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
                                 <EventTrigger.Actions>
                                     <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
                                 </EventTrigger.Actions>
@@ -86,13 +85,7 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </Grid.RenderTransform>
-                    <!--<Button x:Name="ButtonOpenMenu" Height="35" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF512DA8" Click="ButtonOpenMenu_Click">
-                        <materialDesign:PackIcon Kind="Menu" Width="25" Height="25"/>
-                    </Button>
-                    <Button x:Name="ButtonCloseMenu" Visibility="Collapsed" Height="35" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF512DA8" Click="ButtonCloseMenu_Click">
-                        <materialDesign:PackIcon Kind="ArrowLeft" Width="25" Height="25"/>
-                    </Button>-->
-                    <Image Height="60" VerticalAlignment="Top" Source="E:\Projects\RoraGame\RoraGame\RoraGame\Resources\162615_122970534438718_3176443_n.jpg" Margin="0,0,0,5" RenderTransformOrigin="0.581,0.5"/>
+                <Image Height="60" VerticalAlignment="Top" Source="E:\Projects\RoraGame\RoraGame\RoraGame\Resources\162615_122970534438718_3176443_n.jpg" Margin="0,0,0,5" RenderTransformOrigin="0.581,0.5"/>
                 </Grid>
                 <ListView x:Name="ListViewMenu" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged" Foreground="#DDFFFFFF">
                     <ListViewItem x:Name="ItemHome" Height="60">
@@ -125,7 +118,13 @@
                             <TextBlock Text="Thông tin" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                </ListView>
+                <ListViewItem x:Name="ItemLogout" Height="60">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Logout" Height="25" Width="25" Margin="10" Foreground="PaleVioletRed"/>
+                        <TextBlock Text="Đăng xuất" VerticalAlignment="Center" Margin="20 10" Foreground="PaleVioletRed" />
+                    </StackPanel>
+                </ListViewItem>
+            </ListView>
             </StackPanel>
     </Grid>
 </Window>

@@ -32,9 +32,9 @@ namespace RoraGame
             items.Add(new Games() { No = 2, Name = "Battlefield ", Platform = "Steam", Description = "https://www.ea.com/games/battlefield" });
             items.Add(new Games() { No = 3, Name = "Call of Duty", Platform = "Steam", Description = "https://www.callofduty.com" });
             items.Add(new Games() { No = 4, Name = "PlayerUnknown's Battlegrounds", Platform = "Steam", Description = "https://www.pubg.com" });
-            items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
-            items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
-            items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
+            items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom"});
+            items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "Fortnite là một trò chơi sinh tồn phối hợp trên sandbox do Epic Games và People Can Fly phát triển, và Epic Games phát hành." });
+            items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom"});
             items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
             items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
             items.Add(new Games() { No = 5, Name = "Fornite", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
@@ -60,6 +60,8 @@ namespace RoraGame
             public string Platform { get; set; }
 
             public string Description { get; set; }
+
+            public string Thue { get; set; }
 
         }
     }

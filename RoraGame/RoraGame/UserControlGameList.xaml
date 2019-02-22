@@ -6,22 +6,30 @@
              xmlns:local="clr-namespace:RoraGame"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" >
-    <ListView Name ="LsGames">
+    <ListView Name ="LsGames" Margin="10 0 0 0">
         <ListView.View>
             <GridView>
                     <GridViewColumn
                         DisplayMemberBinding="{Binding No}"
-                        Header="STT" />
+                        Header="#" />
                     <GridViewColumn
                         DisplayMemberBinding="{Binding Name}"
                         Header="Tên" />
                     <GridViewColumn
                         DisplayMemberBinding="{Binding Platform}"
                         Header="Nền tảng" />
-                    <GridViewColumn
+                <GridViewColumn
+                        Header="Thuê Game ngay">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Tag="{Binding Thue}" Content="Thuê Game"/>
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                </GridViewColumn>
+                <GridViewColumn
                         DisplayMemberBinding="{Binding Description}"
                         Header="Thông tin" />
-                </GridView>
+            </GridView>
             </ListView.View>
         </ListView>
 </UserControl>

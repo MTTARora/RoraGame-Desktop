@@ -33,3 +33,9 @@ E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.csproj.CoreCompileInpu
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.csproj.CopyComplete
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.exe
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.pdb
+E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\PageLogIn.g.cs
+E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\PageSignUp.g.cs
+E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\PageLogIn.baml
+E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\PageSignUp.baml
+E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\PageAccountInformation.g.cs
+E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\PageAccountInformation.baml

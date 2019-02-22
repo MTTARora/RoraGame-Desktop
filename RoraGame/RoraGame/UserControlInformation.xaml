@@ -6,9 +6,11 @@
              xmlns:local="clr-namespace:RoraGame"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 20 20">
+    <Grid HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 20 10">
         <TextBlock
-    Style="{StaticResource MaterialDesignCaptionTextBlock}">
+    Style="{StaticResource MaterialDesignCaptionTextBlock}" TextAlignment="Right">
+            <Hyperlink>www.roragame.com</Hyperlink>
+            <LineBreak />
   Copyright @ Rorasoft 
             Version 0.1
         </TextBlock>
