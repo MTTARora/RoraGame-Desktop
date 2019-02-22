@@ -5,8 +5,17 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RoraGame"
       mc:Ignorable="d" 
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-      Title="Đăng ký">
+      
+      Title="Đăng ký"
+      
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        FontFamily="{DynamicResource MaterialDesignFont}"
+      >
     <materialDesign:Card Width="250" VerticalAlignment="Center" HorizontalAlignment="Center">
         <Grid Width="200" Margin="20">
             <Grid.RowDefinitions>
@@ -20,7 +29,7 @@
                 <RowDefinition Height="35"></RowDefinition>
                 <RowDefinition Height="33"></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Style="{StaticResource MaterialDesignCaptionTextBlock}">Hãy điền thông tin để đăng ký</TextBlock>
+            <TextBlock Grid.Row="0" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Hãy điền thông tin để đăng ký</TextBlock>
             <TextBox  Grid.Row="1" materialDesign:HintAssist.Hint="Tài khoản" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
             <TextBox  Grid.Row="2" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
             <TextBox Grid.Row="3" materialDesign:HintAssist.Hint="Số điện thoại xác nhận" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />

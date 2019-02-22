@@ -5,29 +5,77 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RoraGame"
       mc:Ignorable="d" 
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-      Title="Thông tin tài khoản">
-    <Grid HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10">
-        <materialDesign:Card Margin="0 20 30 0" Width="440" Height="254">
-            <StackPanel>
-                <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0">
-                Các bước để thuê games tại RoraGame
-                </TextBlock>
-                <ListView Grid.Row="2" Margin="30,0,0,15">
-                    <Button>
-                        1. Tải ứng dụng RoraGame
-                    </Button>
-                    <Button>
-                        2. Tạo tài khoản
-                    </Button>
-                    <Button>
-                        3. Nạp tiền vào tài khoản
-                    </Button>
-                    <Button>
-                        4. Tìm games muốn thuê và chơi
-                    </Button>
-                </ListView>
+      
+      Title="Thông tin tài khoản"
+      
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        FontFamily="{DynamicResource MaterialDesignFont}"
+      >
+    <Grid Margin="0 30 0 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10">
+            <materialDesign:Card Margin="0 20 20 0" MinWidth="350" Height="auto" materialDesign:ShadowAssist.ShadowDepth="Depth1" >
+                <Grid Margin="15 0 15 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="27"></RowDefinition>
+                        <RowDefinition Height="39"></RowDefinition>
+                        <RowDefinition Height="70"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0">Thông tin tài khoản</TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource MaterialDesignBody1TextBlock}">Tên tài khoản:</TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlock}">Usernamedaithatladai</TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignBody1TextBlock}">Số điện thoại:</TextBlock>
+                    <TextBox Grid.Row="2" Grid.Column="1">099 999 9999</TextBox>
+                    <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignBody1TextBlock}">Email:</TextBlock>
+                    <TextBox Grid.Row="3" Grid.Column="1">emaildai@gmail.com</TextBox>
+                    <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Width="100" Style="{StaticResource MaterialDesignRaisedDarkButton}">Cập nhật</Button>
+                </Grid>
+            </materialDesign:Card>
+            <materialDesign:Card Margin="0 20 20 0" Width="350" Height="auto" materialDesign:ShadowAssist.ShadowDepth="Depth1" >
+            <StackPanel Margin="15 0 15 0">
+                <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0">Đổi mật khẩu</TextBlock>
+                <PasswordBox Margin="0 3 0 0" materialDesign:HintAssist.Hint="Mật khẩu hiện tại" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                <PasswordBox Margin="0 3 0 0" materialDesign:HintAssist.Hint="Mật khẩu mới" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                <PasswordBox Margin="0 3 0 0" materialDesign:HintAssist.Hint="Nhập lại mật khẩu mới" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                <Button Width="120" Margin="0 19 0 19" Style="{StaticResource MaterialDesignRaisedDarkButton}">Thay đổi</Button>
             </StackPanel>
         </materialDesign:Card>
+    </WrapPanel>
+        <WrapPanel Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10">
+            <materialDesign:Card Margin="0 20 20 0" MinWidth="350" Height="auto" materialDesign:ShadowAssist.ShadowDepth="Depth1" >
+                <StackPanel>
+                    <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0">Thông tin ví tiền</TextBlock>
+                    <TextBlock Margin="20 10 0 20" Style="{StaticResource MaterialDesignHeadlineTextBlock}">999.999.999 vnđ</TextBlock>
+                </StackPanel>
+            </materialDesign:Card>
+            <materialDesign:Card Margin="0 20 20 0" Width="350" Height="auto" materialDesign:ShadowAssist.ShadowDepth="Depth1" >
+                <StackPanel Margin="15 0 15 0">
+                    <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0">Nạp tiền</TextBlock>
+                    <TextBox Margin="0 3 0 0" materialDesign:HintAssist.Hint="Mã thẻ" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <TextBox Margin="0 3 0 0" materialDesign:HintAssist.Hint="Số Seri" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <ComboBox Margin="0 3 0 0" materialDesign:HintAssist.Hint="Nhà mạng" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                        <ComboBoxItem IsSelected="True"> Viettel </ComboBoxItem>
+                        <ComboBoxItem>Vinaphone</ComboBoxItem>
+                        <ComboBoxItem>Mobiphone</ComboBoxItem>
+                        <ComboBoxItem>Vietnammobile</ComboBoxItem>
+                    </ComboBox>
+                    <Button Width="120" Margin="0 19 0 15" Style="{StaticResource MaterialDesignRaisedDarkButton}">Nạp tiền</Button>
+                </StackPanel>
+            </materialDesign:Card>
+        </WrapPanel>
     </Grid>
 </Page>

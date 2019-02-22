@@ -10,7 +10,7 @@
         <StackPanel>
             <Image VerticalAlignment="Top" Source="E:\Projects\RoraGame\RoraGame\RoraGame\Resources\splashBanner_magic.jpg" />
         <WrapPanel HorizontalAlignment="Center">
-                <materialDesign:Card Margin="0 20 30 0" Width="440" Height="254">
+                <materialDesign:Card Margin="0 20 30 0" Width="440" Height="254" materialDesign:ShadowAssist.ShadowDepth="Depth1">
                     <StackPanel>
                         <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0">
                 Các bước để thuê games tại RoraGame
@@ -31,7 +31,7 @@
         </ListView>
         </StackPanel>
                 </materialDesign:Card>
-                <materialDesign:Card Margin="0 20 0 0" Width="440" Height="254">
+                <materialDesign:Card Margin="0 20 0 0" Width="440" Height="254" materialDesign:ShadowAssist.ShadowDepth="Depth1">
                     <StackPanel>
                     <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,0,0">
                 Game mới cập nhật

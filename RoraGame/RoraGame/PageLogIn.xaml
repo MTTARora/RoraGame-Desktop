@@ -5,8 +5,16 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RoraGame"
       mc:Ignorable="d" 
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-      Title="Đăng nhập">
+      Title="Đăng nhập"
+      
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        FontFamily="{DynamicResource MaterialDesignFont}"
+      >
     <materialDesign:Card Width="270" VerticalAlignment="Center" HorizontalAlignment="Center">
         <Grid Width="220" Margin="20">
             <Grid.RowDefinitions>
@@ -18,7 +26,7 @@
                 <RowDefinition Height="35"></RowDefinition>
                 <RowDefinition Height="33"></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Style="{StaticResource MaterialDesignCaptionTextBlock}">Hãy đăng nhập để có thể truy cập</TextBlock>
+            <TextBlock Grid.Row="0" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Hãy đăng nhập để truy cập</TextBlock>
             <TextBox Grid.Row="1" materialDesign:HintAssist.Hint="Tài khoản" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
             <PasswordBox Grid.Row="2" materialDesign:HintAssist.Hint="Mật khẩu" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
             <CheckBox Grid.Row="3" Style="{StaticResource MaterialDesignCheckBox}">Nhớ mật khẩu</CheckBox>
