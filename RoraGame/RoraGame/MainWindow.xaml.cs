@@ -70,22 +70,27 @@ namespace RoraGame
                 case "ItemHome":
                     usc = new UserControlHome();
                     GridMain.Children.Add(usc);
+                    ScrollViewer.SetVerticalScrollBarVisibility(ScrollViewMain, ScrollBarVisibility.Auto);
                     break;
                 case "ItemAccount":
                     usc = new UserControlAccount();
                     GridMain.Children.Add(usc);
+                    ScrollViewer.SetVerticalScrollBarVisibility(ScrollViewMain, ScrollBarVisibility.Auto);
                     break;
                 case "ItemGameList":
                     usc = new UserControlGameList();
                     GridMain.Children.Add(usc);
+                    ScrollViewer.SetVerticalScrollBarVisibility(ScrollViewMain, ScrollBarVisibility.Disabled);
                     break;
                 case "ItemGuide":
                     usc = new UserControlGuide();
                     GridMain.Children.Add(usc);
+                    ScrollViewer.SetVerticalScrollBarVisibility(ScrollViewMain, ScrollBarVisibility.Auto);
                     break;
                 case "ItemInformation":
                     usc = new UserControlInformation();
                     GridMain.Children.Add(usc);
+                    ScrollViewer.SetVerticalScrollBarVisibility(ScrollViewMain, ScrollBarVisibility.Auto);
                     break;
                 default:
                     break;

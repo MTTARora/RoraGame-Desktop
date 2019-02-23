@@ -35,7 +35,7 @@
     </Window.Resources>
     <Grid>
         <Grid Margin="62 37 0 0">
-            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <ScrollViewer x:Name="ScrollViewMain" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                 <Grid x:Name="GridMain">
                     <local:UserControlHome></local:UserControlHome>
                 </Grid>
