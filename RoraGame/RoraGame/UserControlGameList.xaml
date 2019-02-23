@@ -23,7 +23,7 @@
             </DockPanel>
         </Grid>
         <Grid Grid.Row="1">
-            <ListView Name ="LsGames" Margin="8 0 0 0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView Name ="LsGames" Margin="8 0 0 0">
             <ListView.View>
                 <GridView>
                      <GridViewColumn
