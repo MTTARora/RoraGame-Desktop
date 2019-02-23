@@ -16,5 +16,5 @@ E:\Projects\RoraGame\RoraGame\RoraGame\App.xaml
 18-134052109
 MainWindow.xaml;NotifyIconResources.xaml;PageAccountInformation.xaml;PageLogIn.xaml;PageLostPassword.xaml;PageSignUp.xaml;UserControlAccount.xaml;UserControlGameList.xaml;UserControlGuide.xaml;UserControlHome.xaml;UserControlInformation.xaml;
 
-True
+False
 

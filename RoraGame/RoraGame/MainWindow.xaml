@@ -34,8 +34,12 @@
         </Storyboard>
     </Window.Resources>
     <Grid>
-        <Grid x:Name="GridMain" Margin="62,37,0,0">
-            <local:UserControlHome></local:UserControlHome>
+        <Grid Margin="62 37 0 0">
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                <Grid x:Name="GridMain">
+                    <local:UserControlHome></local:UserControlHome>
+                </Grid>
+            </ScrollViewer>
         </Grid>
         <Grid Height="40" Width="auto" VerticalAlignment="Top" MouseLeftButtonDown="GridOfWindow_MouseLeftButtonDown">
             <materialDesign:ColorZone 

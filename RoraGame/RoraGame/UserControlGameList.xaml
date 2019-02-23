@@ -6,12 +6,13 @@
              xmlns:local="clr-namespace:RoraGame"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" >
-    <Grid ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="True">
+
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" HorizontalAlignment="Left" Margin="20">
+        <Grid Grid.Row="0" HorizontalAlignment="Left" Margin="20 20 20 10">
             <DockPanel>
                 <TextBlock Margin="10 0 0 0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Đang thuê game: </TextBlock>
                 <TextBlock Margin="10 0 0 0" VerticalAlignment="Center" Foreground="Red" Style="{StaticResource MaterialDesignSubheadingTextBlock}">PlayerUnknown's Battlegrounds</TextBlock>
@@ -22,30 +23,30 @@
             </DockPanel>
         </Grid>
         <Grid Grid.Row="1">
-        <ListView Name ="LsGames" Margin="10 0 0 0">
-        <ListView.View>
-            <GridView>
+            <ListView Name ="LsGames" Margin="8 0 0 0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.View>
+                <GridView>
+                     <GridViewColumn
+                            DisplayMemberBinding="{Binding No}"
+                            Header="#" />
+                     <GridViewColumn
+                            DisplayMemberBinding="{Binding Name}"
+                            Header="GAME" />
+                     <GridViewColumn
+                            DisplayMemberBinding="{Binding Platform}"
+                            Header="NỀN TẢNG" />
                     <GridViewColumn
-                        DisplayMemberBinding="{Binding No}"
-                        Header="#" />
+                            Header="THUÊ">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Tag="{Binding ThueGame}" Content="Thuê Game"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                     <GridViewColumn
-                        DisplayMemberBinding="{Binding Name}"
-                        Header="Tên" />
-                    <GridViewColumn
-                        DisplayMemberBinding="{Binding Platform}"
-                        Header="Nền tảng" />
-                <GridViewColumn
-                        Header="Thuê Game ngay">
-                    <GridViewColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Tag="{Binding Thue}" Content="Thuê Game"/>
-                        </DataTemplate>
-                    </GridViewColumn.CellTemplate>
-                </GridViewColumn>
-                <GridViewColumn
-                        DisplayMemberBinding="{Binding Description}"
-                        Header="Thông tin" />
-            </GridView>
+                            DisplayMemberBinding="{Binding Description}"
+                            Header="THÔNG TIN" />
+                </GridView>
             </ListView.View>
         </ListView>
         </Grid>
