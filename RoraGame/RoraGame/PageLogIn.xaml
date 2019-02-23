@@ -21,18 +21,20 @@
                 <RowDefinition Height="20"></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition Height="47"></RowDefinition>
-                <RowDefinition Height="47"></RowDefinition>
-                <RowDefinition></RowDefinition>
                 <RowDefinition Height="35"></RowDefinition>
-                <RowDefinition Height="33"></RowDefinition>
+                <RowDefinition Height="35"></RowDefinition>
+                <RowDefinition Height="35"></RowDefinition>
+                <RowDefinition Height="35"></RowDefinition>
+                <RowDefinition Height="35"></RowDefinition>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Hãy đăng nhập để truy cập</TextBlock>
             <TextBox Grid.Row="1" materialDesign:HintAssist.Hint="Tài khoản" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
             <PasswordBox Grid.Row="2" materialDesign:HintAssist.Hint="Mật khẩu" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
-            <CheckBox Grid.Row="3" Style="{StaticResource MaterialDesignCheckBox}">Nhớ mật khẩu</CheckBox>
-            <Button Grid.Row="4" Width="150" Style="{StaticResource MaterialDesignRaisedDarkButton}">Đăng nhập</Button>
-            <TextBlock Grid.Row="5" HorizontalAlignment="Center" Margin="0 20 0 0">Bạn chưa có tài khoản? <Hyperlink>Tạo tài khoản</Hyperlink></TextBlock>
-            <TextBlock Grid.Row="6" HorizontalAlignment="Center" Margin="0 15 0 0">Bạn quên mật khẩu? <Hyperlink>Lấy mật khẩu</Hyperlink></TextBlock>
+            <CheckBox Grid.Row="3" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignCheckBox}">Nhớ mật khẩu</CheckBox>
+            <CheckBox Grid.Row="4" Style="{StaticResource MaterialDesignCheckBox}">Duy trì đăng nhập</CheckBox>
+            <Button Grid.Row="5" Width="150" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignRaisedDarkButton}">Đăng nhập</Button>
+            <TextBlock Grid.Row="6" HorizontalAlignment="Center" Margin="0 20 0 0">Bạn chưa có tài khoản? <Hyperlink>Tạo tài khoản</Hyperlink></TextBlock>
+            <TextBlock Grid.Row="7" HorizontalAlignment="Center" Margin="0 15 0 0">Bạn quên mật khẩu? <Hyperlink>Lấy mật khẩu</Hyperlink></TextBlock>
         </Grid>
     </materialDesign:Card>
 </Page>

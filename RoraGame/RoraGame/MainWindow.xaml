@@ -41,7 +41,7 @@
             <materialDesign:ColorZone 
             Mode="PrimaryDark"
             Padding="7"
-            materialDesign:ShadowAssist.ShadowDepth="Depth3">
+            materialDesign:ShadowAssist.ShadowDepth="Depth2">
                 <DockPanel>
                     <StackPanel HorizontalAlignment="Center">
                         <TextBlock VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="62 4 0 0">RORAGAME</TextBlock>
