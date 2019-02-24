@@ -28,6 +28,14 @@ namespace RoraGame
             WpfSingleInstance.Make("MyWpfApplication", this);
             #endregion Single Instance
 
+            //create the notifyicon (it's a resource declared in NotifyIconResources.xaml
+            notifyIcon = (TaskbarIcon)FindResource("NotifyIcon");
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            notifyIcon.Dispose(); //the icon would clean up automatically, but this is cleaner
+            base.OnExit(e);
         }
         #endregion Tray system
 

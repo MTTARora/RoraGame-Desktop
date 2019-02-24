@@ -1,12 +1,9 @@
-﻿using Hardcodet.Wpf.TaskbarNotification;
-using Notifications.Wpf;
+﻿using Notifications.Wpf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -17,7 +14,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfSingleInstanceByEventWaitHandle;
-
 
 namespace RoraGame
 {
@@ -35,44 +31,6 @@ namespace RoraGame
         }
         #endregion 1Single Instance
 
-
-        [DllImport("Kernel32")]
-        private static extern bool SetConsoleCtrlHandler(EventHandler handler, bool add);
-
-        private delegate bool EventHandler(CtrlType sig);
-        static EventHandler _handler;
-
-        enum CtrlType
-        {
-            CTRL_C_EVENT = 0,
-            CTRL_BREAK_EVENT = 1,
-            CTRL_CLOSE_EVENT = 2,
-            CTRL_LOGOFF_EVENT = 5,
-            CTRL_SHUTDOWN_EVENT = 6
-        }
-
-        private static bool Handler(CtrlType sig)
-        {
-            switch (sig)
-            {
-                case CtrlType.CTRL_C_EVENT:
-                case CtrlType.CTRL_LOGOFF_EVENT:
-                case CtrlType.CTRL_SHUTDOWN_EVENT:
-                case CtrlType.CTRL_CLOSE_EVENT:
-                default:
-                    return false;
-            }
-        }
-
-
-        static void KillMain(string[] args)
-        {
-            // Some biolerplate to react to close window event
-            _handler += new EventHandler(Handler);
-            SetConsoleCtrlHandler(_handler, true);
-        }
-
-
         public MainWindow()
         {
             InitializeComponent();
@@ -88,9 +46,7 @@ namespace RoraGame
                 Application.Current.Resources.Remove(WpfSingleInstance.StartArgKey);
             };
             #endregion 2 Single Instance
-
-    }
-
+        }
 
         #region Minimize to system tray when applicaiton is closed
         protected override void OnClosing(CancelEventArgs e)
@@ -100,6 +56,15 @@ namespace RoraGame
             e.Cancel = true;
             this.Hide();
             base.OnClosing(e);
+
+            //Notification when hide to tray system
+            var notificationManager = new NotificationManager();
+            notificationManager.Show(new NotificationContent
+            {
+                Title = "Thông báo",
+                Message = "RoraGame still running in background",
+                Type = NotificationType.Information
+            });
         }
         #endregion Minimize to tray system
 
@@ -143,19 +108,11 @@ namespace RoraGame
         }
         #endregion Left Side Menu
 
-        #region Close, Minimize, Maximize Button
+        #region Close Button
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             Close();
 
-            var notificationManager = new NotificationManager();
-
-            notificationManager.Show(new NotificationContent
-            {
-                Title = "Thông báo",
-                Message = "RoraGame Still Running in background",
-                Type = NotificationType.Information
-            });
         }
 
         private void MaximizeButton_Click(object sender, RoutedEventArgs e)
@@ -174,7 +131,7 @@ namespace RoraGame
         {
             this.WindowState = System.Windows.WindowState.Minimized;
         }
-        #endregion Close, Minimize, Maximize Button
+        #endregion Close Button
 
         #region Click to move window
         private void GridOfWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

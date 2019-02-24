@@ -4,6 +4,7 @@ using System.Windows;
 using System.IO;
 using System.IO.IsolatedStorage;
 using RoraGame;
+using Notifications.Wpf;
 
 namespace WpfSingleInstanceByEventWaitHandle
 {
@@ -65,10 +66,22 @@ namespace WpfSingleInstanceByEventWaitHandle
 			Application app = (Application)state;
 			app.Dispatcher.BeginInvoke(
 					new dispatcherInvoker(delegate() {
-						Application.Current.MainWindow.Activate();
+                        Application.Current.MainWindow.Show();
+                        Application.Current.MainWindow.Activate();
+                        Application.Current.MainWindow.Focus();
 
-						// !!! delete it if not use
-						processArgs();
+                        //Notification
+                        var notificationManager = new NotificationManager();
+
+                        notificationManager.Show(new NotificationContent
+                        {
+                            Title = "Thông báo",
+                            Message = "RoraGame đang chạy",
+                            Type = NotificationType.Information
+                        });
+
+                        // !!! delete it if not use
+                        processArgs();
 
 					}),
 					null

@@ -100,9 +100,6 @@
     <Compile Include="UserControlInformation.xaml.cs">
       <DependentUpon>UserControlInformation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlSetting.xaml.cs">
-      <DependentUpon>UserControlSetting.xaml</DependentUpon>
-    </Compile>
     <Compile Include="WpfSingleInstance.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -153,10 +150,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControlInformation.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControlSetting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
-using System.Diagnostics;
-using System.Windows.Controls.Primitives;
-using System.Windows.Navigation;
-using Hardcodet.Wpf.TaskbarNotification;
 
 namespace RoraGame
 {
@@ -85,6 +81,5 @@ namespace RoraGame
             add { CommandManager.RequerySuggested += value; }
             remove { CommandManager.RequerySuggested -= value; }
         }
-
     }
 }
