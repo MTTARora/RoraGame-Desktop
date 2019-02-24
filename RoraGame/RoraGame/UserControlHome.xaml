@@ -16,22 +16,13 @@
                                     Các bước để thuê games tại RoraGame
                         </TextBlock>
                         <ListView Grid.Row="2" Margin="30,0,0,15">
-                            <Button>
-                                1. Tải ứng dụng RoraGame
-                            </Button>
-                            <Button>
-                                2. Tạo tài khoản
-                            </Button>
-                            <Button>
-                                3. Nạp tiền vào tài khoản
-                            </Button>
-                            <Button>
-                                4. Tìm games muốn thuê và chơi
-                            </Button>
+                            <Button>1. Tải ứng dụng RoraGame</Button>
+                            <Button>2. Tạo tài khoản</Button>
+                            <Button>3. Nạp tiền vào tài khoản</Button>
+                            <Button>4. Tìm games muốn thuê và chơi</Button>
                         </ListView>
                     </StackPanel>
                 </materialDesign:Card>
-                <materialDesign:Card Margin="0 20 0 0" Width="440" Height="254" materialDesign:ShadowAssist.ShadowDepth="Depth1">
                     <StackPanel>
                         <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,0,0">
                 Game mới cập nhật
@@ -39,21 +30,15 @@
                         <ListView Name ="GameNew" Margin="10 0 0 0">
                             <ListView.View>
                                 <GridView>
-                                    <GridViewColumn
-                        DisplayMemberBinding="{Binding Dates}"
-                        Header="Ngày" />
-                                    <GridViewColumn
-                        DisplayMemberBinding="{Binding Name}"
-                        Header="Tên" />
-                                    <GridViewColumn
-                        DisplayMemberBinding="{Binding Description}"
-                        Header="Thông tin" />
+                                    <GridViewColumn DisplayMemberBinding="{Binding Dates}" Header="Ngày" />
+                                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Tên" />
+                                    <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Thông tin" />
                                 </GridView>
                             </ListView.View>
                         </ListView>
                     </StackPanel>
-                </materialDesign:Card>
             </WrapPanel>
         </StackPanel>
+        <Button VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20 15 0 0" Background="Green" BorderBrush="Green">www.roragame.com</Button>
     </Grid>
 </UserControl>

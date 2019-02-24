@@ -72,6 +72,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="GridViewSort.cs" />
     <Compile Include="NotifyIconViewModel.cs" />
     <Compile Include="PageAccountInformation.xaml.cs">
       <DependentUpon>PageAccountInformation.xaml</DependentUpon>
@@ -186,8 +187,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\Current\" />
-    <Folder Include="System\Drawing\" />
-    <Folder Include="System\Windows\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\NotifyIcon.ico" />

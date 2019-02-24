@@ -28,7 +28,7 @@ namespace RoraGame
             items.Add(new Games() { Dates = "29/12/1999", Name = "Assassin's Creed", Description = "https://www.assassinscreed.com" });
             items.Add(new Games() { Dates = "29/12/1999", Name = "Call Of Duty", Description = "https://www.assassinscreed.com" });
             items.Add(new Games() { Dates = "29/12/1999", Name = "Fornite", Description = "https://www.assassinscreed.com" });
-            items.Add(new Games() { Dates = "29/12/1999", Name = "Battlefield", Description = "qweqwádfádf ăè ăè adfăè ăe ăè ăèád fa ewf ăè ádf" });
+            items.Add(new Games() { Dates = "29/12/1999", Name = "Battlefield", Description = "qweqwádfádf ăè ăè adfăè ăe ăè " });
 
             GameNew.ItemsSource = items;
         }

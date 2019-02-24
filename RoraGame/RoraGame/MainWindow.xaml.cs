@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -41,7 +43,8 @@ namespace RoraGame
                 ArgsRun.Text = arg;
             };
 
-            this.Initialized += delegate (object sender, EventArgs e) {
+            this.Initialized += delegate (object sender, EventArgs e)
+            {
                 ArgsRun.Text = (String)Application.Current.Resources[WpfSingleInstance.StartArgKey];
                 Application.Current.Resources.Remove(WpfSingleInstance.StartArgKey);
             };
@@ -156,7 +159,5 @@ namespace RoraGame
 
         }
         #endregion Click to move window
-
     }
-
 }

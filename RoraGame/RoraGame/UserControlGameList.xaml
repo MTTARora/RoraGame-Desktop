@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RoraGame"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:util="clr-namespace:Wpf.Util"
              mc:Ignorable="d" >
 
     <Grid>
@@ -23,23 +24,32 @@
             </DockPanel>
         </Grid>
         <Grid Grid.Row="1">
-            <ListView Name ="LsGames" Margin="8 0 0 0">
+            <ListView Name ="LsGames" Margin="8 0 0 0"
+                IsSynchronizedWithCurrentItem="True"
+          util:GridViewSort.AutoSort="True"
+          util:GridViewSort.ShowSortGlyph="False">
             <ListView.View>
                 <GridView>
                      <GridViewColumn
                             DisplayMemberBinding="{Binding No}"
-                            Header="#" />
+                            Header="#" 
+                         util:GridViewSort.PropertyName="No"/>
                      <GridViewColumn
                             DisplayMemberBinding="{Binding Name}"
-                            Header="GAME" />
+                            Header="GAME"
+                         util:GridViewSort.PropertyName="Name"/>
                      <GridViewColumn
                             DisplayMemberBinding="{Binding Platform}"
-                            Header="NỀN TẢNG" />
+                            Header="NỀN TẢNG"
+                         util:GridViewSort.PropertyName="Platform"/>
+                    <!--<GridViewColumn
+                            DisplayMemberBinding="{Binding Status}"
+                            Header="NỀN TẢNG" />-->
                     <GridViewColumn
                             Header="THUÊ">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Tag="{Binding ThueGame}" Content="Thuê Game"/>
+                                <Button Tag="{Binding ThueGame}" Content="Thuê Game" Height="20" FontSize="13" Margin="0 -3 0 -20" Padding="10 0 10 0" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
