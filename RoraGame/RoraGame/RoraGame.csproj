@@ -47,6 +47,9 @@
     <Reference Include="MaterialDesignThemes.Wpf, Version=2.5.0.1205, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.2.5.0.1205\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Notifications.Wpf, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Notifications.Wpf.0.1.1\lib\net461\Notifications.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -96,6 +99,9 @@
     </Compile>
     <Compile Include="UserControlInformation.xaml.cs">
       <DependentUpon>UserControlInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlSetting.xaml.cs">
+      <DependentUpon>UserControlSetting.xaml</DependentUpon>
     </Compile>
     <Compile Include="WpfSingleInstance.cs" />
     <Page Include="MainWindow.xaml">
@@ -147,6 +153,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControlInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlSetting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

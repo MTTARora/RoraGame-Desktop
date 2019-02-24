@@ -7,36 +7,25 @@
              mc:Ignorable="d" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
     <Grid HorizontalAlignment="Center">
+
         <StackPanel>
-            <Image x:Name="Banner1" VerticalAlignment="Top" Source="E:\Projects\RoraGame\RoraGame\RoraGame\Resources\splashBanner_magic.jpg"></Image>
+            <Image x:Name="Banner1" VerticalAlignment="Top" Source="E:\Projects\RoraGame\RoraGame\RoraGame\Resources\splashBanner_magic.jpg"/>
             <WrapPanel HorizontalAlignment="Center">
                 <materialDesign:Card Margin="0 20 30 0" Width="440" Height="254" materialDesign:ShadowAssist.ShadowDepth="Depth1">
                     <StackPanel>
-                        <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0">
-                                    Các bước để thuê games tại RoraGame
-                        </TextBlock>
+                        <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0"><Run Text="Các bước để thuê games tại RoraGame"/></TextBlock>
                         <ListView Grid.Row="2" Margin="30,0,0,15">
-                            <Button>
-                                1. Tải ứng dụng RoraGame
-                            </Button>
-                            <Button>
-                                2. Tạo tài khoản
-                            </Button>
-                            <Button>
-                                3. Nạp tiền vào tài khoản
-                            </Button>
-                            <Button>
-                                4. Tìm games muốn thuê và chơi
-                            </Button>
+                            <Button Content="1. Tải ứng dụng RoraGame"/>
+                            <Button Content="2. Tạo tài khoản"/>
+                            <Button Content="3. Nạp tiền vào tài khoản"/>
+                            <Button Content="4. Tìm games muốn thuê và chơi"/>
                         </ListView>
                     </StackPanel>
                 </materialDesign:Card>
                 <materialDesign:Card Margin="0 20 0 0" Width="440" Height="254" materialDesign:ShadowAssist.ShadowDepth="Depth1">
                     <StackPanel>
-                        <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,0,0">
-                Game mới cập nhật
-                        </TextBlock>
-                        <ListView Name ="GameNew" Margin="10 0 0 0">
+                        <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,0,0"><Run Text="Game mới cập nhật"/></TextBlock>
+                        <ListView x:Name ="GameNew" Margin="10 0 0 0">
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn
@@ -55,5 +44,6 @@
                 </materialDesign:Card>
             </WrapPanel>
         </StackPanel>
+        <Button VerticalAlignment="Top" HorizontalAlignment="Left" Margin="30 20 0 0" Content="www.roragame.com" Width="200" Background="SeaGreen" Foreground="White" BorderBrush="SeaGreen"/>
     </Grid>
 </UserControl>
