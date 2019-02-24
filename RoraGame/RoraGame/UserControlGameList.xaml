@@ -11,6 +11,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" HorizontalAlignment="Left" Margin="20 20 20 10">
@@ -24,10 +25,15 @@
             </DockPanel>
         </Grid>
         <Grid Grid.Row="1">
-            <ListView Name ="LsGames" Margin="8 0 0 0"
-                IsSynchronizedWithCurrentItem="True"
-          util:GridViewSort.AutoSort="True"
-          util:GridViewSort.ShowSortGlyph="False">
+            <DockPanel>
+                <TextBox materialDesign:HintAssist.Hint="Tìm Game" Width="auto" MinWidth="150" Margin="60,0,0,0" HorizontalAlignment="Left" Name="txtFilter" TextChanged="txtFilter_TextChanged"/>
+                <ToggleButton Style="{StaticResource MaterialDesignFlatToggleButton}" ToolTip="Xóa"  HorizontalAlignment="Left" Height="25" Width="25" Click="Xoa_Click">
+                    <materialDesign:PackIcon Kind="Close" Height="12" Width="12"/>
+                </ToggleButton>
+            </DockPanel>
+        </Grid>
+        <Grid Grid.Row="2">
+            <ListView Name ="LsGames" Margin="8 0 0 0" IsSynchronizedWithCurrentItem="True" util:GridViewSort.AutoSort="True" util:GridViewSort.ShowSortGlyph="False">
             <ListView.View>
                 <GridView>
                      <GridViewColumn

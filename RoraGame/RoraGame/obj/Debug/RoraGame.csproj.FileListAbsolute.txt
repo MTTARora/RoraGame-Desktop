@@ -9,7 +9,6 @@ E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\Hardcodet.Wpf.TaskbarNotificati
 E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\Hardcodet.Wpf.TaskbarNotification.xml
 E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\MaterialDesignThemes.Wpf.pdb
 E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\MaterialDesignThemes.Wpf.xml
-E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.csprojAssemblyReference.cache
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\MainWindow.g.cs
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\PageAccountInformation.g.cs
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\PageLogIn.g.cs
