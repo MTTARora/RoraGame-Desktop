@@ -45,5 +45,10 @@ namespace RoraGame
             Main.Content = new PageLostPassword();
         }
 
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new PagePhoneVerify();
+        }
+
     }
 }

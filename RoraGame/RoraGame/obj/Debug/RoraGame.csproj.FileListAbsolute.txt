@@ -42,3 +42,7 @@ E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.csproj.CoreCompileInpu
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.csproj.CopyComplete
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.exe
 E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.pdb
+E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\PagePhoneVerify.g.cs
+E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\PagePhoneVerify.baml
+E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\UserControlSettingApp.g.cs
+E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\UserControlSettingApp.baml

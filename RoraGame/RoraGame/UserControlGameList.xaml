@@ -14,24 +14,31 @@
             <RowDefinition Height="25"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" HorizontalAlignment="Left" Margin="20 20 20 10">
+        
+        <!--Renting Status-->
+        <Grid Grid.Row="0" HorizontalAlignment="Left" Margin="20 15 20 5">
             <DockPanel>
                 <TextBlock Margin="10 0 0 0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Đang thuê game: </TextBlock>
                 <TextBlock Margin="10 0 0 0" VerticalAlignment="Center" Foreground="Red" Style="{StaticResource MaterialDesignSubheadingTextBlock}">PlayerUnknown's Battlegrounds</TextBlock>
                 <Grid Width="150" Margin="10 0 0 0">
                     <Button Background="Red" Style="{StaticResource MaterialDesignRaisedButton}" materialDesign:ButtonProgressAssist.Value="-1" materialDesign:ButtonProgressAssist.IsIndicatorVisible="True" materialDesign:ButtonProgressAssist.IsIndeterminate="True" Content="Dừng thuê game" Margin="2,0" BorderBrush="Red" />
                 </Grid>
-                <TextBlock Margin="10 0 0 0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Thời gian thuê: 0:45:32</TextBlock>
+                <TextBlock Margin="10 0 0 0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Thời gian thuê: 0:45</TextBlock>
             </DockPanel>
         </Grid>
+        
+        <!--Search Bar-->
         <Grid Grid.Row="1">
             <DockPanel>
                 <TextBox materialDesign:HintAssist.Hint="Tìm Game" Width="auto" MinWidth="150" Margin="60,0,0,0" HorizontalAlignment="Left" Name="txtFilter" TextChanged="txtFilter_TextChanged"/>
                 <ToggleButton Style="{StaticResource MaterialDesignFlatToggleButton}" ToolTip="Xóa"  HorizontalAlignment="Left" Height="25" Width="25" Click="Xoa_Click">
                     <materialDesign:PackIcon Kind="Close" Height="12" Width="12"/>
                 </ToggleButton>
+                <Button  Width="150" HorizontalAlignment="Left" Margin="100 0 0 0" Click="TestThueGame_Click">Test Thuê Game</Button>
             </DockPanel>
         </Grid>
+        
+        <!--List Game-->
         <Grid Grid.Row="2">
             <ListView Name ="LsGames" Margin="8 0 0 0" IsSynchronizedWithCurrentItem="True" util:GridViewSort.AutoSort="True" util:GridViewSort.ShowSortGlyph="False">
             <ListView.View>
@@ -55,7 +62,7 @@
                             Header="THUÊ">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Tag="{Binding ThueGame}" Content="Thuê Game" Height="20" FontSize="13" Margin="0 -3 0 -20" Padding="10 0 10 0" />
+                                    <Button Tag="{Binding ThueGame}" Content="Thuê Game" materialDesign:ShadowAssist.ShadowDepth="Depth1" Height="20" FontSize="13" Margin="0 -3 0 -20" Padding="10 0 10 0"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

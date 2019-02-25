@@ -17,23 +17,26 @@
         TextOptions.TextFormattingMode="Ideal" 
         TextOptions.TextRenderingMode="Auto"        
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Background="{DynamicResource MaterialDesignPaper}"
-        >
+        Background="{DynamicResource MaterialDesignPaper}">
+    
+    <!--Menu Left Animation-->
     <Window.Resources>
         <Storyboard x:Key="OpenMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" >
                 <EasingDoubleKeyFrame KeyTime="0" Value="70"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="200"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="CloseMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" >
                 <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="70"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="70"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
+
     <Grid>
+        <!--Frame Window-->
         <Grid Margin="62 37 0 0">
             <ScrollViewer x:Name="ScrollViewMain" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                 <Grid x:Name="GridMain">
@@ -41,6 +44,8 @@
                 </Grid>
             </ScrollViewer>
         </Grid>
+        
+        <!--Control Bar-->
         <Grid Height="40" Width="auto" VerticalAlignment="Top" MouseLeftButtonDown="GridOfWindow_MouseLeftButtonDown">
             <materialDesign:ColorZone 
             Mode="PrimaryDark"
@@ -64,6 +69,8 @@
                     </Button>
                 </DockPanel>
         </Grid>
+        
+        <!--Menu Left-->
         <StackPanel x:Name="GridMenu" Width="62" Height="auto" HorizontalAlignment="Left" Background="#FF512DA8" Margin="0 1 0 0">
                 <StackPanel.Style>
                     <Style TargetType="StackPanel">
@@ -119,12 +126,18 @@
                             <TextBlock Text="Hướng dẫn" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="ItemInformation" Height="60">
+                    <ListViewItem x:Name="ItemSetting" Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="InformationVariant" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Thông tin" VerticalAlignment="Center" Margin="20 10"/>
+                        <materialDesign:PackIcon Kind="SettingsOutline" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Cài đặt" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
+                <ListViewItem x:Name="ItemInformation" Height="60">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="InformationVariant" Height="25" Width="25" Margin="10"/>
+                        <TextBlock Text="Thông tin" VerticalAlignment="Center" Margin="20 10"/>
+                    </StackPanel>
+                </ListViewItem>
                 <ListViewItem x:Name="ItemLogout" Height="60">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Logout" Height="25" Width="25" Margin="10" Foreground="PaleVioletRed"/>

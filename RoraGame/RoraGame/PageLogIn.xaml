@@ -15,7 +15,7 @@
         TextOptions.TextRenderingMode="Auto"        
         FontFamily="{DynamicResource MaterialDesignFont}"
       >
-    <materialDesign:Card Width="270" VerticalAlignment="Center" HorizontalAlignment="Center">
+    <materialDesign:Card Width="270" VerticalAlignment="Center" HorizontalAlignment="Center" materialDesign:ShadowAssist.ShadowDepth="Depth5">
         <Grid Width="220" Margin="20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="20"></RowDefinition>

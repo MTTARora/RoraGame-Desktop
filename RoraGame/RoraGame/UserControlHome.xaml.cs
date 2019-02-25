@@ -32,6 +32,11 @@ namespace RoraGame
 
             GameNew.ItemsSource = items;
         }
+
+        private void Websiteroragame_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.google.com.vn");
+        }
     }
 
     public class Games

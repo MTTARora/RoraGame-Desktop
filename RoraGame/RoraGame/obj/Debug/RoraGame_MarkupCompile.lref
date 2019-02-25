@@ -5,10 +5,12 @@ FE:\Projects\RoraGame\RoraGame\RoraGame\NotifyIconResources.xaml;;
 FE:\Projects\RoraGame\RoraGame\RoraGame\PageAccountInformation.xaml;;
 FE:\Projects\RoraGame\RoraGame\RoraGame\PageLogIn.xaml;;
 FE:\Projects\RoraGame\RoraGame\RoraGame\PageLostPassword.xaml;;
+FE:\Projects\RoraGame\RoraGame\RoraGame\PagePhoneVerify.xaml;;
 FE:\Projects\RoraGame\RoraGame\RoraGame\PageSignUp.xaml;;
 FE:\Projects\RoraGame\RoraGame\RoraGame\UserControlAccount.xaml;;
 FE:\Projects\RoraGame\RoraGame\RoraGame\UserControlGameList.xaml;;
 FE:\Projects\RoraGame\RoraGame\RoraGame\UserControlGuide.xaml;;
 FE:\Projects\RoraGame\RoraGame\RoraGame\UserControlHome.xaml;;
 FE:\Projects\RoraGame\RoraGame\RoraGame\UserControlInformation.xaml;;
+FE:\Projects\RoraGame\RoraGame\RoraGame\UserControlSettingApp.xaml;;
 

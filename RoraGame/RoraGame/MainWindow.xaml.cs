@@ -52,27 +52,26 @@ namespace RoraGame
         }
 
         #region Minimize to system tray when applicaiton is closed
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            // setting cancel to true will cancel the close request
-            // so the application is not closed
-            e.Cancel = true;
-            this.Hide();
-            base.OnClosing(e);
+        //protected override void OnClosing(CancelEventArgs e)
+        //{
+        //    // setting cancel to true will cancel the close request
+        //    // so the application is not closed
+        //    e.Cancel = true;
+        //    this.Hide();
+        //    base.OnClosing(e);
 
-            //Notification when hide to tray system
-            var notificationManager = new NotificationManager();
-            notificationManager.Show(new NotificationContent
-            {
-                Title = "Thông báo",
-                Message = "RoraGame still running in background",
-                Type = NotificationType.Information
-            });
-        }
+        //    //Notification when hide to tray system
+        //    var notificationManager = new NotificationManager();
+        //    notificationManager.Show(new NotificationContent
+        //    {
+        //        Title = "Thông báo",
+        //        Message = "RoraGame still running in background",
+        //        Type = NotificationType.Information
+        //    });
+        //}
         #endregion Minimize to tray system
 
         #region Left Side Menu
-
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UserControl usc = null;
@@ -100,6 +99,11 @@ namespace RoraGame
                     GridMain.Children.Add(usc);
                     ScrollViewer.SetVerticalScrollBarVisibility(ScrollViewMain, ScrollBarVisibility.Auto);
                     break;
+                case "ItemSetting":
+                    usc = new UserControlSettingApp();
+                    GridMain.Children.Add(usc);
+                    ScrollViewer.SetVerticalScrollBarVisibility(ScrollViewMain, ScrollBarVisibility.Auto);
+                    break;
                 case "ItemInformation":
                     usc = new UserControlInformation();
                     GridMain.Children.Add(usc);
@@ -114,8 +118,14 @@ namespace RoraGame
         #region Close Button
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            Close();
-
+            this.Hide();
+            var notificationManager = new NotificationManager();
+            notificationManager.Show(new NotificationContent
+            {
+            Title = "Thông báo",
+            Message = "RoraGame still running in background",
+             Type = NotificationType.Information
+            });
         }
 
         private void MaximizeButton_Click(object sender, RoutedEventArgs e)
