@@ -57,17 +57,17 @@
                     </StackPanel>
                 </DockPanel>
             </materialDesign:ColorZone>
-                <DockPanel HorizontalAlignment="Right">
-                    <Button Style="{StaticResource MaterialDesignRaisedDarkButton}" Name="MinimizeButton" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,4,0" Click="MinimizeButton_Click"  Padding="0" Height="20" Width="40">
-                        <materialDesign:PackIcon Kind="WindowMinimize" Margin="0,7,0,0"></materialDesign:PackIcon>
-                    </Button>
-                    <Button Style="{StaticResource MaterialDesignRaisedDarkButton}" Name="MaximizeButton" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,4,0" Click="MaximizeButton_Click"  Padding="0" Height="20" Width="40">
+            <DockPanel HorizontalAlignment="Right">
+                <Button Style="{StaticResource MaterialDesignRaisedDarkButton}" Name="MinimizeButton" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,4,0" Click="MinimizeButton_Click"  Padding="0" Height="20" Width="40">
+                    <materialDesign:PackIcon Kind="WindowMinimize" Margin="0,7,0,0"></materialDesign:PackIcon>
+                </Button>
+                <Button Style="{StaticResource MaterialDesignRaisedDarkButton}" Name="MaximizeButton" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,4,0" Click="MaximizeButton_Click"  Padding="0" Height="20" Width="40">
                     <materialDesign:PackIcon Kind="WindowMaximize" Margin="0,4,0,0"></materialDesign:PackIcon>
-                    </Button>
-                    <Button Style="{StaticResource MaterialDesignRaisedDarkButton}" Name="CloseButton" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,4,0" Click="CloseButton_Click" Padding="0" Height="20" Width="40">
+                </Button>
+                <Button Style="{StaticResource MaterialDesignRaisedDarkButton}" Name="CloseButton" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,4,0" Click="CloseButton_Click" Padding="0" Height="20" Width="40">
                     <materialDesign:PackIcon Kind="WindowClose" Margin="0,4,0,0"></materialDesign:PackIcon>
-                    </Button>
-                </DockPanel>
+                </Button>
+            </DockPanel>
         </Grid>
         
         <!--Menu Left-->
@@ -75,8 +75,7 @@
                 <StackPanel.Style>
                     <Style TargetType="StackPanel">
                         <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True"></Trigger>
                         <EventTrigger RoutedEvent="MouseEnter">
                             <EventTrigger.Actions>
                                 <BeginStoryboard Storyboard="{StaticResource OpenMenu}"/>

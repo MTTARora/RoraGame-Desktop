@@ -14,7 +14,7 @@
                         <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,0,0">
                 Game mới cập nhật
                         </TextBlock>
-                        <ListView Name ="GameNew" Margin="10 0 0 0">
+                        <ListView Name ="GameNew" Margin="10,0,15,0">
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn DisplayMemberBinding="{Binding Dates}" Header="Ngày" />

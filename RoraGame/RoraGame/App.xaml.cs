@@ -20,6 +20,7 @@ namespace RoraGame
     public partial class App : Application
     {
         #region Tray system
+
         private TaskbarIcon notifyIcon;
 
         protected override void OnStartup(StartupEventArgs e)
@@ -47,7 +48,7 @@ namespace RoraGame
         {
             foreach (System.Diagnostics.Process myProc in System.Diagnostics.Process.GetProcesses())
             {
-                if (myProc.ProcessName == "process name")
+                if (myProc.ProcessName == "Steam")
                 {
                     myProc.Kill();
                 }

@@ -87,6 +87,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ThueGameViewModel.cs" />
     <Compile Include="GridViewSort.cs" />
     <Compile Include="NotifyIconViewModel.cs" />
     <Compile Include="PageAccountInformation.xaml.cs">

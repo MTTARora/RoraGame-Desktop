@@ -11,6 +11,7 @@ namespace RoraGame
     /// </summary>
     public class NotifyIconViewModel
     {
+
         /// <summary>
         /// Shows a window, if none is already open.
         /// </summary>

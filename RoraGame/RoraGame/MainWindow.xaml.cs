@@ -115,7 +115,7 @@ namespace RoraGame
         }
         #endregion Left Side Menu
 
-        #region Close Button
+        #region Control Bar
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
@@ -144,7 +144,7 @@ namespace RoraGame
         {
             this.WindowState = System.Windows.WindowState.Minimized;
         }
-        #endregion Close Button
+        #endregion Control Bar
 
         #region Click to move window
         private void GridOfWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

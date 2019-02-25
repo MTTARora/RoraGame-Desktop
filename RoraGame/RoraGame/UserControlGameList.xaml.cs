@@ -95,7 +95,7 @@ namespace RoraGame
 
 
         //Test Button Thue Game
-        private void TestThueGame_Click(object sender, RoutedEventArgs e)
+        private void ThueGame_Click(object sender, RoutedEventArgs e)
         {
 
             #region Bước 1: Kill Steam
@@ -114,33 +114,49 @@ namespace RoraGame
 
             #region Bước 2: Đăng nhập Steam
 
-            string strCmdText;
-            strCmdText = @"/c cd C:\Program Files (x86)\Steam\ && start steam.exe -login pubgvna_2875 Ha916022";
+            string SteamUsername = @"pubgvna_2875";
+            string SteamPassword = @"Pubgvna123123";
+            string FolderSteam = @"C:\Program Files (x86)\Steam\";
+            string LoginSteam;
+            LoginSteam = @"/c cd " + FolderSteam + " && start steam.exe -login " + SteamUsername + " " + SteamPassword;
 
             Process p = new Process();
 
             p.StartInfo.FileName = "CMD.exe";
-            p.StartInfo.Arguments = strCmdText;
+            p.StartInfo.Arguments = LoginSteam;
             p.StartInfo.UseShellExecute = false;
             p.StartInfo.RedirectStandardError = true;
-
             p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-
             p.Start();
             string error = p.StandardError.ReadToEnd();
             p.WaitForExit();
             if (error == "")
             {
-                
+                GridThueGameDock.RowDefinitions[0].Height = new GridLength(50.0, GridUnitType.Pixel);
             }
             else
             {
                 MessageBox.Show(error);
             }
-            
+        }
+        #endregion
 
-            #endregion
+        #region Bước 3: Dừng thuê game
+
+        private void DungThueGame_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (System.Diagnostics.Process killSteam in System.Diagnostics.Process.GetProcesses())
+            {
+                if (killSteam.ProcessName == "Steam")
+                {
+                    killSteam.Kill();
+                }
+            }
+
+            GridThueGameDock.RowDefinitions[0].Height = new GridLength(0.0, GridUnitType.Pixel);
 
         }
+        #endregion
+                
     }
 }
