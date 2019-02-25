@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RoraGame"
         mc:Ignorable="d"
         
-        Title="RoraGame" Height="600" Width="1024" MinWidth="530" MinHeight="500" WindowStyle="None" WindowStartupLocation="CenterScreen"
+        Title="RoraGame" Height="600" Width="1024" MinWidth="530" MinHeight="560" WindowStyle="None" WindowStartupLocation="CenterScreen"
         ResizeMode="CanResizeWithGrip"
         AllowsTransparency="True"
         

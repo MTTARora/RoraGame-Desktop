@@ -17,6 +17,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Diagnostics;
 using System.IO;
+using Notifications.Wpf;
 
 namespace RoraGame
 {
@@ -31,9 +32,9 @@ namespace RoraGame
 
             //Test List
             List<Games> items = new List<Games>();
-            items.Add(new Games() { No = 1, Name = "Assassin's Creed", Platform = "Steam", Status = "Chơi được", Description = "https://www.assassinscreed.com" });
-            items.Add(new Games() { No = 2, Name = "Battlefield ", Platform = "Steam", Status = "Chơi được", Description = "https://www.ea.com/games/battlefield" });
-            items.Add(new Games() { No = 3, Name = "Call of Duty", Platform = "Steam", Description = "https://www.callofduty.com" });
+            items.Add(new Games() { No = 1, Name = "Assassin's Creed", Platform = "Steam", RequiredLvl = "Level 0", Description = "https://www.assassinscreed.com" });
+            items.Add(new Games() { No = 2, Name = "Battlefield ", Platform = "Steam", RequiredLvl = "Level 5", Description = "https://www.ea.com/games/battlefield" });
+            items.Add(new Games() { No = 3, Name = "Call of Duty", Platform = "Steam", RequiredLvl = "Level 3", Description = "https://www.callofduty.com" });
             items.Add(new Games() { No = 4, Name = "PlayerUnknown's Battlegrounds", Platform = "Steam", Description = "https://www.pubg.com" });
             items.Add(new Games() { No = 5, Name = "Grand Theft Auto 5", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
             items.Add(new Games() { No = 6, Name = "Final Fantasy XV", Platform = "Steam", Description = "Fortnite là một trò chơi sinh tồn phối hợp trên sandbox do Epic Games và People Can Fly phát triển, và Epic Games phát hành." });
@@ -76,11 +77,11 @@ namespace RoraGame
         //Class for Test List
         public class Games
         {
-            internal string Status;
+            public string RequiredLvl { get; set; }
 
             public int No { get; set; }
 
-            public String Name { get; set; }
+            public string Name { get; set; }
 
             public string Platform { get; set; }
 
@@ -94,24 +95,29 @@ namespace RoraGame
         }
 
 
-        //Test Button Thue Game
+        //Button Thue Game
         private void ThueGame_Click(object sender, RoutedEventArgs e)
         {
+            #region Bước 1: Kiểm tra đang thuê hay không
 
-            #region Bước 1: Kill Steam
+            #endregion
 
+            #region Bước 2: Kill Platform
+
+            //Platform Game Thuê
+            string Platform = "Steam";
+
+            //Kill Next Game Platform
             foreach (System.Diagnostics.Process killSteam in System.Diagnostics.Process.GetProcesses())
             {
-                if (killSteam.ProcessName == "Steam")
+                if (killSteam.ProcessName == Platform)
                 {
                     killSteam.Kill();
                 }
             }
-
-            #endregion
-
             System.Threading.Thread.Sleep(500);
-
+            #endregion
+                        
             #region Bước 2: Đăng nhập Steam
 
             string SteamUsername = @"pubgvna_2875";
@@ -132,7 +138,20 @@ namespace RoraGame
             p.WaitForExit();
             if (error == "")
             {
+                //Hiện Dock Đang thuê game
                 GridThueGameDock.RowDefinitions[0].Height = new GridLength(50.0, GridUnitType.Pixel);
+
+                //Notification
+                var notificationManager = new NotificationManager();
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Thông báo",
+                    Message = "Bạn đang thuê game",
+                    Type = NotificationType.Success
+                });
+
+                //Code Tính giờ
+                //Code Active Application_Exit
             }
             else
             {
@@ -143,6 +162,7 @@ namespace RoraGame
 
         #region Bước 3: Dừng thuê game
 
+        //Button Dừng thuê game
         private void DungThueGame_Click(object sender, RoutedEventArgs e)
         {
             foreach (System.Diagnostics.Process killSteam in System.Diagnostics.Process.GetProcesses())
@@ -152,11 +172,19 @@ namespace RoraGame
                     killSteam.Kill();
                 }
             }
-
+            //Ẩn Dock Đang thuê game
             GridThueGameDock.RowDefinitions[0].Height = new GridLength(0.0, GridUnitType.Pixel);
+            //Notification
+            var notificationManager = new NotificationManager();
+            notificationManager.Show(new NotificationContent
+            {
+                Title = "Thông báo",
+                Message = "Bạn đã dừng thuê game",
+                Type = NotificationType.Warning
+            });
 
         }
         #endregion
-                
+
     }
 }

@@ -44,31 +44,18 @@
             <ListView.View>
                 <GridView>
                      <GridViewColumn
-                            DisplayMemberBinding="{Binding No}"
-                            Header="#" 
-                         util:GridViewSort.PropertyName="No"/>
-                     <GridViewColumn
-                            DisplayMemberBinding="{Binding Name}"
-                            Header="GAME"
-                         util:GridViewSort.PropertyName="Name"/>
-                     <GridViewColumn
-                            DisplayMemberBinding="{Binding Platform}"
-                            Header="NỀN TẢNG"
-                         util:GridViewSort.PropertyName="Platform"/>
-                    <!--<GridViewColumn
-                            DisplayMemberBinding="{Binding Status}"
-                            Header="NỀN TẢNG" />-->
-                    <GridViewColumn
-                            Header="THUÊ">
+                            DisplayMemberBinding="{Binding No}" Header="#"  util:GridViewSort.PropertyName="No"/>
+                     <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="GAME" util:GridViewSort.PropertyName="Name"/>
+                     <GridViewColumn DisplayMemberBinding="{Binding Platform}" Header="NỀN" util:GridViewSort.PropertyName="Platform"/>
+                     <GridViewColumn DisplayMemberBinding="{Binding RequiredLvl}" Header="YÊU CẦU" />
+                     <GridViewColumn Header="THUÊ">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                     <Button Tag="{Binding ThueGame}" Click="ThueGame_Click" Content="Thuê Game" materialDesign:ShadowAssist.ShadowDepth="Depth1" Height="20" FontSize="13" Margin="0 -3 0 -20" Padding="10 0 10 0"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn
-                            DisplayMemberBinding="{Binding Description}"
-                            Header="THÔNG TIN" />
+                     </GridViewColumn>
+                     <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="THÔNG TIN" />
                 </GridView>
             </ListView.View>
         </ListView>
