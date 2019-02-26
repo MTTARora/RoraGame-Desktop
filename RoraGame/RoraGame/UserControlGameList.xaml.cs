@@ -93,6 +93,24 @@ namespace RoraGame
             txtFilter.Clear();
         }
 
+        //Hide Dock Thue Game
+        private void HideDockThueGame()
+        {
+            GridThueGameDock.RowDefinitions[1].Height = new GridLength(50.0, GridUnitType.Pixel);
+            GridThueGameDock2.RowDefinitions[0].Height = new GridLength(30, GridUnitType.Pixel);
+        }
+
+        //Hide Dock Thue Game
+        private void ShowDockThueGame()
+        {
+            GridThueGameDock.RowDefinitions[1].Height = new GridLength(0.0, GridUnitType.Pixel);
+            GridThueGameDock2.RowDefinitions[0].Height = new GridLength(0.0, GridUnitType.Pixel);
+        }
+
+        string Platform = "Steam";
+        string SteamUsername = @"pubgvna_2875";
+        string SteamPassword = @"Pubgvna123123";
+        string FolderSteam = @"C:\Program Files (x86)\Steam\";
 
         //Button Thue Game
         private void ThueGame_Click(object sender, RoutedEventArgs e)
@@ -100,6 +118,7 @@ namespace RoraGame
             #region Bước 1: Kiểm tra
             //Kiểm tra xem đăng nhập chưa
             //Kiểm tra xem có đang thuê game không
+            //Gửi thông tin cho server - server response thông tin để đăng nhập
             #endregion
 
             #region Bước 2: Kill Platform
@@ -107,7 +126,7 @@ namespace RoraGame
             //Kill Game Platform
             foreach (System.Diagnostics.Process killSteam in System.Diagnostics.Process.GetProcesses())
             {
-                if (killSteam.ProcessName == "Steam")
+                if (killSteam.ProcessName == Platform)
                 {
                     killSteam.Kill();
                 }
@@ -115,35 +134,52 @@ namespace RoraGame
             System.Threading.Thread.Sleep(500);
             #endregion
 
-            #region Bước 2: Đăng nhập Steam
+            #region Bước 2: Đăng nhập Game
 
-            string SteamUsername = @"pubgvna_2875";
-            string SteamPassword = @"Pubgvna123123";
-            string FolderSteam = @"C:\Program Files (x86)\Steam\";
-            string LoginSteam;
-            LoginSteam = @"/c cd " + FolderSteam + " && start steam.exe -login " + SteamUsername + " " + SteamPassword;
-
-            Process p = new Process();
-
-            p.StartInfo.FileName = "CMD.exe";
-            p.StartInfo.Arguments = LoginSteam;
-            p.StartInfo.UseShellExecute = false;
-            p.StartInfo.RedirectStandardError = true;
-            p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            p.Start();
-            string error = p.StandardError.ReadToEnd();
-            p.WaitForExit();
-            if (error == "")
+            switch (Platform)
             {
-                //Hiện Dock Đang thuê game
-                GridThueGameDock.RowDefinitions[1].Height = new GridLength(50.0, GridUnitType.Pixel);
-                GridThueGameDock2.RowDefinitions[0].Height = new GridLength(30, GridUnitType.Pixel);
-                //Code Tính giờ
-                //Code Active Application_Exit
-            }
-            else
-            {
-                MessageBox.Show(error);
+                #region Login Steam
+                case "Steam":
+                    string LoginSteam;
+                    LoginSteam = @"/c cd " + FolderSteam + " && start steam.exe -login " + SteamUsername + " " + SteamPassword;
+                    Process p = new Process();
+                    p.StartInfo.FileName = "CMD.exe";
+                    p.StartInfo.Arguments = LoginSteam;
+                    p.StartInfo.UseShellExecute = false;
+                    p.StartInfo.RedirectStandardError = true;
+                    p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                    p.Start();
+                    string error = p.StandardError.ReadToEnd();
+                    p.WaitForExit();
+                    if (error == "")
+                    {
+                        //Hiện Dock Đang thuê game
+                        HideDockThueGame();
+                        //Code Tính giờ
+                        //Code Active Application_Exit
+                    }
+                    else
+                    {
+                        MessageBox.Show(error);
+                    }
+                    break;
+                #endregion
+
+                //Login Epic
+                case "Epic":
+                    break;
+
+                //Login Uplay
+                case "Uplay":
+                    break;
+
+                //Login Battle
+                case "Battle":
+                    break;
+
+                //Login Origin
+                case "Origin":
+                    break;
             }
         }
         #endregion
@@ -155,14 +191,13 @@ namespace RoraGame
         {
             foreach (System.Diagnostics.Process killSteam in System.Diagnostics.Process.GetProcesses())
             {
-                if (killSteam.ProcessName == "Steam")
+                if (killSteam.ProcessName == Platform)
                 {
                     killSteam.Kill();
                 }
             }
             //Ẩn Dock Đang thuê game
-            GridThueGameDock.RowDefinitions[1].Height = new GridLength(0.0, GridUnitType.Pixel);
-            GridThueGameDock2.RowDefinitions[0].Height = new GridLength(0.0, GridUnitType.Pixel);
+            ShowDockThueGame();
         }
         #endregion
 
