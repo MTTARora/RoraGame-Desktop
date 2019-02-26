@@ -10,13 +10,15 @@
 
     <Grid x:Name="GridThueGameDock">
         <Grid.RowDefinitions>
+            <RowDefinition Height="10"></RowDefinition>
             <RowDefinition Height="0"></RowDefinition>
-            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         
         <!--Renting Status-->
-        <Grid Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12 15 20 0" >
+        <Grid Grid.Row="0"></Grid>
+        <Grid Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12 5 20 0" >
             <DockPanel>
                 <TextBlock Margin="10 0 0 0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Đang thuê game: </TextBlock>
                 <TextBlock Margin="10 0 0 0" VerticalAlignment="Center" Foreground="Red" Style="{StaticResource MaterialDesignSubheadingTextBlock}">PlayerUnknown's Battlegrounds</TextBlock>
@@ -28,18 +30,30 @@
         </Grid>
         
         <!--Search Bar-->
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="2">
             <DockPanel VerticalAlignment="Bottom">
                 <materialDesign:PackIcon Kind="TableSearch" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="25" Width="25" Margin="60,0,5,0" Foreground="#FF666666"/>
                 <TextBox materialDesign:HintAssist.Hint="Tìm Game" Width="auto" MinWidth="150"  HorizontalAlignment="Left" Name="txtFilter" TextChanged="txtFilter_TextChanged"/>
                 <ToggleButton Style="{StaticResource MaterialDesignFlatToggleButton}" ToolTip="Xóa"  HorizontalAlignment="Left" Height="25" Width="25" Click="Xoa_Click" Margin="0 0 20 0">
                     <materialDesign:PackIcon Kind="Close" Height="12" Width="12" />
                 </ToggleButton>
+            
+            <!--Renting Status-->
+            <Grid x:Name="GridThueGameDock2" HorizontalAlignment="Left">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0"></RowDefinition>
+                </Grid.RowDefinitions>
+                <DockPanel Grid.Row="0">
+                    <TextBlock Margin="0 0 10 0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Tài khoản thuê:</TextBlock>
+                        <TextBlock Margin="0 0 10 0" VerticalAlignment="Center" Foreground="Red" Style="{StaticResource MaterialDesignSubheadingTextBlock}">pubgvna_2875</TextBlock>
+                        <Button Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="MediumVioletRed" BorderBrush="MediumVioletRed">Báo tài khoản lỗi</Button>
+                </DockPanel>
+            </Grid>
             </DockPanel>
         </Grid>
         
         <!--List Game-->
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="3">
             <ListView Name ="LsGames" Margin="8 0 0 0" IsSynchronizedWithCurrentItem="True" util:GridViewSort.AutoSort="True" util:GridViewSort.ShowSortGlyph="False">
             <ListView.View>
                 <GridView>

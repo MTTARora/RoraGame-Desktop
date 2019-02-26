@@ -136,8 +136,8 @@ namespace RoraGame
             if (error == "")
             {
                 //Hiện Dock Đang thuê game
-                GridThueGameDock.RowDefinitions[0].Height = new GridLength(50.0, GridUnitType.Pixel);
-
+                GridThueGameDock.RowDefinitions[1].Height = new GridLength(50.0, GridUnitType.Pixel);
+                GridThueGameDock2.RowDefinitions[0].Height = new GridLength(30, GridUnitType.Pixel);
                 //Code Tính giờ
                 //Code Active Application_Exit
             }
@@ -161,7 +161,8 @@ namespace RoraGame
                 }
             }
             //Ẩn Dock Đang thuê game
-            GridThueGameDock.RowDefinitions[0].Height = new GridLength(0.0, GridUnitType.Pixel);
+            GridThueGameDock.RowDefinitions[1].Height = new GridLength(0.0, GridUnitType.Pixel);
+            GridThueGameDock2.RowDefinitions[0].Height = new GridLength(0.0, GridUnitType.Pixel);
         }
         #endregion
 

@@ -23,31 +23,31 @@
                     
         <materialDesign:Card Grid.Row="0" materialDesign:ShadowAssist.ShadowDepth="Depth1" Padding="20">
             <DockPanel>
-                <ToggleButton Style="{StaticResource MaterialDesignSwitchToggleButton}" IsEnabled="False" Margin="5 0 0 0"/>
-                <TextBlock Style="{StaticResource MaterialDesignBody1TextBlock}"> Khởi động cùng hệ thống </TextBlock>
+                <ToggleButton Style="{StaticResource MaterialDesignSwitchToggleButton}" IsEnabled="False" Margin="5 2 0 0"/>
+                <TextBlock Style="{StaticResource MaterialDesignBody1TextBlock}" Margin="5 3 0 0"> Khởi động cùng hệ thống </TextBlock>
             </DockPanel>
         </materialDesign:Card>
         <materialDesign:Card Grid.Row="1" materialDesign:ShadowAssist.ShadowDepth="Depth1" Padding="20">
             <StackPanel>
                 <DockPanel Margin="0 0 0 10">
                     <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Steam" Text="C:\Program Files (x86)\Steam" Margin="0 0 0 0" MinWidth="200"/>
-                    <Button Content="{materialDesign:PackIcon SettingsHelper}" ToolTip="Đường dẫn" Height="25" Margin="15 0 0 0" VerticalAlignment="Bottom" Width="50" HorizontalAlignment="Right"/>
+                    <Button Content="{materialDesign:PackIcon SettingsHelper}" ToolTip="Đường dẫn" Height="25" Margin="15 0 0 0" VerticalAlignment="Bottom" Width="50" HorizontalAlignment="Right" Click="Button_Click"/>
                 </DockPanel>
                 <DockPanel Margin="0 0 0 10">
                     <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Battle" Text="C:\Program Files (x86)\Battle" Margin="0 0 0 0" MinWidth="200"/>
-                    <Button Content="{materialDesign:PackIcon SettingsHelper}" ToolTip="Đường dẫn" Height="25" Margin="15 0 0 0" VerticalAlignment="Bottom" Width="50" HorizontalAlignment="Right"/>
+                    <Button Content="{materialDesign:PackIcon SettingsHelper}" ToolTip="Đường dẫn" Height="25" Margin="15 0 0 0" VerticalAlignment="Bottom" Width="50" HorizontalAlignment="Right" Click="Button_Click_1"/>
                 </DockPanel>
                 <DockPanel Margin="0 0 0 10">
                     <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Uplay" Text="C:\Program Files (x86)\Ubisoft" Margin="0 0 0 0" MinWidth="200"/>
-                    <Button Content="{materialDesign:PackIcon SettingsHelper}" ToolTip="Đường dẫn" Height="25" Margin="15 0 0 0" VerticalAlignment="Bottom" Width="50" HorizontalAlignment="Right"/>
+                    <Button Content="{materialDesign:PackIcon SettingsHelper}" ToolTip="Đường dẫn" Height="25" Margin="15 0 0 0" VerticalAlignment="Bottom" Width="50" HorizontalAlignment="Right" Click="Button_Click_2"/>
                 </DockPanel>
                 <DockPanel Margin="0 0 0 10">
                     <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Origin" Text="C:\Program Files (x86)\Origin" Margin="0 0 0 0" MinWidth="200"/>
-                    <Button Content="{materialDesign:PackIcon SettingsHelper}" ToolTip="Đường dẫn" Height="25" Margin="15 0 0 0" VerticalAlignment="Bottom" Width="50" HorizontalAlignment="Right"/>
+                    <Button Content="{materialDesign:PackIcon SettingsHelper}" ToolTip="Đường dẫn" Height="25" Margin="15 0 0 0" VerticalAlignment="Bottom" Width="50" HorizontalAlignment="Right" Click="Button_Click_3"/>
                 </DockPanel>
                 <DockPanel Margin="0 0 0 10">
                     <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Epic" Text="C:\Program Files (x86)\Epic Games" Margin="0 0 0 0" MinWidth="200"/>
-                    <Button Content="{materialDesign:PackIcon SettingsHelper}" ToolTip="Đường dẫn" Height="25" Margin="15 0 0 0" VerticalAlignment="Bottom" Width="50" HorizontalAlignment="Right"/>
+                    <Button Content="{materialDesign:PackIcon SettingsHelper}" ToolTip="Đường dẫn" Height="25" Margin="15 0 0 0" VerticalAlignment="Bottom" Width="50" HorizontalAlignment="Right" Click="Button_Click_4"/>
                 </DockPanel>
             </StackPanel>
         </materialDesign:Card>
