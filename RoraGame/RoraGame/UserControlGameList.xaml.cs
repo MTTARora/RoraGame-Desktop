@@ -17,6 +17,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Diagnostics;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace RoraGame
 {
@@ -56,7 +57,6 @@ namespace RoraGame
             //Listview Search
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(LsGames.ItemsSource);
             view.Filter = UserFilter;
-
         }
 
         //Listview Search
@@ -93,21 +93,36 @@ namespace RoraGame
             txtFilter.Clear();
         }
 
+
+        
+
         //Hide Dock Thue Game
         private void HideDockThueGame()
         {
-            GridThueGameDock.RowDefinitions[1].Height = new GridLength(50.0, GridUnitType.Pixel);
-            GridThueGameDock2.RowDefinitions[0].Height = new GridLength(30, GridUnitType.Pixel);
+            //GridThueGameDock.RowDefinitions[1].Height = new GridLength(0.0, GridUnitType.Pixel);
+            //GridThueGameDock2.RowDefinitions[0].Height = new GridLength(0.0, GridUnitType.Pixel);
         }
 
         //Hide Dock Thue Game
         private void ShowDockThueGame()
         {
-            GridThueGameDock.RowDefinitions[1].Height = new GridLength(0.0, GridUnitType.Pixel);
-            GridThueGameDock2.RowDefinitions[0].Height = new GridLength(0.0, GridUnitType.Pixel);
+            //GridThueGameDock.RowDefinitions[1].Height = new GridLength(50.0, GridUnitType.Pixel);
+            //GridThueGameDock2.RowDefinitions[0].Height = new GridLength(30, GridUnitType.Pixel);
         }
 
-        string Platform = "Steam";
+        string Platform;
+
+        private void DeserializeLoginInfo(string strLoginJSON)
+        {
+            var LoginInfo = JsonConvert.DeserializeObject<GameListViewModel>(strLoginJSON);
+
+            Platform = LoginInfo.Platform;
+        }
+
+
+        
+        //string GameName = "PlayerUnknown's Battlegrounds";
+        string GameExtention = "csgo.exe";
         string SteamUsername = @"pubgvna_2875";
         string SteamPassword = @"Pubgvna123123";
         string FolderSteam = @"C:\Program Files (x86)\Steam\";
@@ -118,6 +133,8 @@ namespace RoraGame
             #region Bước 1: Kiểm tra
             //Kiểm tra xem đăng nhập chưa
             //Kiểm tra xem có đang thuê game không
+            //Kiểm tra đủ lvl thuê game không
+            //Kiểm tra ví tiền còn không
             //Gửi thông tin cho server - server response thông tin để đăng nhập
             #endregion
 
@@ -154,9 +171,12 @@ namespace RoraGame
                     if (error == "")
                     {
                         //Hiện Dock Đang thuê game
-                        HideDockThueGame();
+                        ShowDockThueGame();
+
                         //Code Tính giờ
                         //Code Active Application_Exit
+                        //Code Kill Game if lose connect to server
+                        //Code kill Game if log out
                     }
                     else
                     {
@@ -189,6 +209,7 @@ namespace RoraGame
         //Button Dừng thuê game
         private void DungThueGame_Click(object sender, RoutedEventArgs e)
         {
+            //Kill Platform
             foreach (System.Diagnostics.Process killSteam in System.Diagnostics.Process.GetProcesses())
             {
                 if (killSteam.ProcessName == Platform)
@@ -196,8 +217,21 @@ namespace RoraGame
                     killSteam.Kill();
                 }
             }
+
+            //Kill Game
+            foreach (System.Diagnostics.Process killSteam in System.Diagnostics.Process.GetProcesses())
+            {
+                if (killSteam.ProcessName == GameExtention)
+                {
+                    killSteam.Kill();
+                }
+            }
+
             //Ẩn Dock Đang thuê game
-            ShowDockThueGame();
+            HideDockThueGame();
+
+            //Code ngừng tính giờ
+            //Code Disable Application_Exit
         }
         #endregion
 

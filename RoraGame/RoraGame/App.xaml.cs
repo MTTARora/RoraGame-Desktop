@@ -45,9 +45,19 @@ namespace RoraGame
         //Code lại: Nếu đang thuê thì chạy hàm Kill Steam, nếu ko thuê thì ko chạy hàm này
         private void Application_Exit(object sender, ExitEventArgs e)
         {
+            //Kill Platform
             foreach (System.Diagnostics.Process myProc in System.Diagnostics.Process.GetProcesses())
             {
                 if (myProc.ProcessName == "Steam")
+                {
+                    myProc.Kill();
+                }
+            }
+
+            //Kill Game Extention
+            foreach (System.Diagnostics.Process myProc in System.Diagnostics.Process.GetProcesses())
+            {
+                if (myProc.ProcessName == "csgo.exe")
                 {
                     myProc.Kill();
                 }

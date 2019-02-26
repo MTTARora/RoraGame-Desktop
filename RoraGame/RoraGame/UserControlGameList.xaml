@@ -4,23 +4,23 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RoraGame"
-             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:util="clr-namespace:Wpf.Util"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" >
 
     <Grid x:Name="GridThueGameDock">
         <Grid.RowDefinitions>
             <RowDefinition Height="10"></RowDefinition>
-            <RowDefinition Height="0"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        
+
         <!--Renting Status-->
         <Grid Grid.Row="0"></Grid>
-        <Grid Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12 5 20 0" >
+        <Grid Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12 5 20 0">
             <DockPanel>
-                <TextBlock Margin="10 0 0 0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Đang thuê game: </TextBlock>
+                <TextBlock Margin="10 0 0 0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Đang thuê game:</TextBlock>
                 <TextBlock Margin="10 0 0 0" VerticalAlignment="Center" Foreground="Red" Style="{StaticResource MaterialDesignSubheadingTextBlock}">PlayerUnknown's Battlegrounds</TextBlock>
                 <Grid Width="150" Margin="10 0 0 0">
                     <Button Click="DungThueGame_Click" Background="Red" Style="{StaticResource MaterialDesignRaisedButton}" materialDesign:ButtonProgressAssist.Value="-1" materialDesign:ButtonProgressAssist.IsIndicatorVisible="True" materialDesign:ButtonProgressAssist.IsIndeterminate="True" Content="Dừng thuê game" Margin="2,0" BorderBrush="Red" />
@@ -28,7 +28,7 @@
                 <TextBlock Margin="10 0 0 0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Thời gian thuê: 0:45</TextBlock>
             </DockPanel>
         </Grid>
-        
+
         <!--Search Bar-->
         <Grid Grid.Row="2">
             <DockPanel VerticalAlignment="Bottom">
@@ -37,42 +37,57 @@
                 <ToggleButton Style="{StaticResource MaterialDesignFlatToggleButton}" ToolTip="Xóa"  HorizontalAlignment="Left" Height="25" Width="25" Click="Xoa_Click" Margin="0 0 20 0">
                     <materialDesign:PackIcon Kind="Close" Height="12" Width="12" />
                 </ToggleButton>
-            
-            <!--Renting Status-->
-            <Grid x:Name="GridThueGameDock2" HorizontalAlignment="Left">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="0"></RowDefinition>
-                </Grid.RowDefinitions>
-                <DockPanel Grid.Row="0">
-                    <TextBlock Margin="0 0 10 0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Tài khoản thuê:</TextBlock>
-                        <TextBlock Margin="0 0 10 0" VerticalAlignment="Center" Foreground="Red" Style="{StaticResource MaterialDesignSubheadingTextBlock}">pubgvna_2875</TextBlock>
-                        <Button Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="MediumVioletRed" BorderBrush="MediumVioletRed">Báo tài khoản lỗi</Button>
-                </DockPanel>
-            </Grid>
+
+                <!--Renting Status-->
+                <Grid x:Name="GridThueGameDock2" HorizontalAlignment="Left">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <DockPanel Grid.Row="0">
+                        <TextBlock Margin="0 0 10 0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Tài khoản thuê:</TextBlock>
+                        <TextBlock Margin="0 0 10 0" VerticalAlignment="Center" Foreground="Red" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Pubgvna_2875</TextBlock>
+                        <Button Height="27" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="MediumVioletRed" BorderBrush="MediumVioletRed">Báo tài khoản lỗi</Button>
+                    </DockPanel>
+                </Grid>
             </DockPanel>
         </Grid>
-        
+
         <!--List Game-->
         <Grid Grid.Row="3">
-            <ListView Name ="LsGames" Margin="8 0 0 0" IsSynchronizedWithCurrentItem="True" util:GridViewSort.AutoSort="True" util:GridViewSort.ShowSortGlyph="False">
-            <ListView.View>
-                <GridView>
-                     <GridViewColumn
-                            DisplayMemberBinding="{Binding No}" Header="#"  util:GridViewSort.PropertyName="No"/>
-                     <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="GAME" util:GridViewSort.PropertyName="Name"/>
-                     <GridViewColumn DisplayMemberBinding="{Binding Platform}" Header="NỀN" util:GridViewSort.PropertyName="Platform"/>
+            <ListView x:Name="LsGames" Margin="8 0 0 0" IsSynchronizedWithCurrentItem="True" util:GridViewSort.AutoSort="True" util:GridViewSort.ShowSortGlyph="False">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding No}" Header="#"  util:GridViewSort.PropertyName="No"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="GAME" util:GridViewSort.PropertyName="Name"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Platform}" Header="NỀN" util:GridViewSort.PropertyName="Platform"/>
                         <GridViewColumn DisplayMemberBinding="{Binding RequiredLvl}" Header="YÊU CẦU"  util:GridViewSort.PropertyName="RequiredLvl"/>
-                     <GridViewColumn Header="THUÊ">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
+                        <GridViewColumn Header="THUÊ">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
                                     <Button Tag="{Binding ThueGame}" Click="ThueGame_Click" Content="Thuê Game" materialDesign:ShadowAssist.ShadowDepth="Depth1" Height="20" FontSize="13" Margin="0 -3 0 -20" Padding="10 0 10 0"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                     </GridViewColumn>
-                     <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="THÔNG TIN" />
-                </GridView>
-            </ListView.View>
-        </ListView>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="THÔNG TIN" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </Grid>
+        <!--<Grid Grid.Row="3">
+            <DataGrid Margin="0 8 0 0" x:Name ="LsGames" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False"
+                          materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="8">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding No}" Header="#"/>
+                    --><!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn --><!--
+                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding Name}" Header="GAME" />
+                    --><!-- set a max length to get an indicator in the editor --><!--
+                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding Platform}" Header="NỀN" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
+                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding RequiredLvl}" Header="YÊU CẦU" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding ThueGame}" Header="YÊU CẦU" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding Description}" Header="YÊU CẦU" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>-->
     </Grid>
 </UserControl>
