@@ -14,10 +14,43 @@
             TextOptions.TextRenderingMode="Auto"        
             FontFamily="{DynamicResource MaterialDesignFont}"
             Background="{DynamicResource MaterialDesignPaper}">
-    <Grid VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20">
-        <DockPanel>
-            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Steam" Text="C:\Program Files (x86)\Steam" Margin="0 0 0 0" MinWidth="200"/>
-            <Button Content="{materialDesign:PackIcon SettingsHelper}" ToolTip="Đường dẫn" Height="25" Margin="15 0 0 0" VerticalAlignment="Bottom"/>
-        </DockPanel>
+    <Grid VerticalAlignment="Top" HorizontalAlignment="Left" Margin="30 20 20 20">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+                    
+        <materialDesign:Card Grid.Row="0" materialDesign:ShadowAssist.ShadowDepth="Depth1" Padding="20">
+            <DockPanel>
+                <ToggleButton Style="{StaticResource MaterialDesignSwitchToggleButton}" IsEnabled="False" Margin="5 0 0 0"/>
+                <TextBlock Style="{StaticResource MaterialDesignBody1TextBlock}"> Khởi động cùng hệ thống </TextBlock>
+            </DockPanel>
+        </materialDesign:Card>
+        <materialDesign:Card Grid.Row="1" materialDesign:ShadowAssist.ShadowDepth="Depth1" Padding="20">
+            <StackPanel>
+                <DockPanel Margin="0 0 0 10">
+                    <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Steam" Text="C:\Program Files (x86)\Steam" Margin="0 0 0 0" MinWidth="200"/>
+                    <Button Content="{materialDesign:PackIcon SettingsHelper}" ToolTip="Đường dẫn" Height="25" Margin="15 0 0 0" VerticalAlignment="Bottom" Width="50" HorizontalAlignment="Right"/>
+                </DockPanel>
+                <DockPanel Margin="0 0 0 10">
+                    <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Battle" Text="C:\Program Files (x86)\Battle" Margin="0 0 0 0" MinWidth="200"/>
+                    <Button Content="{materialDesign:PackIcon SettingsHelper}" ToolTip="Đường dẫn" Height="25" Margin="15 0 0 0" VerticalAlignment="Bottom" Width="50" HorizontalAlignment="Right"/>
+                </DockPanel>
+                <DockPanel Margin="0 0 0 10">
+                    <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Uplay" Text="C:\Program Files (x86)\Ubisoft" Margin="0 0 0 0" MinWidth="200"/>
+                    <Button Content="{materialDesign:PackIcon SettingsHelper}" ToolTip="Đường dẫn" Height="25" Margin="15 0 0 0" VerticalAlignment="Bottom" Width="50" HorizontalAlignment="Right"/>
+                </DockPanel>
+                <DockPanel Margin="0 0 0 10">
+                    <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Origin" Text="C:\Program Files (x86)\Origin" Margin="0 0 0 0" MinWidth="200"/>
+                    <Button Content="{materialDesign:PackIcon SettingsHelper}" ToolTip="Đường dẫn" Height="25" Margin="15 0 0 0" VerticalAlignment="Bottom" Width="50" HorizontalAlignment="Right"/>
+                </DockPanel>
+                <DockPanel Margin="0 0 0 10">
+                    <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Epic" Text="C:\Program Files (x86)\Epic Games" Margin="0 0 0 0" MinWidth="200"/>
+                    <Button Content="{materialDesign:PackIcon SettingsHelper}" ToolTip="Đường dẫn" Height="25" Margin="15 0 0 0" VerticalAlignment="Bottom" Width="50" HorizontalAlignment="Right"/>
+                </DockPanel>
+            </StackPanel>
+        </materialDesign:Card>
+        
     </Grid>
 </UserControl>

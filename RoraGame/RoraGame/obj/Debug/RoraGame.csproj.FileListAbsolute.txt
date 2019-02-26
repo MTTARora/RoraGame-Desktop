@@ -4,7 +4,6 @@ E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\RoraGame.pdb
 E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\Hardcodet.Wpf.TaskbarNotification.dll
 E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\MaterialDesignColors.dll
 E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\MaterialDesignThemes.Wpf.dll
-E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\Notifications.Wpf.dll
 E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\Hardcodet.Wpf.TaskbarNotification.pdb
 E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\Hardcodet.Wpf.TaskbarNotification.xml
 E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\MaterialDesignThemes.Wpf.pdb

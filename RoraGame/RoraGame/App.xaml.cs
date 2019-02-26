@@ -9,7 +9,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using Hardcodet.Wpf.TaskbarNotification;
-using Notifications.Wpf;
 using WpfSingleInstanceByEventWaitHandle;
 
 namespace RoraGame

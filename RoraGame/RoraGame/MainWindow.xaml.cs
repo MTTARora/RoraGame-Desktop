@@ -1,5 +1,4 @@
-﻿using Notifications.Wpf;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -119,13 +118,6 @@ namespace RoraGame
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            var notificationManager = new NotificationManager();
-            notificationManager.Show(new NotificationContent
-            {
-            Title = "Thông báo",
-            Message = "RoraGame still running in background",
-             Type = NotificationType.Information
-            });
         }
 
         private void MaximizeButton_Click(object sender, RoutedEventArgs e)

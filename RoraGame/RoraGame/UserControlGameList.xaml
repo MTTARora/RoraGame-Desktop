@@ -30,10 +30,10 @@
         <!--Search Bar-->
         <Grid Grid.Row="1">
             <DockPanel VerticalAlignment="Bottom">
-                <materialDesign:PackIcon Kind="TableSearch" HorizontalAlignment="Right" Height="25" Width="25" Margin="60,0,5,0" Foreground="#FF666666"/>
+                <materialDesign:PackIcon Kind="TableSearch" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="25" Width="25" Margin="60,0,5,0" Foreground="#FF666666"/>
                 <TextBox materialDesign:HintAssist.Hint="Tìm Game" Width="auto" MinWidth="150"  HorizontalAlignment="Left" Name="txtFilter" TextChanged="txtFilter_TextChanged"/>
-                <ToggleButton Style="{StaticResource MaterialDesignFlatToggleButton}" ToolTip="Xóa"  HorizontalAlignment="Left" Height="25" Width="25" Click="Xoa_Click">
-                    <materialDesign:PackIcon Kind="Close" Height="12" Width="12"/>
+                <ToggleButton Style="{StaticResource MaterialDesignFlatToggleButton}" ToolTip="Xóa"  HorizontalAlignment="Left" Height="25" Width="25" Click="Xoa_Click" Margin="0 0 20 0">
+                    <materialDesign:PackIcon Kind="Close" Height="12" Width="12" />
                 </ToggleButton>
             </DockPanel>
         </Grid>
@@ -47,7 +47,7 @@
                             DisplayMemberBinding="{Binding No}" Header="#"  util:GridViewSort.PropertyName="No"/>
                      <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="GAME" util:GridViewSort.PropertyName="Name"/>
                      <GridViewColumn DisplayMemberBinding="{Binding Platform}" Header="NỀN" util:GridViewSort.PropertyName="Platform"/>
-                     <GridViewColumn DisplayMemberBinding="{Binding RequiredLvl}" Header="YÊU CẦU" />
+                        <GridViewColumn DisplayMemberBinding="{Binding RequiredLvl}" Header="YÊU CẦU"  util:GridViewSort.PropertyName="RequiredLvl"/>
                      <GridViewColumn Header="THUÊ">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
