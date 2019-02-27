@@ -69,10 +69,10 @@ namespace RoraGame
         //Listview Search
         private bool UserFilter(object item)
         {
-            if (String.IsNullOrEmpty(txtFilter.Text))
+            if (string.IsNullOrEmpty(txtFilter.Text))
                 return true;
             else
-                return ((item as Games).Name.IndexOf(txtFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+                return ((item as GameList).Name.IndexOf(txtFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0);
         }
         private void txtFilter_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
