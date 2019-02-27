@@ -40,6 +40,17 @@
 
             </WrapPanel>
         </StackPanel>
-        <Button VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20 15 0 0" Background="Green" BorderBrush="Green" Click="Websiteroragame_Click">Website RoraGame</Button>
+        <Button VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25 15 0 0" Width="187" Background="Green" BorderBrush="Green" Click="Websiteroragame_Click">
+            <DockPanel>
+                <materialDesign:PackIcon Kind="Web" Margin="-15 0 5 0" Height="25" Width="25"/>
+                <TextBlock Margin="0 5 0 0">Website RoraGame</TextBlock>
+            </DockPanel>
+            </Button>
+        <Button VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25 60 0 0" Width="187" Background="#3b5998" BorderBrush="#3b5998" Click="Websiteroragame_Click">
+            <DockPanel>
+                <materialDesign:PackIcon Kind="Facebook" Margin="-5 0 5 0" Height="25" Width="25"/>
+                <TextBlock Margin="0 5 0 0">Facebook RoraGame</TextBlock>
+            </DockPanel>
+        </Button>
     </Grid>
 </UserControl>

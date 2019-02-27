@@ -7,13 +7,7 @@
              mc:Ignorable="d"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
     <Grid Margin="0 10 0 0">
-        <TextBlock
-    Style="{StaticResource MaterialDesignButtonTextBlock}">
-  MEDIUM (ALL CAPS) 14sp
-        </TextBlock>
-        <materialDesign:Card
-  Background="{DynamicResource MaterialDesignBackground}">
-            <StackPanel>
+                    <StackPanel>
                 <Expander
       HorizontalAlignment="Stretch"
       Header="Expander Example 2a">
@@ -70,6 +64,5 @@
                     </StackPanel>
                 </Expander>
             </StackPanel>
-        </materialDesign:Card>
     </Grid>
 </UserControl>

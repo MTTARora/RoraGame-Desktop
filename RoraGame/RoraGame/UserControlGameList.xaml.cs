@@ -78,7 +78,6 @@ namespace RoraGame
         {
             CollectionViewSource.GetDefaultView(LsGames.ItemsSource).Refresh();
         }
-
         //Clear Search
         private void Xoa_Click(object sender, RoutedEventArgs e)
         {
@@ -92,7 +91,7 @@ namespace RoraGame
             //GridThueGameDock2.RowDefinitions[0].Height = new GridLength(0.0, GridUnitType.Pixel);
         }
 
-        //Hide Dock Thue Game
+        //Show Dock Thue Game
         private void ShowDockThueGame()
         {
             //GridThueGameDock.RowDefinitions[1].Height = new GridLength(50.0, GridUnitType.Pixel);
