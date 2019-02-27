@@ -1,26 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Security.Policy;
 using System.Threading.Tasks;
 
-namespace RoraGame
+namespace GameListViewModel
 {
-    class GameListViewModel
+    public class GameList
     {
-        public string Platform { get; set; }
-        public string GameName { get; set; }
-        public string GameExtention { get; set; }
-        public string SteamUsername { get; set; }
-        public string SteamPassword { get; set; }
-    }
-
-    class Game
-    {
-        public int No { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Platform { get; set; }
         public string RequiredLvl { get; set; }
+        public string GameCode { get; set; }
         public string Description { get; set; }
     }
+
+    public class GameLogin
+    {
+        public string Platform = "Steam";
+        public string GameName = "PlayerUnknown's Battlegrounds";
+        public string GameExtention = "csgo.exe";
+        public string SteamUsername = @"pubgvna_2875";
+        public string SteamPassword = @"Pubgvna123123";
+    }
+    
 }

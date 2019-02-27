@@ -18,6 +18,9 @@ using System.Runtime.CompilerServices;
 using System.Diagnostics;
 using System.IO;
 using Newtonsoft.Json;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using GameListViewModel;
 
 namespace RoraGame
 {
@@ -26,33 +29,37 @@ namespace RoraGame
     /// </summary>
     public partial class UserControlGameList : UserControl
     {
+
+        //API GameList Get
+        private void GetDataGameList()
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://localhost:57677/");
+
+            // Add an Accept header for JSON format.
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+
+            HttpResponseMessage response = client.GetAsync("api/GameList").Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                var gameList = response.Content.ReadAsAsync<IEnumerable<GameList>>().Result;
+                LsGames.ItemsSource = gameList;
+
+            }
+            else
+            {
+                MessageBox.Show("Error Code" +
+                response.StatusCode + " : Message - " + response.ReasonPhrase);
+            }
+        }
+
         public UserControlGameList()
         {
             InitializeComponent();
 
-            //Test List
-            List<Games> items = new List<Games>();
-            items.Add(new Games() { No = 1, Name = "Assassin's Creed", Platform = "Steam", RequiredLvl = "Level 0", Description = "https://www.assassinscreed.com" });
-            items.Add(new Games() { No = 2, Name = "Battlefield ", Platform = "Steam", RequiredLvl = "Level 5", Description = "https://www.ea.com/games/battlefield" });
-            items.Add(new Games() { No = 3, Name = "Call of Duty", Platform = "Steam", RequiredLvl = "Level 3", Description = "https://www.callofduty.com" });
-            items.Add(new Games() { No = 4, Name = "PlayerUnknown's Battlegrounds", Platform = "Steam", Description = "https://www.pubg.com" });
-            items.Add(new Games() { No = 5, Name = "Grand Theft Auto 5", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
-            items.Add(new Games() { No = 6, Name = "Final Fantasy XV", Platform = "Battle", Description = "Fortnite là một trò chơi sinh tồn phối hợp trên sandbox do Epic Games và People Can Fly phát triển, và Epic Games phát hành." });
-            items.Add(new Games() { No = 7, Name = "Warhammer Vermintide 2  ", Platform = "Steam", Description = "https://www.epicgames.com/fortnite/hom" });
-            items.Add(new Games() { No = 8, Name = "Northgard  ", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
-            items.Add(new Games() { No = 9, Name = "Rise Of The Tomb Raider ", Platform = "Uplay", Description = "https://www.epicgames.com/fortnite/hom" });
-            items.Add(new Games() { No = 10, Name = "Ghost Recon Wildlands  ", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
-            items.Add(new Games() { No = 11, Name = "We need to go deeper", Platform = "Uplay", Description = "https://www.epicgames.com/fortnite/hom" });
-            items.Add(new Games() { No = 12, Name = "FIGHTING EX LAYER ", Platform = "Steam", Description = "https://www.epicgames.com/fortnite/hom" });
-            items.Add(new Games() { No = 13, Name = "Shadow Warrior 2 ", Platform = "Epic", Description = "https://www.epicgames.com/fortnite/hom" });
-            items.Add(new Games() { No = 14, Name = "Naruto to Boruto  ", Platform = "Battle", Description = "https://www.epicgames.com/fortnite/hom" });
-            items.Add(new Games() { No = 15, Name = "Monster Hunter World  ", Platform = "Steam", Description = "https://www.epicgames.com/fortnite/hom" });
-            items.Add(new Games() { No = 16, Name = "Rend  ", Platform = "Steam", Description = "https://www.epicgames.com/fortnite/hom" });
-            items.Add(new Games() { No = 17, Name = "Tricky Tower  ", Platform = "Steam", Description = "https://www.epicgames.com/fortnite/hom" });
-            items.Add(new Games() { No = 18, Name = "Legion TD 2 ", Platform = "Battle", Description = "https://www.epicgames.com/fortnite/hom" });
-            items.Add(new Games() { No = 19, Name = "Conan Exiles  ", Platform = "Steam", Description = "https://www.epicgames.com/fortnite/hom" });
-
-            LsGames.ItemsSource = items;
+            GetDataGameList();
 
             //Listview Search
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(LsGames.ItemsSource);
@@ -67,24 +74,9 @@ namespace RoraGame
             else
                 return ((item as Games).Name.IndexOf(txtFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0);
         }
-
         private void txtFilter_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(LsGames.ItemsSource).Refresh();
-        }
-
-        //Class for Test List
-        public class Games
-        {
-            public string RequiredLvl { get; set; }
-
-            public int No { get; set; }
-
-            public string Name { get; set; }
-
-            public string Platform { get; set; }
-
-            public string Description { get; set; }
         }
 
         //Clear Search
@@ -92,9 +84,6 @@ namespace RoraGame
         {
             txtFilter.Clear();
         }
-
-
-        
 
         //Hide Dock Thue Game
         private void HideDockThueGame()
@@ -110,17 +99,7 @@ namespace RoraGame
             //GridThueGameDock2.RowDefinitions[0].Height = new GridLength(30, GridUnitType.Pixel);
         }
 
-        string Platform;
-
-        private void DeserializeLoginInfo(string strLoginJSON)
-        {
-            var LoginInfo = JsonConvert.DeserializeObject<GameListViewModel>(strLoginJSON);
-
-            Platform = LoginInfo.Platform;
-        }
-
-
-        
+        string Platform = "Steam";
         //string GameName = "PlayerUnknown's Battlegrounds";
         string GameExtention = "csgo.exe";
         string SteamUsername = @"pubgvna_2875";
@@ -141,11 +120,11 @@ namespace RoraGame
             #region Bước 2: Kill Platform
 
             //Kill Game Platform
-            foreach (System.Diagnostics.Process killSteam in System.Diagnostics.Process.GetProcesses())
+            foreach (System.Diagnostics.Process killPlatform in System.Diagnostics.Process.GetProcesses())
             {
-                if (killSteam.ProcessName == Platform)
+                if (killPlatform.ProcessName == Platform)
                 {
-                    killSteam.Kill();
+                    killPlatform.Kill();
                 }
             }
             System.Threading.Thread.Sleep(500);
@@ -210,20 +189,20 @@ namespace RoraGame
         private void DungThueGame_Click(object sender, RoutedEventArgs e)
         {
             //Kill Platform
-            foreach (System.Diagnostics.Process killSteam in System.Diagnostics.Process.GetProcesses())
+            foreach (System.Diagnostics.Process killPlatform in System.Diagnostics.Process.GetProcesses())
             {
-                if (killSteam.ProcessName == Platform)
+                if (killPlatform.ProcessName == Platform)
                 {
-                    killSteam.Kill();
+                    killPlatform.Kill();
                 }
             }
 
             //Kill Game
-            foreach (System.Diagnostics.Process killSteam in System.Diagnostics.Process.GetProcesses())
+            foreach (System.Diagnostics.Process killGameEx in System.Diagnostics.Process.GetProcesses())
             {
-                if (killSteam.ProcessName == GameExtention)
+                if (killGameEx.ProcessName == GameExtention)
                 {
-                    killSteam.Kill();
+                    killGameEx.Kill();
                 }
             }
 
@@ -234,6 +213,5 @@ namespace RoraGame
             //Code Disable Application_Exit
         }
         #endregion
-
     }
 }

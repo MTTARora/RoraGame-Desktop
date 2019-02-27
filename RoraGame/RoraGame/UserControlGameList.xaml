@@ -4,7 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RoraGame"
-             xmlns:util="clr-namespace:Wpf.Util"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" >
 
@@ -23,7 +22,7 @@
                 <TextBlock Margin="10 0 0 0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Đang thuê game:</TextBlock>
                 <TextBlock Margin="10 0 0 0" VerticalAlignment="Center" Foreground="Red" Style="{StaticResource MaterialDesignSubheadingTextBlock}">PlayerUnknown's Battlegrounds</TextBlock>
                 <Grid Width="150" Margin="10 0 0 0">
-                    <Button Click="DungThueGame_Click" Background="Red" Style="{StaticResource MaterialDesignRaisedButton}" materialDesign:ButtonProgressAssist.Value="-1" materialDesign:ButtonProgressAssist.IsIndicatorVisible="True" materialDesign:ButtonProgressAssist.IsIndeterminate="True" Content="Dừng thuê game" Margin="2,0" BorderBrush="Red" />
+                    <Button Click="DungThueGame_Click" Height="30" Background="Red" Style="{StaticResource MaterialDesignRaisedButton}" materialDesign:ButtonProgressAssist.Value="-1" materialDesign:ButtonProgressAssist.IsIndicatorVisible="True" materialDesign:ButtonProgressAssist.IsIndeterminate="True" Content="Dừng thuê game" Margin="2,0" BorderBrush="Red" />
                 </Grid>
                 <TextBlock Margin="10 0 0 0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Thời gian thuê: 0:45</TextBlock>
             </DockPanel>
@@ -53,18 +52,18 @@
         </Grid>
 
         <!--List Game-->
-        <Grid Grid.Row="3">
+        <!--<Grid Grid.Row="3">
             <ListView x:Name="LsGames" Margin="8 0 0 0" IsSynchronizedWithCurrentItem="True" util:GridViewSort.AutoSort="True" util:GridViewSort.ShowSortGlyph="False">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn DisplayMemberBinding="{Binding No}" Header="#"  util:GridViewSort.PropertyName="No"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Id}" Header="#"  util:GridViewSort.PropertyName="No"/>
                         <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="GAME" util:GridViewSort.PropertyName="Name"/>
                         <GridViewColumn DisplayMemberBinding="{Binding Platform}" Header="NỀN" util:GridViewSort.PropertyName="Platform"/>
                         <GridViewColumn DisplayMemberBinding="{Binding RequiredLvl}" Header="YÊU CẦU"  util:GridViewSort.PropertyName="RequiredLvl"/>
                         <GridViewColumn Header="THUÊ">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Tag="{Binding ThueGame}" Click="ThueGame_Click" Content="Thuê Game" materialDesign:ShadowAssist.ShadowDepth="Depth1" Height="20" FontSize="13" Margin="0 -3 0 -20" Padding="10 0 10 0"/>
+                                    <Button Tag="{Binding GameCode}" Click="ThueGame_Click" Content="Thuê Game" materialDesign:ShadowAssist.ShadowDepth="Depth1" Height="20" FontSize="13" Margin="0 -3 0 -20" Padding="10 0 10 0"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -72,22 +71,25 @@
                     </GridView>
                 </ListView.View>
             </ListView>
-        </Grid>
-        <!--<Grid Grid.Row="3">
-            <DataGrid Margin="0 8 0 0" x:Name ="LsGames" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False"
+        </Grid>-->
+        <Grid Grid.Row="3">
+            <DataGrid Margin="0 8 0 0" x:Name="LsGames" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True"
                           materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="8">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding No}" Header="#"/>
-                    --><!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn --><!--
+                    <DataGridTextColumn Binding="{Binding Id}" Header="#"/>
                     <materialDesign:MaterialDataGridTextColumn Binding="{Binding Name}" Header="GAME" />
-                    --><!-- set a max length to get an indicator in the editor --><!--
                     <materialDesign:MaterialDataGridTextColumn Binding="{Binding Platform}" Header="NỀN" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
                     <materialDesign:MaterialDataGridTextColumn Binding="{Binding RequiredLvl}" Header="YÊU CẦU" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
-                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding ThueGame}" Header="YÊU CẦU" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
-                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding Description}" Header="YÊU CẦU" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
-
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Tag="{Binding GameCode}" Click="ThueGame_Click" Content="Thuê Game" materialDesign:ShadowAssist.ShadowDepth="Depth1" Height="20" FontSize="13" Margin="0 -3 0 -3" Padding="10 0 10 0"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding Description}" Header="THÔNG TIN" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
                 </DataGrid.Columns>
             </DataGrid>
-        </Grid>-->
+        </Grid>
     </Grid>
 </UserControl>
