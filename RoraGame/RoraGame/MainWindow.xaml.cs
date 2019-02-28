@@ -69,44 +69,50 @@ namespace RoraGame
         //    });
         //}
         #endregion Minimize to tray system
-
         #region Left Side Menu
+        int i = 0;
+        UserControl usc = null;
+        UserControl uscc = null;
+        
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            UserControl usc = null;
+        {            
             GridMain.Children.Clear();
-
+            ScrollViewer.SetVerticalScrollBarVisibility(ScrollViewMain, ScrollBarVisibility.Auto);
+            
             switch (((ListViewItem)((ListView)sender).SelectedItem).Name)
             {
                 case "ItemHome":
                     usc = new UserControlHome();
                     GridMain.Children.Add(usc);
-                    ScrollViewer.SetVerticalScrollBarVisibility(ScrollViewMain, ScrollBarVisibility.Auto);
                     break;
                 case "ItemAccount":
                     usc = new UserControlAccount();
                     GridMain.Children.Add(usc);
-                    ScrollViewer.SetVerticalScrollBarVisibility(ScrollViewMain, ScrollBarVisibility.Auto);
                     break;
                 case "ItemGameList":
-                    usc = new UserControlGameList();
-                    GridMain.Children.Add(usc);
-                    ScrollViewer.SetVerticalScrollBarVisibility(ScrollViewMain, ScrollBarVisibility.Disabled);
+                    if (i<1)
+                    {
+                        uscc = new UserControlGameList();
+                        GridMain.Children.Add(uscc);
+                        i++;                        
+                    }
+                    else
+                    {
+                        GridMain.Children.Add(uscc);
+                        ScrollViewer.SetVerticalScrollBarVisibility(ScrollViewMain, ScrollBarVisibility.Disabled);
+                    }
                     break;
                 case "ItemGuide":
                     usc = new UserControlGuide();
                     GridMain.Children.Add(usc);
-                    ScrollViewer.SetVerticalScrollBarVisibility(ScrollViewMain, ScrollBarVisibility.Auto);
                     break;
                 case "ItemSetting":
                     usc = new UserControlSettingApp();
                     GridMain.Children.Add(usc);
-                    ScrollViewer.SetVerticalScrollBarVisibility(ScrollViewMain, ScrollBarVisibility.Auto);
                     break;
                 case "ItemInformation":
                     usc = new UserControlInformation();
                     GridMain.Children.Add(usc);
-                    ScrollViewer.SetVerticalScrollBarVisibility(ScrollViewMain, ScrollBarVisibility.Auto);
                     break;
                 default:
                     break;

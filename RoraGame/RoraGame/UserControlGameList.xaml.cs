@@ -86,15 +86,15 @@ namespace RoraGame
         //Hide Dock Thue Game
         private void HideDockThueGame()
         {
-            //GridThueGameDock.RowDefinitions[1].Height = new GridLength(0.0, GridUnitType.Pixel);
-            //GridThueGameDock2.RowDefinitions[0].Height = new GridLength(0.0, GridUnitType.Pixel);
+            GridThueGameDock.RowDefinitions[1].Height = new GridLength(0.0, GridUnitType.Pixel);
+            GridThueGameDock2.RowDefinitions[0].Height = new GridLength(0.0, GridUnitType.Pixel);
         }
 
         //Show Dock Thue Game
         private void ShowDockThueGame()
         {
-            //GridThueGameDock.RowDefinitions[1].Height = new GridLength(50.0, GridUnitType.Pixel);
-            //GridThueGameDock2.RowDefinitions[0].Height = new GridLength(30, GridUnitType.Pixel);
+            GridThueGameDock.RowDefinitions[1].Height = new GridLength(50.0, GridUnitType.Pixel);
+            GridThueGameDock2.RowDefinitions[0].Height = new GridLength(30, GridUnitType.Pixel);
         }
 
         string Platform = "Steam";
