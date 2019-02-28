@@ -45,7 +45,8 @@
                     <DockPanel Grid.Row="0">
                         <TextBlock Margin="0 0 10 0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Tài khoản thuê:</TextBlock>
                         <TextBlock Margin="0 0 10 0" VerticalAlignment="Center" Foreground="Red" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Pubgvna_2875</TextBlock>
-                        <Button Height="27" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="MediumVioletRed" BorderBrush="MediumVioletRed">Báo tài khoản lỗi</Button>
+                        <Button Margin="0 0 10 0" Height="27" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="MediumVioletRed" BorderBrush="MediumVioletRed">Báo lối tài khoản</Button>
+                        <Button Height="27" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="CornflowerBlue" BorderBrush="CornflowerBlue">Yêu cầu đổi tài khoản</Button>
                     </DockPanel>
                 </Grid>
             </DockPanel>
@@ -83,7 +84,7 @@
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Tag="{Binding GameCode}" Click="ThueGame_Click" Content="Thuê Game" materialDesign:ShadowAssist.ShadowDepth="Depth1" Height="20" FontSize="13" Margin="0 -3 0 -3" Padding="10 0 10 0"/>
+                                <Button Tag="{Binding GameCode}" Click="ThueGame_Click" Content="Chơi ngay" materialDesign:ShadowAssist.ShadowDepth="Depth1" materialDesign:ShadowAssist.ShadowEdges="Top" Height="20" FontSize="13" Margin="0 -3 0 -3" Padding="10 0 10 0" Background="{x:Null}" Foreground="Black" BorderBrush="#FFCFCFCF" Opacity="0.9" BorderThickness="0.5" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

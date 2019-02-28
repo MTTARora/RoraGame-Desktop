@@ -30,7 +30,7 @@
                 <RowDefinition Height="33"></RowDefinition>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Hãy điền thông tin để đăng ký</TextBlock>
-            <TextBox  Grid.Row="1" materialDesign:HintAssist.Hint="Tài khoản" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox Name="SignUpUsername" Grid.Row="1" materialDesign:HintAssist.Hint="Tài khoản" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
             <TextBox  Grid.Row="2" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
             <TextBox Grid.Row="3" materialDesign:HintAssist.Hint="Số điện thoại xác nhận" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
             <PasswordBox Grid.Row="4" materialDesign:HintAssist.Hint="Mật khẩu" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />

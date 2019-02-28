@@ -23,6 +23,7 @@ namespace RoraGame
         public PageSignUp()
         {
             InitializeComponent();
+
         }
     }
 }

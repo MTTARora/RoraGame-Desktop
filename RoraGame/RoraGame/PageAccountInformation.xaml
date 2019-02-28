@@ -36,11 +36,11 @@
                         <RowDefinition Height="70"></RowDefinition>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0">Thông tin tài khoản</TextBlock>
-                    <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource MaterialDesignBody1TextBlock}">Tên tài khoản:</TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="SemiBold" Style="{StaticResource MaterialDesignBody1TextBlock}">Tên tài khoản:</TextBlock>
                     <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlock}">Usernamedaithatladai</TextBlock>
-                    <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignBody1TextBlock}">Số điện thoại:</TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom" FontWeight="SemiBold" Style="{StaticResource MaterialDesignBody1TextBlock}">Số điện thoại:</TextBlock>
                     <TextBox Grid.Row="2" Grid.Column="1">099 999 9999</TextBox>
-                    <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignBody1TextBlock}">Email:</TextBlock>
+                    <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Bottom" FontWeight="SemiBold" Style="{StaticResource MaterialDesignBody1TextBlock}">Email:</TextBlock>
                     <TextBox Grid.Row="3" Grid.Column="1">emaildai@gmail.com</TextBox>
                     <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Width="100" Style="{StaticResource MaterialDesignRaisedDarkButton}">Cập nhật</Button>
                 </Grid>
@@ -56,13 +56,15 @@
         </materialDesign:Card>
     </WrapPanel>
         <WrapPanel Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10">
-            <materialDesign:Card Margin="0 20 20 0" MinWidth="350" Height="auto" materialDesign:ShadowAssist.ShadowDepth="Depth1" >
-                <StackPanel>
+            <materialDesign:Card Margin="0 0 20 0" MinWidth="350" Height="auto" materialDesign:ShadowAssist.ShadowDepth="Depth1" >
+                <StackPanel Margin="15 0 15 0">
                     <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0">Thông tin ví tiền</TextBlock>
-                    <TextBlock Margin="20 10 0 20" Style="{StaticResource MaterialDesignHeadlineTextBlock}">999.999.999 vnđ</TextBlock>
+                    <TextBlock Margin="40 10 0 0" Style="{StaticResource MaterialDesignSubheadingTextBlock}" FontWeight="Bold" Foreground="#FFC70606">999.999.999 vnđ</TextBlock>
+                    <TextBox Margin="0 3 0 0" materialDesign:HintAssist.Hint="Code" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <Button Width="120" Margin="0 19 0 15" Style="{StaticResource MaterialDesignRaisedDarkButton}">Nhập Code</Button>
                 </StackPanel>
             </materialDesign:Card>
-            <materialDesign:Card Margin="0 20 20 0" Width="350" Height="auto" materialDesign:ShadowAssist.ShadowDepth="Depth1" >
+            <materialDesign:Card Margin="0 0 20 0" Width="350" Height="auto" materialDesign:ShadowAssist.ShadowDepth="Depth1" >
                 <StackPanel Margin="15 0 15 0">
                     <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0">Nạp tiền</TextBlock>
                     <TextBox Margin="0 3 0 0" materialDesign:HintAssist.Hint="Mã thẻ" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />

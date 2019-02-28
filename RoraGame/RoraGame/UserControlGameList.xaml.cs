@@ -50,8 +50,7 @@ namespace RoraGame
             }
             else
             {
-                MessageBox.Show("Error Code" +
-                response.StatusCode + " : Message - " + response.ReasonPhrase);
+                MessageBox.Show("Error Code" + response.StatusCode + " : Message - " + response.ReasonPhrase);
             }
         }
 
@@ -169,6 +168,7 @@ namespace RoraGame
 
                 //Login Uplay
                 case "Uplay":
+                //C: \Users\Sky\AppData\Local\Ubisoft Game Launcher
                     break;
 
                 //Login Battle

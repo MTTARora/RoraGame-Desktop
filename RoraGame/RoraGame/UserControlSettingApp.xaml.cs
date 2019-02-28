@@ -64,5 +64,35 @@ namespace RoraGame
                 System.Windows.Forms.DialogResult result = dialog.ShowDialog();
             }
         }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            string defaul = @"C:\Program Files (x86)\Steam";
+            SteamFolder.Text = defaul;
+        }
+
+        private void Button_Click6(object sender, RoutedEventArgs e)
+        {
+            string defaul = @"C:\Program Files (x86)\Battle";
+            BattleFolder.Text = defaul;
+        }
+
+        private void Button_Click7(object sender, RoutedEventArgs e)
+        {
+            string defaul = @"C:\Program Files (x86)\Ubisoft";
+            UplayFolder.Text = defaul;
+        }
+
+        private void Button_Click8(object sender, RoutedEventArgs e)
+        {
+            string defaul = @"C:\Program Files (x86)\Origin";
+            OriginFolder.Text = defaul;
+        }
+
+        private void Button_Click9(object sender, RoutedEventArgs e)
+        {
+            string defaul = @"C:\Program Files (x86)\Epic Games";
+            EpicFolder.Text = defaul;
+        }
     }
 }
