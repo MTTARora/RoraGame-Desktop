@@ -6,9 +6,27 @@
              xmlns:local="clr-namespace:RoraGame"
              mc:Ignorable="d" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <UserControl.Resources>
+        <Storyboard x:Key="SlideBanner">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Banner2" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:12" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:14" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:24" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource SlideBanner}"/>
+        </EventTrigger>
+    </UserControl.Triggers>
     <Grid HorizontalAlignment="Center">
         <StackPanel>
-            <Image x:Name="Banner1" VerticalAlignment="Top" Source="/Resources/splashBanner_magic.jpg"></Image>
+            <Grid>              
+                <Image x:Name="Banner1" VerticalAlignment="Top" Source="/Resources/splashBanner_magic.jpg"></Image>
+                <Image x:Name="Banner2" VerticalAlignment="Top" Source="/Resources/billboard_IAB_kaladesh.jpg"></Image>
+            </Grid>
             <WrapPanel>
                 <StackPanel HorizontalAlignment="Left" Width="440">
                     <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,0,0">
@@ -58,25 +76,25 @@
         <Button VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 20 20 0" Background="DarkOliveGreen" BorderBrush="DarkOliveGreen" Click="Websiteroragame_Click" materialDesign:ShadowAssist.ShadowDepth="Depth4">
             <DockPanel>
                 <materialDesign:PackIcon Kind="Numeric1Box" Margin="-10 0 5 0" Height="25" Width="25"/>
-                <TextBlock Margin="0 4 0 0">Tải ứng dụng RoraGame</TextBlock>
+                <TextBlock Margin="0 5 0 0">Tải ứng dụng RoraGame</TextBlock>
             </DockPanel>
         </Button>
         <Button VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 70 20 0" Background="CornflowerBlue" BorderBrush="CornflowerBlue" Click="Websiteroragame_Click" materialDesign:ShadowAssist.ShadowDepth="Depth4">
             <DockPanel>
                 <materialDesign:PackIcon Kind="Numeric2Box" Margin="-10 0 5 0" Height="25" Width="25"/>
-                <TextBlock Margin="0 4 0 0">Tạo tài khoản</TextBlock>
+                <TextBlock Margin="0 5 0 0">Tạo tài khoản</TextBlock>
             </DockPanel>
         </Button>
         <Button VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 120 20 0" Background="IndianRed" BorderBrush="IndianRed" Click="Websiteroragame_Click" materialDesign:ShadowAssist.ShadowDepth="Depth4">
             <DockPanel>
                 <materialDesign:PackIcon Kind="Numeric3Box" Margin="-10 0 5 0" Height="25" Width="25"/>
-                <TextBlock Margin="0 4 0 0">Nạp tiền vào tài khoản</TextBlock>
+                <TextBlock Margin="0 5 0 0">Nạp tiền vào tài khoản</TextBlock>
             </DockPanel>
         </Button>
         <Button VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 170 20 0" Background="Indigo" BorderBrush="Indigo" Click="Websiteroragame_Click" materialDesign:ShadowAssist.ShadowDepth="Depth4">
             <DockPanel>
                 <materialDesign:PackIcon Kind="Numeric4Box" Margin="-10 0 5 0" Height="25" Width="25"/>
-                <TextBlock Margin="0 4 0 0"> Tìm games muốn thuê và chơi</TextBlock>
+                <TextBlock Margin="0 5 0 0"> Tìm games muốn thuê và chơi</TextBlock>
             </DockPanel>
         </Button>
         <materialDesign:PopupBox Style="{StaticResource MaterialDesignMultiFloatingActionPopupBox}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 20 20" PlacementMode="TopAndAlignCentres" ToggleCheckedContentCommandParameter="wowsers" >

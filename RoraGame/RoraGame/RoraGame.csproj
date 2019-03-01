@@ -257,5 +257,8 @@
   <ItemGroup>
     <Resource Include="Resources\Logo Epic.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\billboard_IAB_kaladesh.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -51,3 +51,4 @@ E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\Newtonsoft.Json.xml
 E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\System.Net.Http.Formatting.dll
 E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\System.Net.Http.Formatting.xml
 E:\Projects\RoraGame\RoraGame\RoraGame\bin\Debug\KAutoHelper.dll
+E:\Projects\RoraGame\RoraGame\RoraGame\obj\Debug\RoraGame.csprojAssemblyReference.cache
