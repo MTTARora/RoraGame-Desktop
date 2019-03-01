@@ -69,6 +69,7 @@ namespace RoraGame
         //    });
         //}
         #endregion Minimize to tray system
+
         #region Left Side Menu
         int i = 0;
         UserControl usc = null;
@@ -90,17 +91,13 @@ namespace RoraGame
                     GridMain.Children.Add(usc);
                     break;
                 case "ItemGameList":
+                    ScrollViewer.SetVerticalScrollBarVisibility(ScrollViewMain, ScrollBarVisibility.Disabled);
                     if (i<1)
                     {
                         uscc = new UserControlGameList();
-                        GridMain.Children.Add(uscc);
                         i++;                        
                     }
-                    else
-                    {
-                        GridMain.Children.Add(uscc);
-                        ScrollViewer.SetVerticalScrollBarVisibility(ScrollViewMain, ScrollBarVisibility.Disabled);
-                    }
+                    GridMain.Children.Add(uscc);
                     break;
                 case "ItemGuide":
                     usc = new UserControlGuide();

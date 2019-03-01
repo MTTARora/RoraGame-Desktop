@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KAutoHelper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,6 +37,11 @@ namespace RoraGame
         private void Websiteroragame_Click(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start("http://www.google.com.vn");
+        }
+
+        private void Facebookroragame_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.fb.com");
         }
     }
 

@@ -46,7 +46,7 @@
                 <TextBlock Margin="0 5 0 0">Website RoraGame</TextBlock>
             </DockPanel>
             </Button>
-        <Button VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25 60 0 0" Width="187" Background="#3b5998" BorderBrush="#3b5998" Click="Websiteroragame_Click" materialDesign:ShadowAssist.ShadowDepth="Depth4">
+        <Button VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25 60 0 0" Width="187" Background="#3b5998" BorderBrush="#3b5998" Click="Facebookroragame_Click" materialDesign:ShadowAssist.ShadowDepth="Depth4">
             <DockPanel>
                 <materialDesign:PackIcon Kind="Facebook" Margin="-5 0 5 0" Height="25" Width="25"/>
                 <TextBlock Margin="0 5 0 0">Facebook RoraGame</TextBlock>

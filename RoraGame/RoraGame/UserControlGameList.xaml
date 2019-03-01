@@ -74,7 +74,7 @@
             </ListView>
         </Grid>-->
         <Grid Grid.Row="3">
-            <DataGrid Margin="0 8 0 0" x:Name="LsGames" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True"
+            <DataGrid x:Name="LsGames" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True"
                           materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="8">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Id}" Header="#"/>

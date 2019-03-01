@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using GameListViewModel;
+using KAutoHelper;
 
 namespace RoraGame
 {
@@ -144,7 +145,10 @@ namespace RoraGame
                     p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                     p.Start();
                     string error = p.StandardError.ReadToEnd();
+                    //string errors = error + "Xem tại mục hướng dẫn để khắc phục lỗi này.";
+
                     p.WaitForExit();
+
                     if (error == "")
                     {
                         //Hiện Dock Đang thuê game
@@ -157,7 +161,8 @@ namespace RoraGame
                     }
                     else
                     {
-                        MessageBox.Show(error);
+                        
+                        //MessageBox.Show(errors, "Lỗi khởi động Steam");
                     }
                     break;
                 #endregion
@@ -168,7 +173,7 @@ namespace RoraGame
 
                 //Login Uplay
                 case "Uplay":
-                //C: \Users\Sky\AppData\Local\Ubisoft Game Launcher
+                // C:\Users\Sky\AppData\Local\Ubisoft Game Launcher
                     break;
 
                 //Login Battle
@@ -182,10 +187,10 @@ namespace RoraGame
         }
         #endregion
 
-        #region Bước 3: Dừng thuê game
+            #region Bước 3: Dừng thuê game
 
-        //Button Dừng thuê game
-        private void DungThueGame_Click(object sender, RoutedEventArgs e)
+            //Button Dừng thuê game
+            private void DungThueGame_Click(object sender, RoutedEventArgs e)
         {
             //Kill Platform
             foreach (System.Diagnostics.Process killPlatform in System.Diagnostics.Process.GetProcesses())

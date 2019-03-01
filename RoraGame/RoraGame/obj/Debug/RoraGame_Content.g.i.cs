@@ -8,10 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("notifyiconwpf/bin/debug/hardcodet.wpf.taskbarnotification.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("notifyiconwpf/bin/debug/hardcodet.wpf.taskbarnotification.pdb")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("notifyiconwpf/notifyiconwpf.csproj")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("notifyiconwpf/obj/debug/hardcodet.wpf.taskbarnotification.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("notifyiconwpf/obj/debug/hardcodet.wpf.taskbarnotification.pdb")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("kautohelper.dll")]
 
 
