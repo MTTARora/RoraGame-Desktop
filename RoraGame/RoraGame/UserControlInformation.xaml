@@ -74,15 +74,15 @@
         </Grid>
         <materialDesign:PopupBox Style="{StaticResource MaterialDesignMultiFloatingActionPopupBox}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 20 20" PlacementMode="TopAndAlignCentres" ToggleCheckedContentCommandParameter="wowsers">
                 <materialDesign:PopupBox.ToggleCheckedContent>
-                    <materialDesign:PackIcon Kind="Pencil" Width="24" Height="24" />
+                <materialDesign:PackIcon Kind="Adjust" Width="24" Height="24" />
                 </materialDesign:PopupBox.ToggleCheckedContent>
                 <StackPanel>
-                <Button ToolTipService.Placement="Left" ToolTip="Nhắn Messenger" Margin="0,0,0,10" Background="#FF0084FF" BorderBrush="#FF0084FF" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
-                        <materialDesign:PackIcon Kind="FacebookMessenger" Height="24" Width="24" />
-                    </Button>
-                <Button  ToolTipService.Placement="Left" ToolTip="Facebook Fanpage" Margin="0,0,0,10" Background="#3b5998" BorderBrush="#3b5998" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
-                        <materialDesign:PackIcon Kind="Facebook" Height="24" Width="24" />
-                    </Button>
+                <Button ToolTipService.Placement="Left" ToolTip="Nhắn Messenger" Margin="0,0,0,10" Background="#FF0084FF" BorderBrush="#FF0084FF" Click="Websiteroragame_Click" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
+                    <materialDesign:PackIcon Kind="FacebookMessenger" Height="24" Width="24" />
+                </Button>
+                <Button ToolTipService.Placement="Left" ToolTip="Facebook Fanpage" Margin="0,0,0,10" Background="#3b5998" BorderBrush="#3b5998" Click="Facebookroragame_Click"  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
+                    <materialDesign:PackIcon Kind="Facebook" Height="24" Width="24" />
+                </Button>
                 <Button ToolTipService.Placement="Left" ToolTip="Website RoraGame" Margin="0,0,0,10" Background="DarkOliveGreen" BorderBrush="DarkOliveGreen" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
                         <materialDesign:PackIcon Kind="Web" Height="24" Width="24" />
                     </Button>

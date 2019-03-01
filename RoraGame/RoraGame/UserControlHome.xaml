@@ -24,8 +24,7 @@
                         </ListView.View>
                     </ListView>
                 </StackPanel>
-                <materialDesign:Card Margin="0 20 30 0" Width="440" Height="254" materialDesign:ShadowAssist.ShadowDepth="Depth1">
-                    <StackPanel>
+                    <!--<StackPanel>
                         <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0">
                                     Các bước để thuê games tại RoraGame
                         </TextBlock>
@@ -35,11 +34,10 @@
                             <Button>3. Nạp tiền vào tài khoản</Button>
                             <Button>4. Tìm games muốn thuê và chơi</Button>
                         </ListView>
-                    </StackPanel>
-                </materialDesign:Card>
+                    </StackPanel>-->
             </WrapPanel>
         </StackPanel>
-        <Button VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25 15 0 0" Width="187" Background="DarkOliveGreen" BorderBrush="DarkOliveGreen" Click="Websiteroragame_Click" materialDesign:ShadowAssist.ShadowDepth="Depth4">
+        <!--<Button VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25 15 0 0" Width="187" Background="DarkOliveGreen" BorderBrush="DarkOliveGreen" Click="Websiteroragame_Click" materialDesign:ShadowAssist.ShadowDepth="Depth4">
             <DockPanel>
                 <materialDesign:PackIcon Kind="Web" Margin="-15 0 5 0" Height="25" Width="25"/>
                 <TextBlock Margin="0 5 0 0">Website RoraGame</TextBlock>
@@ -56,16 +54,40 @@
                 <materialDesign:PackIcon Kind="FacebookMessenger" Margin="-22 0 5 0" Height="25" Width="25"/>
                 <TextBlock Margin="3 5 0 0">Nhắn Messenger</TextBlock>
             </DockPanel>
+        </Button>-->
+        <Button VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 20 20 0" Background="DarkOliveGreen" BorderBrush="DarkOliveGreen" Click="Websiteroragame_Click" materialDesign:ShadowAssist.ShadowDepth="Depth4">
+            <DockPanel>
+                <materialDesign:PackIcon Kind="Numeric1Box" Margin="-10 0 5 0" Height="25" Width="25"/>
+                <TextBlock Margin="0 4 0 0">Tải ứng dụng RoraGame</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 70 20 0" Background="CornflowerBlue" BorderBrush="CornflowerBlue" Click="Websiteroragame_Click" materialDesign:ShadowAssist.ShadowDepth="Depth4">
+            <DockPanel>
+                <materialDesign:PackIcon Kind="Numeric2Box" Margin="-10 0 5 0" Height="25" Width="25"/>
+                <TextBlock Margin="0 4 0 0">Tạo tài khoản</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 120 20 0" Background="IndianRed" BorderBrush="IndianRed" Click="Websiteroragame_Click" materialDesign:ShadowAssist.ShadowDepth="Depth4">
+            <DockPanel>
+                <materialDesign:PackIcon Kind="Numeric3Box" Margin="-10 0 5 0" Height="25" Width="25"/>
+                <TextBlock Margin="0 4 0 0">Nạp tiền vào tài khoản</TextBlock>
+            </DockPanel>
+        </Button>
+        <Button VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 170 20 0" Background="Indigo" BorderBrush="Indigo" Click="Websiteroragame_Click" materialDesign:ShadowAssist.ShadowDepth="Depth4">
+            <DockPanel>
+                <materialDesign:PackIcon Kind="Numeric4Box" Margin="-10 0 5 0" Height="25" Width="25"/>
+                <TextBlock Margin="0 4 0 0"> Tìm games muốn thuê và chơi</TextBlock>
+            </DockPanel>
         </Button>
         <materialDesign:PopupBox Style="{StaticResource MaterialDesignMultiFloatingActionPopupBox}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 20 20" PlacementMode="TopAndAlignCentres" ToggleCheckedContentCommandParameter="wowsers" >
             <materialDesign:PopupBox.ToggleCheckedContent>
-                <materialDesign:PackIcon Kind="Pencil" Width="24" Height="24" />
+                <materialDesign:PackIcon Kind="Adjust" Width="24" Height="24" />
             </materialDesign:PopupBox.ToggleCheckedContent>
             <StackPanel>
-                <Button ToolTipService.Placement="Left" ToolTip="Nhắn Messenger" Margin="0,0,0,10" Background="#FF0084FF" BorderBrush="#FF0084FF" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
+                <Button ToolTipService.Placement="Left" ToolTip="Nhắn Messenger" Margin="0,0,0,10" Background="#FF0084FF" BorderBrush="#FF0084FF" Click="Websiteroragame_Click" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
                     <materialDesign:PackIcon Kind="FacebookMessenger" Height="24" Width="24" />
                 </Button>
-                <Button ToolTipService.Placement="Left" ToolTip="Facebook Fanpage" Margin="0,0,0,10" Background="#3b5998" BorderBrush="#3b5998" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
+                <Button ToolTipService.Placement="Left" ToolTip="Facebook Fanpage" Margin="0,0,0,10" Background="#3b5998" BorderBrush="#3b5998" Click="Facebookroragame_Click"  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
                     <materialDesign:PackIcon Kind="Facebook" Height="24" Width="24" />
                 </Button>
                 <Button ToolTipService.Placement="Left" ToolTip="Website RoraGame" Margin="0,0,0,10" Background="DarkOliveGreen" BorderBrush="DarkOliveGreen" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">

@@ -145,10 +145,8 @@ namespace RoraGame
                     p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                     p.Start();
                     string error = p.StandardError.ReadToEnd();
-                    //string errors = error + "Xem tại mục hướng dẫn để khắc phục lỗi này.";
-
+                    string errors = error + "Xem tại mục hướng dẫn để khắc phục lỗi này.";
                     p.WaitForExit();
-
                     if (error == "")
                     {
                         //Hiện Dock Đang thuê game
@@ -161,8 +159,7 @@ namespace RoraGame
                     }
                     else
                     {
-                        
-                        //MessageBox.Show(errors, "Lỗi khởi động Steam");
+                        MessageBox.Show(errors);
                     }
                     break;
                 #endregion

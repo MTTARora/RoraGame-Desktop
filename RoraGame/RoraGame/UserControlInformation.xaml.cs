@@ -24,5 +24,15 @@ namespace RoraGame
         {
             InitializeComponent();
         }
+
+        private void Websiteroragame_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.google.com.vn");
+        }
+
+        private void Facebookroragame_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.fb.com");
+        }
     }
 }
