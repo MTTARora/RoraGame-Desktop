@@ -30,6 +30,10 @@ namespace RoraGame
             using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
             {
                 System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+                if (dialog.SelectedPath != "")
+                {
+                    SteamFolder.Text = dialog.SelectedPath;
+                }
             }
         }
 
@@ -38,6 +42,10 @@ namespace RoraGame
             using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
             {
                 System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+                if (dialog.SelectedPath != "")
+                {
+                    BattleFolder.Text = dialog.SelectedPath;
+                }
             }
         }
 
@@ -46,6 +54,10 @@ namespace RoraGame
             using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
             {
                 System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+                if (dialog.SelectedPath != "")
+                {
+                    UplayFolder.Text = dialog.SelectedPath;
+                }
             }
         }
 
@@ -54,6 +66,10 @@ namespace RoraGame
             using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
             {
                 System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+                if (dialog.SelectedPath != "")
+                {
+                    OriginFolder.Text = dialog.SelectedPath;
+                }
             }
         }
 
@@ -62,6 +78,10 @@ namespace RoraGame
             using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
             {
                 System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+                if (dialog.SelectedPath != "")
+                {
+                    EpicFolder.Text = dialog.SelectedPath;
+                }
             }
         }
 
@@ -93,6 +113,10 @@ namespace RoraGame
         {
             string defaul = @"C:\Program Files (x86)\Epic Games";
             EpicFolder.Text = defaul;
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
         }
     }
 }
