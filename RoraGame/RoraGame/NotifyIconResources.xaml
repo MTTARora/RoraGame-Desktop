@@ -23,7 +23,7 @@
     <tb:TaskbarIcon x:Key="NotifyIcon"
                     IconSource="/Resources/Red.ico"
                     ToolTipText="RoraGame"
-                    ToolTipService.Placement="Right"
+                    ToolTipService.Placement="MousePoint"
                     LeftClickCommand="{Binding ShowWindowCommand}"
                     DoubleClickCommand="{Binding ShowWindowCommand}"
                     ContextMenu="{StaticResource SysTrayMenu}">
