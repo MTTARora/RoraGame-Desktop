@@ -8,22 +8,22 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
     <Grid HorizontalAlignment="Center">
         <StackPanel>
-            <Image x:Name="Banner1" VerticalAlignment="Top" Source="E:\Projects\RoraGame\RoraGame\RoraGame\Resources\splashBanner_magic.jpg"></Image>
+            <Image x:Name="Banner1" VerticalAlignment="Top" Source="/Resources/splashBanner_magic.jpg"></Image>
             <WrapPanel>
-                    <StackPanel HorizontalAlignment="Left" Width="440">
-                        <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,0,0">
+                <StackPanel HorizontalAlignment="Left" Width="440">
+                    <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,0,0">
                 Game mới cập nhật
-                        </TextBlock>
-                        <ListView Name ="GameNew" Margin="10,0,15,0">
-                            <ListView.View>
-                                <GridView>
-                                    <GridViewColumn DisplayMemberBinding="{Binding Dates}" Header="Ngày" />
-                                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Tên" />
-                                    <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Thông tin" />
-                                </GridView>
-                            </ListView.View>
-                        </ListView>
-                    </StackPanel>
+                    </TextBlock>
+                    <ListView Name ="GameNew" Margin="10,0,15,0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding Dates}" Header="Ngày" />
+                                <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Tên" />
+                                <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Thông tin" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
                 <materialDesign:Card Margin="0 20 30 0" Width="440" Height="254" materialDesign:ShadowAssist.ShadowDepth="Depth1">
                     <StackPanel>
                         <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0">
@@ -37,7 +37,6 @@
                         </ListView>
                     </StackPanel>
                 </materialDesign:Card>
-
             </WrapPanel>
         </StackPanel>
         <Button VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25 15 0 0" Width="187" Background="DarkOliveGreen" BorderBrush="DarkOliveGreen" Click="Websiteroragame_Click" materialDesign:ShadowAssist.ShadowDepth="Depth4">
@@ -45,12 +44,34 @@
                 <materialDesign:PackIcon Kind="Web" Margin="-15 0 5 0" Height="25" Width="25"/>
                 <TextBlock Margin="0 5 0 0">Website RoraGame</TextBlock>
             </DockPanel>
-            </Button>
+        </Button>
         <Button VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25 60 0 0" Width="187" Background="#3b5998" BorderBrush="#3b5998" Click="Facebookroragame_Click" materialDesign:ShadowAssist.ShadowDepth="Depth4">
             <DockPanel>
                 <materialDesign:PackIcon Kind="Facebook" Margin="-5 0 5 0" Height="25" Width="25"/>
                 <TextBlock Margin="0 5 0 0">Facebook RoraGame</TextBlock>
             </DockPanel>
         </Button>
+        <Button VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25 105 0 0" Width="187" Background="#FF0084FF" BorderBrush="#FF0084FF" Click="Facebookroragame_Click" materialDesign:ShadowAssist.ShadowDepth="Depth4">
+            <DockPanel>
+                <materialDesign:PackIcon Kind="FacebookMessenger" Margin="-22 0 5 0" Height="25" Width="25"/>
+                <TextBlock Margin="3 5 0 0">Nhắn Messenger</TextBlock>
+            </DockPanel>
+        </Button>
+        <materialDesign:PopupBox Style="{StaticResource MaterialDesignMultiFloatingActionPopupBox}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 20 20" PlacementMode="TopAndAlignCentres" ToggleCheckedContentCommandParameter="wowsers" ToolTip="PopupBox, Style MaterialDesignMultiFloatingActionPopupBox">
+            <materialDesign:PopupBox.ToggleCheckedContent>
+                <materialDesign:PackIcon Kind="Pencil" Width="24" Height="24" />
+            </materialDesign:PopupBox.ToggleCheckedContent>
+            <StackPanel>
+                <Button ToolTip="Nhắn Messenger" Margin="0,0,0,10" Background="#FF0084FF" BorderBrush="#FF0084FF" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
+                    <materialDesign:PackIcon Kind="FacebookMessenger" Height="24" Width="24" />
+                </Button>
+                <Button  ToolTip="Facebook Fanpage" Margin="0,0,0,10" Background="#3b5998" BorderBrush="#3b5998" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
+                    <materialDesign:PackIcon Kind="Facebook" Height="24" Width="24" />
+                </Button>
+                <Button ToolTip="Website RoraGame" Margin="0,0,0,10" Background="DarkOliveGreen" BorderBrush="DarkOliveGreen" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
+                    <materialDesign:PackIcon Kind="Web" Height="24" Width="24" />
+                </Button>
+            </StackPanel>
+        </materialDesign:PopupBox>
     </Grid>
 </UserControl>

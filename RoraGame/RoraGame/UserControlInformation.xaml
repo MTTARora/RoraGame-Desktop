@@ -5,14 +5,88 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RoraGame"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 20 10">
-        <TextBlock
-    Style="{StaticResource MaterialDesignCaptionTextBlock}" TextAlignment="Right">
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <Grid>
+        <Grid Margin="0 10 0 0">
+        <StackPanel>
+            <Expander
+      HorizontalAlignment="Stretch"
+      Header="PRIVACY POLICY">
+                <StackPanel
+        Orientation="Vertical"
+        TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
+        Margin="24,8,24,16">
+                    <TextBlock
+          Text="Your Content" />
+                    <TextBlock
+          Opacity=".68"
+          Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          TextWrapping="Wrap" />
+                </StackPanel>
+            </Expander>
+            <Border
+      Background="{DynamicResource MaterialDesignDivider}"
+      Height="1"
+      HorizontalAlignment="Stretch"
+      SnapsToDevicePixels="True" />
+            <Expander
+      HorizontalAlignment="Stretch"
+      Header="TERMS">
+                <StackPanel
+        Orientation="Vertical"
+        TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
+        Margin="24,8,24,16">
+                    <TextBlock
+          Text="Your Content" />
+                    <TextBlock
+          Opacity=".68"
+          Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          TextWrapping="Wrap" />
+                </StackPanel>
+            </Expander>
+            <Border
+      Background="{DynamicResource MaterialDesignDivider}"
+      Height="1"
+      HorizontalAlignment="Stretch"
+      SnapsToDevicePixels="True" />
+            <Expander
+      HorizontalAlignment="Stretch"
+      Header="Expander Example 2c">
+                <StackPanel
+        Orientation="Vertical"
+        TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
+        Margin="24,8,24,16">
+                    <TextBlock
+          Text="Your Content" />
+                    <TextBlock
+          Opacity=".68"
+          Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          TextWrapping="Wrap" />
+                </StackPanel>
+            </Expander>
+        </StackPanel>
+    </Grid>
+        <Grid HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 100 30">
+            <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" TextAlignment="Right">
             <Hyperlink>www.roragame.com</Hyperlink>
-            <LineBreak />
-  Copyright @ Rorasoft 
-            Version 0.1
-        </TextBlock>
+            <LineBreak /> Copyright @ Rorasoft  Version 0.1
+            </TextBlock>
+        </Grid>
+        <materialDesign:PopupBox Style="{StaticResource MaterialDesignMultiFloatingActionPopupBox}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 20 20" PlacementMode="TopAndAlignCentres" ToggleCheckedContentCommandParameter="wowsers" ToolTip="PopupBox, Style MaterialDesignMultiFloatingActionPopupBox">
+                <materialDesign:PopupBox.ToggleCheckedContent>
+                    <materialDesign:PackIcon Kind="Pencil" Width="24" Height="24" />
+                </materialDesign:PopupBox.ToggleCheckedContent>
+                <StackPanel>
+                    <Button ToolTip="Nhắn Messenger" Margin="0,0,0,10" Background="#FF0084FF" BorderBrush="#FF0084FF" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
+                        <materialDesign:PackIcon Kind="FacebookMessenger" Height="24" Width="24" />
+                    </Button>
+                    <Button  ToolTip="Facebook Fanpage" Margin="0,0,0,10" Background="#3b5998" BorderBrush="#3b5998" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
+                        <materialDesign:PackIcon Kind="Facebook" Height="24" Width="24" />
+                    </Button>
+                    <Button ToolTip="Website RoraGame" Margin="0,0,0,10" Background="DarkOliveGreen" BorderBrush="DarkOliveGreen" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
+                        <materialDesign:PackIcon Kind="Web" Height="24" Width="24" />
+                    </Button>
+                </StackPanel>
+            </materialDesign:PopupBox>
     </Grid>
 </UserControl>

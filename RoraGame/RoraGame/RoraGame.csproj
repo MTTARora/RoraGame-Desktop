@@ -234,7 +234,7 @@
     <Resource Include="Resources\162615_122970534438718_3176443_n.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Red.ico" />
+    <Resource Include="Resources\Red.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\banner_CC_Windows.jpg" />
