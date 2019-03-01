@@ -74,11 +74,14 @@
         </Grid>
         <materialDesign:PopupBox Style="{StaticResource MaterialDesignMultiFloatingActionPopupBox}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 20 20" PlacementMode="TopAndAlignCentres" ToggleCheckedContentCommandParameter="wowsers">
                 <materialDesign:PopupBox.ToggleCheckedContent>
-                <materialDesign:PackIcon Kind="Adjust" Width="24" Height="24" />
+                <materialDesign:PackIcon Kind="CircleOutline" Width="24" Height="24" />
                 </materialDesign:PopupBox.ToggleCheckedContent>
                 <StackPanel>
-                <Button ToolTipService.Placement="Left" ToolTip="Nhắn Messenger" Margin="0,0,0,10" Background="#FF0084FF" BorderBrush="#FF0084FF" Click="Websiteroragame_Click" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
+                <Button ToolTipService.Placement="Left" ToolTip="Hỗ trợ - Messenger" Margin="0,0,0,10" Background="#FF0084FF" BorderBrush="#FF0084FF" Click="Websiteroragame_Click" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
                     <materialDesign:PackIcon Kind="FacebookMessenger" Height="24" Width="24" />
+                </Button>
+                <Button ToolTipService.Placement="Left" ToolTip="Hỗ trợ - Zalo" Margin="0,0,0,10" Background="#FF0EA8E1" BorderBrush="#FF0EA8E1" Click="Websiteroragame_Click" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
+                    <Image Source="/Resources/Zalo.png" Height="37" Width="37" />
                 </Button>
                 <Button ToolTipService.Placement="Left" ToolTip="Facebook Fanpage" Margin="0,0,0,10" Background="#3b5998" BorderBrush="#3b5998" Click="Facebookroragame_Click"  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
                     <materialDesign:PackIcon Kind="Facebook" Height="24" Width="24" />

@@ -17,11 +17,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
       >
     <Grid Margin="0 30 0 0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-        </Grid.RowDefinitions>
-        <WrapPanel Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10">
+        <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">
             <materialDesign:Card Margin="0 20 20 0" MinWidth="350" Height="auto" materialDesign:ShadowAssist.ShadowDepth="Depth1" >
                 <Grid Margin="15 0 15 0">
                     <Grid.ColumnDefinitions>
@@ -55,9 +51,7 @@
                     <Button Width="120" Margin="0 19 0 19" Style="{StaticResource MaterialDesignRaisedDarkButton}">Thay đổi</Button>
                 </StackPanel>
             </materialDesign:Card>
-        </WrapPanel>
-        <WrapPanel Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10">
-            <materialDesign:Card Margin="0 0 20 0" MinWidth="350" Height="auto" materialDesign:ShadowAssist.ShadowDepth="Depth1" >
+            <materialDesign:Card Margin="0 20 20 0" MinWidth="350" Height="auto" materialDesign:ShadowAssist.ShadowDepth="Depth1" >
                 <StackPanel Margin="15 0 15 0">
                     <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0">Thông tin ví tiền</TextBlock>
                     <TextBlock Margin="0 10 0 8" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}" FontWeight="Bold" Foreground="#FFC70606">999.999.999 vnđ</TextBlock>
@@ -88,7 +82,7 @@
                     <Button Width="120" Margin="0 19 0 15" Style="{StaticResource MaterialDesignRaisedDarkButton}">Nhập Code</Button>
                 </StackPanel>
             </materialDesign:Card>
-            <materialDesign:Card Margin="0 0 20 0" Width="350" Height="auto" materialDesign:ShadowAssist.ShadowDepth="Depth1" >
+            <materialDesign:Card Margin="0 20 20 0" Width="350" Height="auto" materialDesign:ShadowAssist.ShadowDepth="Depth1" >
                 <StackPanel Margin="15 0 15 0">
                     <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0">Nạp tiền</TextBlock>
                     <TextBox Margin="0 3 0 0" materialDesign:HintAssist.Hint="Mã thẻ" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
