@@ -159,7 +159,7 @@ namespace RoraGame
                     }
                     else
                     {
-                        MessageBox.Show(errors);
+                        MessageBox.Show(errors, "Lỗi");
                     }
                     break;
                 #endregion

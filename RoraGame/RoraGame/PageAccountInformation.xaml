@@ -79,7 +79,7 @@
                             <ComboBoxItem>14</ComboBoxItem>
                             <ComboBoxItem>15</ComboBoxItem>
                         </ComboBox>
-                        <Button Width="150" Margin="15 10 20 4" Style="{StaticResource MaterialDesignRaisedDarkButton}">Mua gói tháng</Button>
+                        <Button Width="150" Margin="20 10 20 4" Style="{StaticResource MaterialDesignRaisedDarkButton}">Mua gói tháng</Button>
                         <Button BorderBrush="Azure" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Thông tin gói tháng" VerticalAlignment="Bottom">
                             <materialDesign:PackIcon Kind="QuestionMarkCircle" Height="20" Width="20" />
                         </Button>

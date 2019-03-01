@@ -28,7 +28,7 @@
                 <Image x:Name="Banner2" VerticalAlignment="Top" Source="/Resources/billboard_IAB_kaladesh.jpg"></Image>
             </Grid>
             <WrapPanel>
-                <StackPanel HorizontalAlignment="Left" Width="440">
+                <StackPanel HorizontalAlignment="Left" Width="auto">
                     <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,0,0">
                 Game mới cập nhật
                     </TextBlock>
@@ -37,6 +37,7 @@
                             <GridView>
                                 <GridViewColumn DisplayMemberBinding="{Binding Dates}" Header="Ngày" />
                                 <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Tên" />
+                                <GridViewColumn DisplayMemberBinding="{Binding RequiredLvl}" Header="Tên" />
                                 <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Thông tin" />
                             </GridView>
                         </ListView.View>
@@ -94,7 +95,7 @@
         <Button VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 170 20 0" Background="Indigo" BorderBrush="Indigo" Click="Websiteroragame_Click" materialDesign:ShadowAssist.ShadowDepth="Depth4">
             <DockPanel>
                 <materialDesign:PackIcon Kind="Numeric4Box" Margin="-10 0 5 0" Height="25" Width="25"/>
-                <TextBlock Margin="0 5 0 0"> Tìm games muốn thuê và chơi</TextBlock>
+                <TextBlock Margin="0 5 0 0"> Tìm game muốn thuê và chơi</TextBlock>
             </DockPanel>
         </Button>
         <materialDesign:PopupBox Style="{StaticResource MaterialDesignMultiFloatingActionPopupBox}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 20 20" PlacementMode="TopAndAlignCentres" ToggleCheckedContentCommandParameter="wowsers" >

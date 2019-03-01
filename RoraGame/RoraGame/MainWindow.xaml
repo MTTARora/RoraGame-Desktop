@@ -98,7 +98,7 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </Grid.RenderTransform>
-                <Image Height="60" VerticalAlignment="Top" Source="E:\Projects\RoraGame\RoraGame\RoraGame\Resources\162615_122970534438718_3176443_n.jpg" Margin="0,0,0,5" RenderTransformOrigin="0.581,0.5"/>
+                <Image Height="60" VerticalAlignment="Top" Source="/Resources/162615_122970534438718_3176443_n.jpg" Margin="0,0,0,5" RenderTransformOrigin="0.581,0.5"/>
                 </Grid>
                 <ListView x:Name="ListViewMenu" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged" Foreground="#DDFFFFFF">
                     <ListViewItem x:Name="ItemHome" Height="60">

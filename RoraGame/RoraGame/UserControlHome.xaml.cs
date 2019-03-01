@@ -26,11 +26,13 @@ namespace RoraGame
             InitializeComponent();
 
             List<Games> items = new List<Games>();
-            items.Add(new Games() { Dates = "29/12/1999", Name = "Assassin's Creed", Description = "https://www.assassinscreed.com" });
-            items.Add(new Games() { Dates = "29/12/1999", Name = "Call Of Duty", Description = "https://www.assassinscreed.com" });
-            items.Add(new Games() { Dates = "29/12/1999", Name = "Fornite", Description = "https://www.assassinscreed.com" });
-            items.Add(new Games() { Dates = "29/12/1999", Name = "Battlefield", Description = "qweqwádfádf ăè ăè adfăè ăe ăè " });
-
+            items.Add(new Games() { Dates = "29/12/1999", Name = "Assassin's Creed", RequiredLvl = "Level 6", Description = "https://www.assassinscreed.com" });
+            items.Add(new Games() { Dates = "29/12/1999", Name = "Call Of Duty", RequiredLvl = "Level 6", Description = "https://www.assassinscreed.com" });
+            items.Add(new Games() { Dates = "29/12/1999", Name = "Fornite", RequiredLvl = "Level 6", Description = "https://www.assassinscreed.com" });
+            items.Add(new Games() { Dates = "29/12/1999", Name = "Battlefield", RequiredLvl = "Level 6", Description = "qweqwádfádf ăè ăè adfăè ăe ăè " });
+            items.Add(new Games() { Dates = "29/12/1999", Name = "Battlefield", RequiredLvl = "Level 6", Description = "qweqwádfádf ăè ăè adfăè ăe ăè " });
+            items.Add(new Games() { Dates = "29/12/1999", Name = "Battlefield", RequiredLvl = "Level 6", Description = "qweqwádfádf ăè ăè adfăè ăe ăè " });
+            
             GameNew.ItemsSource = items;
         }
 
@@ -49,6 +51,8 @@ namespace RoraGame
     {
         public string Dates { get; internal set; }
         public string Name { get; internal set; }
+        public string RequiredLvl { get; internal set; }
         public string Description { get; internal set; }
+
     }
 }
