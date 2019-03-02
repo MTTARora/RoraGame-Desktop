@@ -90,43 +90,45 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="GameListViewModel.cs" />
-    <Compile Include="ThueGameViewModel.cs" />
+    <Compile Include="ViewModels\GameListViewModel.cs" />
+    <Compile Include="Models\Game.cs" />
+    <Compile Include="ViewModels\ThueGameViewModel.cs" />
     <Compile Include="NotifyIconViewModel.cs" />
-    <Compile Include="PageAccountInformation.xaml.cs">
+    <Compile Include="Views\Pages\PageAccountInformation.xaml.cs">
       <DependentUpon>PageAccountInformation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageLogIn.xaml.cs">
+    <Compile Include="Views\Pages\PageLogIn.xaml.cs">
       <DependentUpon>PageLogIn.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageLostPassword.xaml.cs">
+    <Compile Include="Views\Pages\PageLostPassword.xaml.cs">
       <DependentUpon>PageLostPassword.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PagePhoneVerify.xaml.cs">
+    <Compile Include="Views\Pages\PagePhoneVerify.xaml.cs">
       <DependentUpon>PagePhoneVerify.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageSignUp.xaml.cs">
+    <Compile Include="Views\Pages\PageSignUp.xaml.cs">
       <DependentUpon>PageSignUp.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlAccount.xaml.cs">
+    <Compile Include="Views\UserControls\GameList\GameListUCViewModel.cs" />
+    <Compile Include="Views\UserControls\UserControlAccount.xaml.cs">
       <DependentUpon>UserControlAccount.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlGameList.xaml.cs">
+    <Compile Include="Views\UserControls\UserControlGameList.xaml.cs">
       <DependentUpon>UserControlGameList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlGuide.xaml.cs">
+    <Compile Include="Views\UserControls\UserControlGuide.xaml.cs">
       <DependentUpon>UserControlGuide.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlHome.xaml.cs">
+    <Compile Include="Views\UserControls\UserControlHome.xaml.cs">
       <DependentUpon>UserControlHome.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlInformation.xaml.cs">
+    <Compile Include="Views\UserControls\UserControlInformation.xaml.cs">
       <DependentUpon>UserControlInformation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlSettingApp.xaml.cs">
+    <Compile Include="Views\UserControls\UserControlSettingApp.xaml.cs">
       <DependentUpon>UserControlSettingApp.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WpfSingleInstance.cs" />
+    <Compile Include="Ulti\WpfSingleInstance.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -143,47 +145,47 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PageAccountInformation.xaml">
+    <Page Include="Views\Pages\PageAccountInformation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PageLogIn.xaml">
+    <Page Include="Views\Pages\PageLogIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PageLostPassword.xaml">
+    <Page Include="Views\Pages\PageLostPassword.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PagePhoneVerify.xaml">
+    <Page Include="Views\Pages\PagePhoneVerify.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PageSignUp.xaml">
+    <Page Include="Views\Pages\PageSignUp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlAccount.xaml">
+    <Page Include="Views\UserControls\UserControlAccount.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlGameList.xaml">
+    <Page Include="Views\UserControls\UserControlGameList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlGuide.xaml">
+    <Page Include="Views\UserControls\UserControlGuide.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlHome.xaml">
+    <Page Include="Views\UserControls\UserControlHome.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UserControlInformation.xaml">
+    <Page Include="Views\UserControls\UserControlInformation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlSettingApp.xaml">
+    <Page Include="Views\UserControls\UserControlSettingApp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -220,6 +222,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\Current\" />
+    <Folder Include="Network\" />
+    <Folder Include="Views\Windows\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\NotifyIcon.ico" />
