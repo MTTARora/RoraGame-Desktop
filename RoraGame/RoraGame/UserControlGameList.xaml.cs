@@ -190,9 +190,9 @@ namespace RoraGame
             private void DungThueGame_Click(object sender, RoutedEventArgs e)
         {
             //Kill Platform
-            string PlatformExe = "stream.exe";
+            string PlatformExe = "steam.exe";
             string KillPlatform;
-            KillPlatform = "/c taskkill /F /IM" + PlatformExe;
+            KillPlatform = "/c taskkill /F /IM " + PlatformExe;
             Process p = new Process();
             p.StartInfo.FileName = "CMD.exe";
             p.StartInfo.Arguments = KillPlatform;
@@ -205,7 +205,7 @@ namespace RoraGame
             //Kill Game Extention
             string KillGameExe = "csgo.exe";
             string KillGame;
-            KillGame = "/c taskkill /F /IM" + KillGameExe;
+            KillGame = "/c taskkill /F /IM " + KillGameExe;
             Process g = new Process();
             g.StartInfo.FileName = "CMD.exe";
             g.StartInfo.Arguments = KillGame;
