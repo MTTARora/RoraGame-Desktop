@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RoraGame
+namespace RoraGame.Models
 {
-    public class ThueGameViewModel
+    class News
     {
     }
 }
