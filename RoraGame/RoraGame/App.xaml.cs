@@ -46,23 +46,27 @@ namespace RoraGame
         private void Application_Exit(object sender, ExitEventArgs e)
         {
             //Kill Platform
+            string PlatformExe = "stream.exe";
             string KillPlatform;
-            KillPlatform = "/c taskkill /F /IM steam.exe";
+            KillPlatform = "/c taskkill /F /IM" + PlatformExe;
             Process p = new Process();
             p.StartInfo.FileName = "CMD.exe";
             p.StartInfo.Arguments = KillPlatform;
             p.StartInfo.UseShellExecute = false;
+            p.StartInfo.CreateNoWindow = true;
             p.StartInfo.RedirectStandardError = true;
             p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             p.Start();
 
             //Kill Game Extention
+            string KillGameExe = "csgo.exe";
             string KillGame;
-            KillGame = "/c taskkill /F /IM csgo.exe";
+            KillGame = "/c taskkill /F /IM" + KillGameExe;
             Process g = new Process();
             g.StartInfo.FileName = "CMD.exe";
             g.StartInfo.Arguments = KillGame;
             g.StartInfo.UseShellExecute = false;
+            g.StartInfo.CreateNoWindow = true;
             g.StartInfo.RedirectStandardError = true;
             g.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             g.Start();

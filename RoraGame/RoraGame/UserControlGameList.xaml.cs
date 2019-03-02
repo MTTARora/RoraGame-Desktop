@@ -140,6 +140,7 @@ namespace RoraGame
                     p.StartInfo.FileName = "CMD.exe";
                     p.StartInfo.Arguments = LoginSteam;
                     p.StartInfo.UseShellExecute = false;
+                    p.StartInfo.CreateNoWindow = true;
                     p.StartInfo.RedirectStandardError = true;
                     p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                     p.Start();
@@ -189,22 +190,30 @@ namespace RoraGame
             private void DungThueGame_Click(object sender, RoutedEventArgs e)
         {
             //Kill Platform
-            foreach (System.Diagnostics.Process killPlatform in System.Diagnostics.Process.GetProcesses())
-            {
-                if (killPlatform.ProcessName == Platform)
-                {
-                    killPlatform.Kill();
-                }
-            }
+            string PlatformExe = "stream.exe";
+            string KillPlatform;
+            KillPlatform = "/c taskkill /F /IM" + PlatformExe;
+            Process p = new Process();
+            p.StartInfo.FileName = "CMD.exe";
+            p.StartInfo.Arguments = KillPlatform;
+            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.CreateNoWindow = true;
+            p.StartInfo.RedirectStandardError = true;
+            p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            p.Start();
 
-            //Kill Game
-            foreach (System.Diagnostics.Process killGameEx in System.Diagnostics.Process.GetProcesses())
-            {
-                if (killGameEx.ProcessName == GameExtention)
-                {
-                    killGameEx.Kill();
-                }
-            }
+            //Kill Game Extention
+            string KillGameExe = "csgo.exe";
+            string KillGame;
+            KillGame = "/c taskkill /F /IM" + KillGameExe;
+            Process g = new Process();
+            g.StartInfo.FileName = "CMD.exe";
+            g.StartInfo.Arguments = KillGame;
+            g.StartInfo.UseShellExecute = false;
+            g.StartInfo.CreateNoWindow = true;
+            g.StartInfo.RedirectStandardError = true;
+            g.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            g.Start();
 
             //Ẩn Dock Đang thuê game
             HideDockThueGame();
