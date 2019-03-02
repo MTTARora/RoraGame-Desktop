@@ -48,10 +48,9 @@ namespace RoraGame
 
     public class Games
     {
-        public string Dates { get; internal set; }
-        public string Name { get; internal set; }
-        public string RequiredLvl { get; internal set; }
-        public string Description { get; internal set; }
-
+        public string Dates { get; set; }
+        public string Name { get; set; }
+        public string RequiredLvl { get; set; }
+        public string Description { get; set; }
     }
 }

@@ -28,8 +28,8 @@
                 <Image x:Name="Banner2" VerticalAlignment="Top" Source="/Resources/billboard_IAB_kaladesh.jpg"></Image>
             </Grid>
             <WrapPanel>
-                <StackPanel HorizontalAlignment="Left" Width="auto">
-                    <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,0,0">
+                <StackPanel HorizontalAlignment="Left">
+                    <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,0,0">
                 Game mới cập nhật
                     </TextBlock>
                     <ListView Name ="GameNew" Margin="10,0,15,0">
@@ -37,23 +37,25 @@
                             <GridView>
                                 <GridViewColumn DisplayMemberBinding="{Binding Dates}" Header="Ngày" />
                                 <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Tên" />
-                                <GridViewColumn DisplayMemberBinding="{Binding RequiredLvl}" Header="Tên" />
+                                <GridViewColumn DisplayMemberBinding="{Binding RequiredLvl}" Header="Yêu cầu" />
                                 <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Thông tin" />
                             </GridView>
                         </ListView.View>
                     </ListView>
                 </StackPanel>
-                    <!--<StackPanel>
-                        <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0">
-                                    Các bước để thuê games tại RoraGame
-                        </TextBlock>
-                        <ListView Grid.Row="2" Margin="30,0,0,15">
-                            <Button>1. Tải ứng dụng RoraGame</Button>
-                            <Button>2. Tạo tài khoản</Button>
-                            <Button>3. Nạp tiền vào tài khoản</Button>
-                            <Button>4. Tìm games muốn thuê và chơi</Button>
-                        </ListView>
-                    </StackPanel>-->
+                <StackPanel HorizontalAlignment="Left">
+                    <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,0,0">
+                Tin tức mới
+                    </TextBlock>
+                    <ListView Name ="GameNews" Margin="10,0,15,0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding Dates}" Header="Ngày" />
+                                <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Tin tức" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
             </WrapPanel>
         </StackPanel>
         <!--<Button VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25 15 0 0" Width="187" Background="DarkOliveGreen" BorderBrush="DarkOliveGreen" Click="Websiteroragame_Click" materialDesign:ShadowAssist.ShadowDepth="Depth4">
