@@ -58,13 +58,17 @@ namespace RoraGame
         // Rent game
         private void ThueGame_Click(object sender, RoutedEventArgs e)
         {
-            gameListViewModel.rentGame();
+            if(gameListViewModel.rentGame() == true)
+            {
+                gameListViewModel.rentGame();
+                ShowDockThueGame();
+            }
+            
         }
 
         // Stop renting
         private void DungThueGame_Click(object sender, RoutedEventArgs e)
         {
-
             gameListViewModel.stopRentingGame();
 
             //Ẩn Dock Đang thuê game
