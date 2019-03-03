@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using RoraGame.Network;
+using RoraGame.Ulti;
 
 namespace RoraGame.Models
 {
@@ -23,29 +25,30 @@ namespace RoraGame.Models
 
         #endregion
 
+
         #region API SERVICES
 
-        public static List<Game> getGameList()
+        public async static Task<(List<Game> gameList, string errMsg)> GetGameList()
         {
+            var result = await APIServices.Instance.GETRequest(URLStorage.getGameList);
 
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://localhost:57677/");
-
-            // Add an Accept header for JSON format.
-            client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));
-
-            HttpResponseMessage response = client.GetAsync("api/GameList").Result;
-
-            if (response.IsSuccessStatusCode)
+            if(result.err != null)
             {
-                var gameList = response.Content.ReadAsAsync<List<Game>>().Result;
-                return gameList;
+                return (null, result.err);
+            }
+
+            HttpResponseMessage data = result.response;
+
+            if (data.IsSuccessStatusCode)
+            {   
+                var gameList = data.Content.ReadAsAsync<List<Game>>().Result;
+                return (gameList, null);
             }
             else
             {
-                return null;
+                return (null, "Can't get data");
             }
+
         }
 
         #endregion
