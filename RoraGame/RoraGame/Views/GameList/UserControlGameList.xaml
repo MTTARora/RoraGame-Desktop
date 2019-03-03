@@ -32,13 +32,14 @@
         <!--Search Bar-->
         <Grid Grid.Row="2">
             <DockPanel VerticalAlignment="Bottom">
-                <materialDesign:PackIcon Kind="SteamBox" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="35" Width="35" Margin="55,0,0,0" />
-                <materialDesign:PackIcon Kind="BattleNet" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="35" Width="35" Margin="5,0,0,0" Foreground="DodgerBlue"/>
-                <materialDesign:PackIcon Kind="Origin" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="35" Width="35" Margin="5,0,0,0" Foreground="#FFF56C2D"/>
-                <materialDesign:PackIcon Kind="Uplay" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="35" Width="35" Margin="5,0,0,0" Foreground="#FF0070FF"/>
+                <materialDesign:PackIcon Kind="SelectAll" ToolTip="Tất cả" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="35" Width="35" Margin="55,0,0,0" Foreground="DarkGreen"/>
+                <materialDesign:PackIcon Kind="SteamBox" ToolTip="Steam" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="35" Width="35" Margin="5,0,0,0" />
+                <materialDesign:PackIcon Kind="BattleNet" ToolTip="Battle Net" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="35" Width="35" Margin="5,0,0,0" Foreground="DodgerBlue"/>
+                <materialDesign:PackIcon Kind="Origin" ToolTip="Origin" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="35" Width="35" Margin="5,0,0,0" Foreground="#FFF56C2D"/>
+                <materialDesign:PackIcon Kind="Uplay" ToolTip="Uplay" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="35" Width="35" Margin="5,0,0,0" Foreground="#FF0070FF"/>
                 <Image Source="/Resources/Logo Epic.png" Height="30" Width="30" Margin="5 0 0 0"/>
                 <materialDesign:PackIcon Kind="TableSearch" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="25" Width="25" Margin="30,0,5,5" Foreground="#FF666666"/>
-                <TextBox materialDesign:HintAssist.Hint="Tìm Game" Width="auto" MinWidth="150"  HorizontalAlignment="Left" Name="txtFilter" TextChanged="txtFilter_TextChanged" Margin="0 0 0 5"/>
+                <TextBox materialDesign:HintAssist.Hint="Tìm Game" Width="auto" MinWidth="150" MaxWidth="300"  HorizontalAlignment="Left" Name="txtFilter" TextChanged="txtFilter_TextChanged" Margin="0 0 0 5"/>
                 <ToggleButton Style="{StaticResource MaterialDesignFlatToggleButton}" ToolTip="Xóa"  HorizontalAlignment="Left" Height="25" Width="25" Click="Xoa_Click" Margin="0 0 20 5">
                     <materialDesign:PackIcon Kind="Close" Height="12" Width="12" />
                 </ToggleButton>
