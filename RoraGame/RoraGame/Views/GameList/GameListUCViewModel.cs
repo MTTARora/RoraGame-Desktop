@@ -61,7 +61,8 @@ namespace RoraGame.Views.UserControls.GameList
                 #region Login Steam
                 case "Steam":
                     string LoginSteam;
-                    LoginSteam = @"/c cd " + folderSteam + " && start steam.exe -login " + steamUsername + " " + steamPassword;
+                    //LoginSteam = @"/c cd " + folderSteam + " && start steam.exe -login " + steamUsername + " " + steamPassword;
+                    LoginSteam = "/c start \"\" \"C:\\Program Files (x86)\\Steam\\steam.exe\" -login pubgvna_2875 Pubgvna123123";
                     Process p = new Process();
                     p.StartInfo.FileName = "CMD.exe";
                     p.StartInfo.Arguments = LoginSteam;
