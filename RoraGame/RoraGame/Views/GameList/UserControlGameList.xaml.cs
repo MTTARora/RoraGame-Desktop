@@ -51,8 +51,6 @@ namespace RoraGame
             GetDataGameList();
 
             //Listview Search
-
-            configViews();
         }
 
         #endregion
@@ -62,7 +60,9 @@ namespace RoraGame
 
         private void configViews()
         {
+            LsGames.ItemsSource = gameList;
             cvGameList = (CollectionView)CollectionViewSource.GetDefaultView(LsGames.ItemsSource);
+            cvGameList.Filter = UserFilter;
 
         }
 
@@ -121,8 +121,7 @@ namespace RoraGame
             }
 
             gameList = result.gameList;
-            LsGames.ItemsSource = gameList;
-            cvGameList.Filter = UserFilter;
+            configViews();
         }
 
         #endregion
