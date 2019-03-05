@@ -11,6 +11,9 @@ using System.Windows.Data;
 using System.Diagnostics;
 using RoraGame.Models;
 using RoraGame.Ulti;
+using KAutoHelper;
+using System.Windows.Forms;
+using System.Drawing;
 
 namespace RoraGame.Views.UserControls.GameList
 {
@@ -21,7 +24,8 @@ namespace RoraGame.Views.UserControls.GameList
         //string GameName = "PlayerUnknown's Battlegrounds";
         string steamUsername = @"pubgvna_2875";
         string steamPassword = @"Pubgvna123123";
-        string folderSteam = @"C:\Program Files (x86)\Steam\steam.exe";
+        string folderPlatform = @"C:\Program Files (x86)\Steam\steam.exe";
+        //string folderPlatform = @"C:\Program Files (x86)\Ubisoft\Ubisoft Game Launcher\upc.exe";
 
         public List<Game> getGameList()
         {
@@ -37,61 +41,36 @@ namespace RoraGame.Views.UserControls.GameList
 
         public bool rentGame()
         {
-
-            #region Bước 1: Kiểm tra
             //Kiểm tra xem đăng nhập chưa
             //Kiểm tra xem có đang thuê game không
             //Kiểm tra đủ lvl thuê game không
             //Kiểm tra ví tiền còn không
             //Gửi thông tin cho server - server response thông tin để đăng nhập
-            #endregion
-
-            #region Bước 2: Kill Platform
 
             //Kill Game Platform
             AppHandler.killPlatform(platform);
 
-            #endregion
-
-            #region Bước 2: Đăng nhập Game
-
             switch (platform)
             {
-                #region Login Steam
+                //Login Steam
                 case "Steam":
-                    string LoginSteam;
-                    LoginSteam = "/c start \"\" \"" + folderSteam + "\" -login " + steamUsername + " " + steamPassword;
-                    Process p = new Process();
-                    p.StartInfo.FileName = "CMD.exe";
-                    p.StartInfo.Arguments = LoginSteam;
-                    p.StartInfo.UseShellExecute = false;
-                    p.StartInfo.CreateNoWindow = true;
-                    p.StartInfo.RedirectStandardError = true;
-                    p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                    p.Start();
-                    string error = p.StandardError.ReadToEnd();
-                    string errors = error + "Xem tại mục hướng dẫn để khắc phục lỗi này.";
-                    p.WaitForExit();
+                    AppHandler.loginPlaform(folderPlatform, steamUsername, steamPassword);
 
                     // Handle result
 
-                    if (error == "")
-                    {
-                        //Hiện Dock Đang thuê game
-                        //ShowDockThueGame();
-
-                        //Code Tính giờ
-                        //Code Active Application_Exit
-                        //Code Kill Game if lose connect to server
-                        //Code kill Game if log out
-                        return true;
-                    }
-                    else
-                    {
-                        MessageBox.Show(errors, "Lỗi");
-                        return false;
-                    }
-                #endregion
+                    //if (error == "")
+                    //{
+                    //    //Code Tính giờ
+                    //    //Code Active Application_Exit
+                    //    //Code Kill Game if lose connect to server
+                    //    //Code kill Game if log out
+                    return true;
+                //}
+                //else
+                //{
+                //    MessageBox.Show(errors, "Lỗi");
+                //    return false;
+                //}
 
                 //Login Epic
                 case "Epic":
@@ -99,7 +78,50 @@ namespace RoraGame.Views.UserControls.GameList
 
                 //Login Uplay
                 case "Uplay":
-                    // C:\Users\Sky\AppData\Local\Ubisoft Game Launcher
+                    //Delete Setting Platform
+                    System.IO.File.Delete(@"C:\Users\Sky\AppData\Local\Ubisoft Game Launcher\settings.yml");
+                    System.IO.File.Delete(@"C:\Users\Sky\AppData\Local\Ubisoft Game Launcher\users.dat");
+                    //Login Platform
+                    AppHandler.loginPlaform(folderPlatform, steamUsername, steamPassword);
+                    int z = 0;
+                    while (z < 20)
+                    {
+                        System.Threading.Thread.Sleep(200);
+                        IntPtr hWnd1 = IntPtr.Zero;
+                        hWnd1 = Process.GetProcessesByName("upc")[0].MainWindowHandle;
+                        if ((int)hWnd1 != 0)
+                        {
+                            z = 20;
+                        }
+                        z++;
+                    }
+                    IntPtr hWnd = IntPtr.Zero;
+                    hWnd = Process.GetProcessesByName("upc")[0].MainWindowHandle;
+                    var subBitmap = ImageScanOpenCV.GetImage("uplay_login_screen.PNG");
+                    for (int i = 0; i < 100; i++)
+                    {
+                        AppHandler.ShowWindow(hWnd, 9);
+                        AppHandler.SetForegroundWindow(hWnd);
+                        var screen = CaptureHelper.CaptureScreen();
+                        var resBitmap = ImageScanOpenCV.Find((Bitmap)screen, subBitmap);
+                        if (resBitmap != null)
+                        {
+                            AppHandler.InputBlocker.BlockInput(true);
+                            System.Threading.Thread.Sleep(500);
+                            AppHandler.ShowWindow(hWnd, 9);
+                            AppHandler.SetForegroundWindow(hWnd);
+                            string Username = "truonghoangha002@gmail.com";
+                            string Password = "Ha916022";
+                            AutoControl.SendClickOnPosition(hWnd, 226, 152);
+                            SendKeys.SendWait(Username);
+                            SendKeys.SendWait("{TAB}");
+                            SendKeys.SendWait(Password);
+                            SendKeys.SendWait("{ENTER}");
+                            i = 100;
+                            AppHandler.InputBlocker.BlockInput(false);
+                        }
+                    }
+                    AppHandler.InputBlocker.BlockInput(false);
                     return true;
 
                 //Login Battle
@@ -113,26 +135,52 @@ namespace RoraGame.Views.UserControls.GameList
                 default:
                     return true;
             }
-
-            #endregion
         }
 
-        public void stopRentingGame()
+        public bool stopRentingGame()
         {
-            //Kill Platform
-            string PlatformExe = "steam.exe";
+            switch (platform)
+            {
+                //Quit Steam
+                case "Steam":
+                    //Kill Platform
+                    string PlatformExe = "steam.exe";
 
-            AppHandler.killPlatformByCMD(PlatformExe);
+                    AppHandler.killPlatformByCMD(PlatformExe);
 
-            //Kill Game Extention
-            string KillGameExe = "csgo.exe";
+                    //Kill Game Extention
+                    string KillGameExe = "csgo.exe";
 
-            AppHandler.killPlatformByCMD(KillGameExe);
+                    AppHandler.killPlatformByCMD(KillGameExe);
+                    return true;
+
+                //Quit Epic
+                case "Epic":
+                    return true;
+
+                //Quit Uplay
+                case "Uplay":
+                    //Delete Setting Platform
+                    System.IO.File.Delete(@"C:\Users\Sky\AppData\Local\Ubisoft Game Launcher\settings.yml");
+                    System.IO.File.Delete(@"C:\Users\Sky\AppData\Local\Ubisoft Game Launcher\users.dat");
+                    return true;
+
+                //Quit Battle
+                case "Battle":
+                    return true;
+
+                //Quit Origin
+                case "Origin":
+                    return true;
+
+                default:
+                    return true;
+            }
         }
 
         public bool filterGame(string name)
         {
             return string.IsNullOrEmpty(name);
-        }
+        }   
     }
 }

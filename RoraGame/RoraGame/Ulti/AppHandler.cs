@@ -10,11 +10,19 @@ using System.Windows.Data;
 using System.Diagnostics;
 using RoraGame.Models;
 using RoraGame.Ulti;
+using System.Runtime.InteropServices;
 
 namespace RoraGame.Ulti
 {
     class AppHandler
     {
+        //Set Window to Top View
+        [DllImport("user32.dll")]
+        public static extern bool SetForegroundWindow(IntPtr hWnd);
+
+        //Show window even Minimize
+        [DllImport("User32.dll")]
+        public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
         public static void killPlatform(string platform)
         {
@@ -47,6 +55,33 @@ namespace RoraGame.Ulti
             p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             p.Start();
 
+        }
+
+        //KillPlatformByproccessID
+
+
+        //RunPlatformByCMD
+        public static void loginPlaform(string folderPlatform, string steamUsername, string steamPassword)
+        {
+            string strLoginPlatform = "/c start \"\" \"" + folderPlatform + "\" -login " + steamUsername + " " + steamPassword;
+            Process o = new Process();
+            o.StartInfo.FileName = "CMD.exe";
+            o.StartInfo.Arguments = strLoginPlatform;
+            o.StartInfo.UseShellExecute = false;
+            o.StartInfo.CreateNoWindow = true;
+            o.StartInfo.RedirectStandardError = true;
+            o.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            o.Start();
+            string error = o.StandardError.ReadToEnd();
+            o.WaitForExit();
+        }
+
+        //Lock Keyboard & Mouse
+        public static class InputBlocker
+        {
+            [return: MarshalAs(UnmanagedType.Bool)]
+            [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
+            public static extern void BlockInput([In, MarshalAs(UnmanagedType.Bool)]bool fBlockIt);
         }
     }
 }

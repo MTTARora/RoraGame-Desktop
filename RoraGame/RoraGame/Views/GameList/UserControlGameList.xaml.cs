@@ -69,13 +69,15 @@ namespace RoraGame
         // Stop renting
         private void DungThueGame_Click(object sender, RoutedEventArgs e)
         {
-            gameListViewModel.stopRentingGame();
+            if(gameListViewModel.stopRentingGame() == true)
+            {
+                gameListViewModel.stopRentingGame();
+                HideDockThueGame();
+                //Code ngừng tính giờ
+                //Code Disable Application_Exit
+            }
 
-            //Ẩn Dock Đang thuê game
-            HideDockThueGame();
 
-            //Code ngừng tính giờ
-            //Code Disable Application_Exit
         }
 
         private void txtFilter_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)

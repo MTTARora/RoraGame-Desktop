@@ -40,8 +40,8 @@
                 <Image Source="/Resources/Logo Epic.png" Height="30" Width="30" Margin="5 0 0 0"/>
                 <materialDesign:PackIcon Kind="TableSearch" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="25" Width="25" Margin="30,0,5,5" Foreground="#FF666666"/>
                 <TextBox materialDesign:HintAssist.Hint="Tìm Game" Width="auto" MinWidth="150" MaxWidth="300"  HorizontalAlignment="Left" Name="txtFilter" TextChanged="txtFilter_TextChanged" Margin="0 0 0 5"/>
-                <ToggleButton Style="{StaticResource MaterialDesignFlatToggleButton}" ToolTip="Xóa"  HorizontalAlignment="Left" Height="25" Width="25" Click="Xoa_Click" Margin="0 0 20 5">
-                    <materialDesign:PackIcon Kind="Close" Height="12" Width="12" />
+                <ToggleButton Style="{StaticResource MaterialDesignFlatToggleButton}" ToolTip="Xóa"  HorizontalAlignment="Left" Height="25" Width="25" Click="Xoa_Click" Margin="0 2 20 5">
+                    <materialDesign:PackIcon Kind="Close" Height="12" Width="12"/>
                 </ToggleButton>
 
                 <!--Renting Status-->

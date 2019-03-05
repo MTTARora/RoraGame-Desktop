@@ -56,6 +56,9 @@
     <Reference Include="Hardcodet.Wpf.TaskbarNotification, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Hardcodet.NotifyIcon.Wpf.1.0.8\lib\net451\Hardcodet.Wpf.TaskbarNotification.dll</HintPath>
     </Reference>
+    <Reference Include="KAutoHelper">
+      <HintPath>C:\Users\Sky\Downloads\KAutoHelper.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=1.0.0.14576, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.1.1\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -117,6 +120,9 @@
     <Compile Include="Views\GameList\UserControlGameList.xaml.cs">
       <DependentUpon>UserControlGameList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\GameList\UserControlPopupReportGameAccount.xaml.cs">
+      <DependentUpon>UserControlPopupReportGameAccount.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Guide\UserControlGuide.xaml.cs">
       <DependentUpon>UserControlGuide.xaml</DependentUpon>
     </Compile>
@@ -171,6 +177,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\GameList\UserControlGameList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GameList\UserControlPopupReportGameAccount.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
