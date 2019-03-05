@@ -1,13 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
 using System.Diagnostics;
 using RoraGame.Models;
 using RoraGame.Ulti;
@@ -20,12 +13,16 @@ namespace RoraGame.Views.UserControls.GameList
     class GameListUCViewModel
     {
 
-        string platform = "Steam";
+        string platform = "upc";
         //string GameName = "PlayerUnknown's Battlegrounds";
-        string steamUsername = @"pubgvna_2875";
-        string steamPassword = @"Pubgvna123123";
-        string folderPlatform = @"C:\Program Files (x86)\Steam\steam.exe";
-        //string folderPlatform = @"C:\Program Files (x86)\Ubisoft\Ubisoft Game Launcher\upc.exe";
+        //string gameUsername = @"pubgvna_2875";
+        //string gamePassword = @"Pubgvna123123";
+        string gameUsername = "truonghoangha002@gmail.com";
+        string gamePassword = "Ha916022";
+        string imageLoginPlatform = "uplay_login_screen.PNG";
+        //string folderPlatform = @"C:\Program Files (x86)\Steam\steam.exe";
+        string folderPlatform = @"C:\Program Files (x86)\Ubisoft\Ubisoft Game Launcher\upc.exe";
+        string killGame = "csgo";
 
         public async Task<(List<Game> gameList, string errMsg)> getGameList()
         {
@@ -49,12 +46,13 @@ namespace RoraGame.Views.UserControls.GameList
 
             //Kill Game Platform
             AppHandler.killPlatform(platform);
+            System.Threading.Thread.Sleep(500);
 
             switch (platform)
             {
                 //Login Steam
-                case "Steam":
-                    AppHandler.loginPlaform(folderPlatform, steamUsername, steamPassword);
+                case "steam":
+                    AppHandler.loginPlaform(folderPlatform, gameUsername, gamePassword);
 
                     // Handle result
 
@@ -77,12 +75,12 @@ namespace RoraGame.Views.UserControls.GameList
                     return true;
 
                 //Login Uplay
-                case "Uplay":
+                case "upc":
                     //Delete Setting Platform
                     System.IO.File.Delete(@"C:\Users\Sky\AppData\Local\Ubisoft Game Launcher\settings.yml");
                     System.IO.File.Delete(@"C:\Users\Sky\AppData\Local\Ubisoft Game Launcher\users.dat");
                     //Login Platform
-                    AppHandler.loginPlaform(folderPlatform, steamUsername, steamPassword);
+                    AppHandler.loginPlaform(folderPlatform, gameUsername, gamePassword);
                     int z = 0;
                     while (z < 20)
                     {
@@ -96,32 +94,29 @@ namespace RoraGame.Views.UserControls.GameList
                         z++;
                     }
                     IntPtr hWnd = IntPtr.Zero;
-                    hWnd = Process.GetProcessesByName("upc")[0].MainWindowHandle;
-                    var subBitmap = ImageScanOpenCV.GetImage("uplay_login_screen.PNG");
+                    hWnd = Process.GetProcessesByName(platform)[0].MainWindowHandle;
+                    var subBitmap = ImageScanOpenCV.GetImage(imageLoginPlatform);
                     for (int i = 0; i < 100; i++)
                     {
                         AppHandler.ShowWindow(hWnd, 9);
                         AppHandler.SetForegroundWindow(hWnd);
                         var screen = CaptureHelper.CaptureScreen();
-                        var resBitmap = ImageScanOpenCV.Find((Bitmap)screen, subBitmap);
+                        var resBitmap = ImageScanOpenCV.Find((Bitmap)screen, subBitmap); //Scan Login Image
                         if (resBitmap != null)
                         {
-                            AppHandler.InputBlocker.BlockInput(true);
-                            System.Threading.Thread.Sleep(500);
+                            AppHandler.InputBlocker.BlockInput(true); //Lock keyboard
+                            System.Threading.Thread.Sleep(300);
                             AppHandler.ShowWindow(hWnd, 9);
                             AppHandler.SetForegroundWindow(hWnd);
-                            string Username = "truonghoangha002@gmail.com";
-                            string Password = "Ha916022";
                             AutoControl.SendClickOnPosition(hWnd, 226, 152);
-                            SendKeys.SendWait(Username);
+                            SendKeys.SendWait(gameUsername);
                             SendKeys.SendWait("{TAB}");
-                            SendKeys.SendWait(Password);
-                            SendKeys.SendWait("{ENTER}");
-                            i = 100;
+                            SendKeys.SendWait(gamePassword);
+                            SendKeys.SendWait("{ENTER}");                            
                             AppHandler.InputBlocker.BlockInput(false);
+                            i = 100;
                         }
                     }
-                    AppHandler.InputBlocker.BlockInput(false);
                     return true;
 
                 //Login Battle
@@ -142,16 +137,9 @@ namespace RoraGame.Views.UserControls.GameList
             switch (platform)
             {
                 //Quit Steam
-                case "Steam":
-                    //Kill Platform
-                    string PlatformExe = "steam.exe";
-
-                    AppHandler.killPlatformByCMD(PlatformExe);
-
-                    //Kill Game Extention
-                    string KillGameExe = "csgo.exe";
-
-                    AppHandler.killPlatformByCMD(KillGameExe);
+                case "steam":
+                    AppHandler.killPlatform(platform);
+                    AppHandler.killPlatform(killGame);
                     return true;
 
                 //Quit Epic
@@ -159,10 +147,11 @@ namespace RoraGame.Views.UserControls.GameList
                     return true;
 
                 //Quit Uplay
-                case "Uplay":
-                    //Delete Setting Platform
+                case "upc":
                     System.IO.File.Delete(@"C:\Users\Sky\AppData\Local\Ubisoft Game Launcher\settings.yml");
                     System.IO.File.Delete(@"C:\Users\Sky\AppData\Local\Ubisoft Game Launcher\users.dat");
+                    AppHandler.killPlatform(platform);
+                    AppHandler.killPlatform(killGame);
                     return true;
 
                 //Quit Battle

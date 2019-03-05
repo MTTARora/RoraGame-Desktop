@@ -1,25 +1,8 @@
 ﻿using System;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Diagnostics;
-using System.IO;
-using Newtonsoft.Json;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using RoraGame.Views.UserControls.GameList;
 using RoraGame.Models;
 
@@ -80,26 +63,23 @@ namespace RoraGame
         // Rent game
         private void ThueGame_Click(object sender, RoutedEventArgs e)
         {
-            if(gameListViewModel.rentGame() == true)
+            if(true)
             {
                 gameListViewModel.rentGame();
                 ShowDockThueGame();
-            }
-            
+            }    
         }
 
         // Stop renting
         private void DungThueGame_Click(object sender, RoutedEventArgs e)
         {
-            if(gameListViewModel.stopRentingGame() == true)
+            if(true)
             {
                 gameListViewModel.stopRentingGame();
                 HideDockThueGame();
                 //Code ngừng tính giờ
                 //Code Disable Application_Exit
             }
-
-
         }
 
         private void txtFilter_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)

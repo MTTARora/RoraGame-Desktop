@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Diagnostics;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using Hardcodet.Wpf.TaskbarNotification;
 using WpfSingleInstanceByEventWaitHandle;
 
@@ -24,10 +15,8 @@ namespace RoraGame
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            #region Single Instance
             base.OnStartup(e);
             WpfSingleInstance.Make("MyWpfApplication", this);
-            #endregion Single Instance
 
             //create the notifyicon (it's a resource declared in NotifyIconResources.xaml
             notifyIcon = (TaskbarIcon)FindResource("NotifyIcon");
@@ -48,7 +37,7 @@ namespace RoraGame
             //Kill Platform
             foreach (System.Diagnostics.Process myProc in System.Diagnostics.Process.GetProcesses())
             {
-                if (myProc.ProcessName == "Steam")
+                if (myProc.ProcessName == "upc")
                 {
                     myProc.Kill();
                 }
