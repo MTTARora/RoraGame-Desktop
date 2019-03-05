@@ -31,8 +31,17 @@ namespace RoraGame
     public partial class UserControlGameList : UserControl
     {
 
+        // Views
+
+        private CollectionView cvGameList;
+
+        // Props
+
         private GameListUCViewModel gameListViewModel;
-        private IEnumerable<Game> gameList;
+        private List<Game> gameList;
+
+
+        #region LIFECYCLE
 
         public UserControlGameList()
         {
@@ -42,9 +51,22 @@ namespace RoraGame
             GetDataGameList();
 
             //Listview Search
-            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(LsGames.ItemsSource);
-            view.Filter = UserFilter;
         }
+
+        #endregion
+
+
+        #region CONFIGS
+
+        private void configViews()
+        {
+            LsGames.ItemsSource = gameList;
+            cvGameList = (CollectionView)CollectionViewSource.GetDefaultView(LsGames.ItemsSource);
+            cvGameList.Filter = UserFilter;
+
+        }
+
+        #endregion
 
 
         #region ACTIONS
@@ -90,18 +112,18 @@ namespace RoraGame
 
         #region API SERVICES
 
-        private void GetDataGameList()
+        private async void GetDataGameList()
         {
-            gameList = gameListViewModel.getGameList();
-            if (gameList != null)
+            var result = await gameListViewModel.getGameList();
+
+            if(result.errMsg != null)
             {
-                LsGames.ItemsSource = gameList;
+                MessageBox.Show("Message: " + result.errMsg, "Error!");
+                return;
             }
-            else
-            {
-                //MessageBox.Show("Error Code" + response.StatusCode + " : Message - " + response.ReasonPhrase);
-                MessageBox.Show("Message: Error");
-            }
+
+            gameList = result.gameList;
+            configViews();
         }
 
         #endregion

@@ -27,16 +27,16 @@ namespace RoraGame.Views.UserControls.GameList
         string folderPlatform = @"C:\Program Files (x86)\Steam\steam.exe";
         //string folderPlatform = @"C:\Program Files (x86)\Ubisoft\Ubisoft Game Launcher\upc.exe";
 
-        public List<Game> getGameList()
+        public async Task<(List<Game> gameList, string errMsg)> getGameList()
         {
-            List<Game> gameList = Game.getGameList();
-            if (gameList != null)
-            {
-                return gameList;
-            } else
-            {
-                return null;
+            var result = await Game.GetGameList();
+
+            if(result.errMsg != null) {
+                return (null, result.errMsg);
             }
+
+            List<Game> gameList = result.gameList;
+            return (gameList, null);
         }
 
         public bool rentGame()
