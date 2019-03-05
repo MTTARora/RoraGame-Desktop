@@ -1,5 +1,7 @@
-﻿using System;
+﻿using KAutoHelper;
+using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Runtime.InteropServices;
 
 namespace RoraGame.Ulti
@@ -41,7 +43,7 @@ namespace RoraGame.Ulti
         //}
 
         //RunPlatformByCMD
-        public static void loginPlaform(string folderPlatform, string steamUsername, string steamPassword)
+        public static void startPlaform(string folderPlatform, string steamUsername, string steamPassword)
         {
             string strLoginPlatform = "/c start \"\" \"" + folderPlatform + "\" -login " + steamUsername + " " + steamPassword;
             Process o = new Process();
@@ -62,6 +64,18 @@ namespace RoraGame.Ulti
             [return: MarshalAs(UnmanagedType.Bool)]
             [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
             public static extern void BlockInput([In, MarshalAs(UnmanagedType.Bool)]bool fBlockIt);
+        }
+
+        public static bool sceenScan(string imagePatten)
+        {
+            var subBitmapPatten = ImageScanOpenCV.GetImage(imagePatten);
+            var screen = CaptureHelper.CaptureScreen();
+            var resBitmap = ImageScanOpenCV.Find((Bitmap)screen, subBitmapPatten);
+            if (resBitmap != null)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

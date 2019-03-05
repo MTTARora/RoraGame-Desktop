@@ -14,15 +14,17 @@ namespace RoraGame.Views.UserControls.GameList
     {
 
         string platform = "upc";
+        string killGame = "csgo";
         //string GameName = "PlayerUnknown's Battlegrounds";
         //string gameUsername = @"pubgvna_2875";
         //string gamePassword = @"Pubgvna123123";
         string gameUsername = "truonghoangha002@gmail.com";
         string gamePassword = "Ha916022";
         string imageLoginPlatform = "uplay_login_screen.PNG";
+        string imageRememberPlatform = "uplay_remember_screen.PNG";
         //string folderPlatform = @"C:\Program Files (x86)\Steam\steam.exe";
         string folderPlatform = @"C:\Program Files (x86)\Ubisoft\Ubisoft Game Launcher\upc.exe";
-        string killGame = "csgo";
+        
 
         public async Task<(List<Game> gameList, string errMsg)> getGameList()
         {
@@ -52,7 +54,7 @@ namespace RoraGame.Views.UserControls.GameList
             {
                 //Login Steam
                 case "steam":
-                    AppHandler.loginPlaform(folderPlatform, gameUsername, gamePassword);
+                    AppHandler.startPlaform(folderPlatform, gameUsername, gamePassword);
 
                     // Handle result
 
@@ -80,43 +82,46 @@ namespace RoraGame.Views.UserControls.GameList
                     System.IO.File.Delete(@"C:\Users\Sky\AppData\Local\Ubisoft Game Launcher\settings.yml");
                     System.IO.File.Delete(@"C:\Users\Sky\AppData\Local\Ubisoft Game Launcher\users.dat");
                     //Login Platform
-                    AppHandler.loginPlaform(folderPlatform, gameUsername, gamePassword);
+                    AppHandler.startPlaform(folderPlatform, null, null);
                     int z = 0;
-                    while (z < 20)
+                    while (z < 33)
                     {
-                        System.Threading.Thread.Sleep(200);
-                        IntPtr hWnd1 = IntPtr.Zero;
-                        hWnd1 = Process.GetProcessesByName("upc")[0].MainWindowHandle;
-                        if ((int)hWnd1 != 0)
+                        System.Threading.Thread.Sleep(300);
+                        IntPtr hWnd = IntPtr.Zero;
+                        hWnd = Process.GetProcessesByName(platform)[0].MainWindowHandle;
+                        if (hWnd != IntPtr.Zero)
                         {
-                            z = 20;
+                            z = 33;
+                            for (int i = 0; i < 100; i++)
+                            {
+                                AppHandler.ShowWindow(hWnd, 9);
+                                AppHandler.SetForegroundWindow(hWnd);
+                                if(AppHandler.sceenScan(imageLoginPlatform))
+                                {
+                                    AppHandler.InputBlocker.BlockInput(true); //Lock keyboard
+                                    System.Threading.Thread.Sleep(300);
+                                    AppHandler.ShowWindow(hWnd, 9);
+                                    AppHandler.SetForegroundWindow(hWnd);
+                                    AutoControl.SendClickOnPosition(hWnd, 225, 150);
+                                    SendKeys.SendWait(gameUsername);
+                                    SendKeys.SendWait("{TAB}");
+                                    SendKeys.SendWait(gamePassword);
+                                    if (AppHandler.sceenScan(imageRememberPlatform))
+                                    {
+                                        AutoControl.SendClickOnPosition(hWnd, 220, 270);
+                                    }
+                                    SendKeys.SendWait("{ENTER}");
+                                    AppHandler.InputBlocker.BlockInput(false);
+                                    i = 100;
+                                }
+                            }
                         }
-                        z++;
-                    }
-                    IntPtr hWnd = IntPtr.Zero;
-                    hWnd = Process.GetProcessesByName(platform)[0].MainWindowHandle;
-                    var subBitmap = ImageScanOpenCV.GetImage(imageLoginPlatform);
-                    for (int i = 0; i < 100; i++)
-                    {
-                        AppHandler.ShowWindow(hWnd, 9);
-                        AppHandler.SetForegroundWindow(hWnd);
-                        var screen = CaptureHelper.CaptureScreen();
-                        var resBitmap = ImageScanOpenCV.Find((Bitmap)screen, subBitmap); //Scan Login Image
-                        if (resBitmap != null)
+                        else
                         {
-                            AppHandler.InputBlocker.BlockInput(true); //Lock keyboard
-                            System.Threading.Thread.Sleep(300);
-                            AppHandler.ShowWindow(hWnd, 9);
-                            AppHandler.SetForegroundWindow(hWnd);
-                            AutoControl.SendClickOnPosition(hWnd, 226, 152);
-                            SendKeys.SendWait(gameUsername);
-                            SendKeys.SendWait("{TAB}");
-                            SendKeys.SendWait(gamePassword);
-                            SendKeys.SendWait("{ENTER}");                            
-                            AppHandler.InputBlocker.BlockInput(false);
-                            i = 100;
+                            z++;
                         }
                     }
+                    
                     return true;
 
                 //Login Battle

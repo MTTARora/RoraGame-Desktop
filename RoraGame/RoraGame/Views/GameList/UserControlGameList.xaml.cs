@@ -63,9 +63,8 @@ namespace RoraGame
         // Rent game
         private void ThueGame_Click(object sender, RoutedEventArgs e)
         {
-            if(true)
-            {
-                gameListViewModel.rentGame();
+            if(gameListViewModel.rentGame())
+            {                
                 ShowDockThueGame();
             }    
         }
