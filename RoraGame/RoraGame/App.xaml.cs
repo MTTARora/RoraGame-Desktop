@@ -42,6 +42,9 @@ namespace RoraGame
                     myProc.Kill();
                 }
             }
+            
+            System.IO.File.Delete(@"C:\Users\Sky\AppData\Local\Ubisoft Game Launcher\settings.yml");
+            System.IO.File.Delete(@"C:\Users\Sky\AppData\Local\Ubisoft Game Launcher\users.dat");
 
             //Kill Game Extention
             foreach (System.Diagnostics.Process myProc in System.Diagnostics.Process.GetProcesses())

@@ -6,7 +6,6 @@ using RoraGame.Models;
 using RoraGame.Ulti;
 using KAutoHelper;
 using System.Windows.Forms;
-using System.Drawing;
 
 namespace RoraGame.Views.UserControls.GameList
 {
@@ -19,12 +18,15 @@ namespace RoraGame.Views.UserControls.GameList
         //string gameUsername = @"pubgvna_2875";
         //string gamePassword = @"Pubgvna123123";
         string gameUsername = "truonghoangha002@gmail.com";
-        string gamePassword = "Ha916022";
-        string imageLoginPlatform = "uplay_login_screen.PNG";
-        string imageRememberPlatform = "uplay_remember_screen.PNG";
+        string gamePasswordf = "Ha9"; //Fake Password
+        string gamePasswords = "Ha9"; //Password Start
+        string gamePassworde = "Ha9"; //Password End
+        string imageLoginPlatform = "uplay_login_screen.PNG"; //Getting form Server
+        string imageRememberPlatform = "uplay_remember_screen.PNG"; //Getting form Server
         //string folderPlatform = @"C:\Program Files (x86)\Steam\steam.exe";
         string folderPlatform = @"C:\Program Files (x86)\Ubisoft\Ubisoft Game Launcher\upc.exe";
-        
+        string pathSettingPlatform = @"C:\Users\Sky\AppData\Local\Ubisoft Game Launcher";
+
 
         public async Task<(List<Game> gameList, string errMsg)> getGameList()
         {
@@ -40,12 +42,12 @@ namespace RoraGame.Views.UserControls.GameList
 
         public bool rentGame()
         {
-            //Kiểm tra xem đăng nhập chưa
-            //Kiểm tra xem có đang thuê game không
-            //Kiểm tra đủ lvl thuê game không
-            //Kiểm tra ví tiền còn không
-            //Gửi thông tin cho server - server response thông tin để đăng nhập
-
+            //Check Logged in
+            //Check Rented
+            //Check Level Require
+            //Check Wallet
+            //Get Data form Server
+            //If Uplay, Origin, Battle, Epic Check Admin Right
             //Kill Game Platform
             AppHandler.killPlatform(platform);
             System.Threading.Thread.Sleep(500);
@@ -54,7 +56,7 @@ namespace RoraGame.Views.UserControls.GameList
             {
                 //Login Steam
                 case "steam":
-                    AppHandler.startPlaform(folderPlatform, gameUsername, gamePassword);
+                    AppHandler.startPlaform(folderPlatform, gameUsername, gamePasswords);
 
                     // Handle result
 
@@ -79,49 +81,51 @@ namespace RoraGame.Views.UserControls.GameList
                 //Login Uplay
                 case "upc":
                     //Delete Setting Platform
-                    System.IO.File.Delete(@"C:\Users\Sky\AppData\Local\Ubisoft Game Launcher\settings.yml");
-                    System.IO.File.Delete(@"C:\Users\Sky\AppData\Local\Ubisoft Game Launcher\users.dat");
+                    AppHandler.deleteFileSetting(pathSettingPlatform);
+                    
                     //Login Platform
                     AppHandler.startPlaform(folderPlatform, null, null);
-                    int z = 0;
-                    while (z < 33)
+                    
+                    for (int z = 0; z < 33; z++)
                     {
                         System.Threading.Thread.Sleep(300);
                         IntPtr hWnd = IntPtr.Zero;
                         hWnd = Process.GetProcessesByName(platform)[0].MainWindowHandle;
+                        
                         if (hWnd != IntPtr.Zero)
                         {
-                            z = 33;
                             for (int i = 0; i < 100; i++)
                             {
                                 AppHandler.ShowWindow(hWnd, 9);
                                 AppHandler.SetForegroundWindow(hWnd);
-                                if(AppHandler.sceenScan(imageLoginPlatform))
+                                if(AppHandler.sceenScan(imageLoginPlatform)) //Scan Login
                                 {
                                     AppHandler.InputBlocker.BlockInput(true); //Lock keyboard
                                     System.Threading.Thread.Sleep(300);
                                     AppHandler.ShowWindow(hWnd, 9);
                                     AppHandler.SetForegroundWindow(hWnd);
-                                    AutoControl.SendClickOnPosition(hWnd, 225, 150);
-                                    SendKeys.SendWait(gameUsername);
-                                    SendKeys.SendWait("{TAB}");
-                                    SendKeys.SendWait(gamePassword);
-                                    if (AppHandler.sceenScan(imageRememberPlatform))
+                                    if (AppHandler.sceenScan(imageRememberPlatform)) //Scan Remember
                                     {
-                                        AutoControl.SendClickOnPosition(hWnd, 220, 270);
+                                        AutoControl.SendClickOnPosition(hWnd, 220, 270); //Click Remember
                                     }
+                                    AutoControl.SendClickOnPosition(hWnd, 225, 150);
+                                    AppHandler.ShowWindow(hWnd, 0); //Hide Window
+                                    System.Threading.Thread.Sleep(50);
+                                    SendKeys.SendWait(gameUsername); //Send Username
+                                    SendKeys.SendWait("{TAB}");
+                                    Clipboard.SetText(gamePasswordf); //Clipboard Password Fake
+                                    AutoControl.SendStringFocus(gamePasswords); //Send Password Start
+                                    AutoControl.SendTextKeyBoard(hWnd, gamePassworde); //Send Password End
                                     SendKeys.SendWait("{ENTER}");
-                                    AppHandler.InputBlocker.BlockInput(false);
+                                    AppHandler.ShowWindow(hWnd, 9); //Show Window
+                                    AppHandler.InputBlocker.BlockInput(false); //Unlock keyboard
                                     i = 100;
                                 }
                             }
+                            z = 33;
                         }
-                        else
-                        {
-                            z++;
-                        }
+                        Clipboard.Clear();
                     }
-                    
                     return true;
 
                 //Login Battle
@@ -153,8 +157,8 @@ namespace RoraGame.Views.UserControls.GameList
 
                 //Quit Uplay
                 case "upc":
-                    System.IO.File.Delete(@"C:\Users\Sky\AppData\Local\Ubisoft Game Launcher\settings.yml");
-                    System.IO.File.Delete(@"C:\Users\Sky\AppData\Local\Ubisoft Game Launcher\users.dat");
+                    //Delete Setting Platform
+                    AppHandler.deleteFileSetting(pathSettingPlatform);
                     AppHandler.killPlatform(platform);
                     AppHandler.killPlatform(killGame);
                     return true;

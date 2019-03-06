@@ -2,6 +2,7 @@
 using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Runtime.InteropServices;
 
 namespace RoraGame.Ulti
@@ -16,6 +17,7 @@ namespace RoraGame.Ulti
         [DllImport("User32.dll")]
         public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
+        //Kill Platform
         public static void killPlatform(string platform)
         {
 
@@ -27,22 +29,8 @@ namespace RoraGame.Ulti
                 }
             }
         }
-
-        //public static void killPlatformByCMD(string platform)
-        //{
-        //    string cmd = "/c taskkill /F /IM ";
-
-        //    Process p = new Process();
-        //    p.StartInfo.FileName = "CMD.exe";
-        //    p.StartInfo.Arguments = cmd + platform;
-        //    p.StartInfo.UseShellExecute = false;
-        //    p.StartInfo.CreateNoWindow = true;
-        //    p.StartInfo.RedirectStandardError = true;
-        //    p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-        //    p.Start();
-        //}
-
-        //RunPlatformByCMD
+                
+        //Run Platform
         public static void startPlaform(string folderPlatform, string steamUsername, string steamPassword)
         {
             string strLoginPlatform = "/c start \"\" \"" + folderPlatform + "\" -login " + steamUsername + " " + steamPassword;
@@ -66,6 +54,7 @@ namespace RoraGame.Ulti
             public static extern void BlockInput([In, MarshalAs(UnmanagedType.Bool)]bool fBlockIt);
         }
 
+        //Image Scan
         public static bool sceenScan(string imagePatten)
         {
             var subBitmapPatten = ImageScanOpenCV.GetImage(imagePatten);
@@ -76,6 +65,21 @@ namespace RoraGame.Ulti
                 return true;
             }
             return false;
+        }
+
+        //Delete File Setting
+        public static void deleteFileSetting(string pathSettingPlatform)
+        {
+            DirectoryInfo di = new DirectoryInfo(pathSettingPlatform);
+
+            foreach (FileInfo file in di.GetFiles())
+            {
+                file.Delete(); 
+            }
+            foreach (DirectoryInfo dir in di.GetDirectories())
+            {
+                dir.Delete(true); 
+            }
         }
     }
 }
