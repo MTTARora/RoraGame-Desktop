@@ -114,14 +114,14 @@ namespace RoraGame
         private void HideDockThueGame()
         {
             GridThueGameDock.RowDefinitions[1].Height = new GridLength(0.0, GridUnitType.Pixel);
-            GridThueGameDock2.RowDefinitions[0].Height = new GridLength(0.0, GridUnitType.Pixel);
+            GridThueGameDock.RowDefinitions[2].Height = new GridLength(0.0, GridUnitType.Pixel);
         }
 
         //Show Dock Thue Game
         private void ShowDockThueGame()
         {
-            GridThueGameDock.RowDefinitions[1].Height = new GridLength(50.0, GridUnitType.Pixel);
-            GridThueGameDock2.RowDefinitions[0].Height = new GridLength(30, GridUnitType.Pixel);
+            GridThueGameDock.RowDefinitions[1].Height = new GridLength(45, GridUnitType.Pixel);
+            GridThueGameDock.RowDefinitions[2].Height = new GridLength(50, GridUnitType.Pixel);
         }
 
         //Listview Search

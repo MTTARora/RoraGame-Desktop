@@ -93,7 +93,7 @@ namespace RoraGame.Views.UserControls.GameList
                                 AppHandler.SetForegroundWindow(hWnd);
                                 if(AppHandler.sceenScan(imageLoginPlatform)) //Scan Login
                                 {
-                                    AppHandler.killPlatform(killTaskmngr);
+                                    AppHandler.killPlatform(killTaskmngr); //Kill Taskmgr
                                     AppHandler.InputBlocker.BlockInput(true); //Lock keyboard
                                     System.Threading.Thread.Sleep(300);
                                     AppHandler.ShowWindow(hWnd, 9);
@@ -105,7 +105,7 @@ namespace RoraGame.Views.UserControls.GameList
                                     AutoControl.SendClickOnPosition(hWnd, 225, 225);
                                     AppHandler.ShowWindow(hWnd, 0); //Hide Window
                                     System.Threading.Thread.Sleep(20);
-                                    AppHandler.killPlatform(killTaskmngr);
+                                    AppHandler.killPlatform(killTaskmngr); //Kill Taskmgr
                                     AppHandler.InputBlocker.BlockInput(true); //Lock keyboard
                                     SendKeys.SendWait("+{TAB}");
                                     SendKeys.SendWait(gameUsername); //Send Username
@@ -113,6 +113,7 @@ namespace RoraGame.Views.UserControls.GameList
                                     Clipboard.SetText(gamePasswordf); //Clipboard Password Fake
                                     AutoControl.SendStringFocus(gamePasswords); //Send Password Start
                                     System.Threading.Thread.Sleep(50);
+                                    AppHandler.killPlatform(killTaskmngr); //Kill Taskmgr
                                     AppHandler.InputBlocker.BlockInput(true); //Lock keyboard
                                     AutoControl.SendTextKeyBoard(hWnd, gamePassworde); //Send Password End
                                     SendKeys.SendWait("{ENTER}");
