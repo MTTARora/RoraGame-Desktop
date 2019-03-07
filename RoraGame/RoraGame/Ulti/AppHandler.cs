@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace RoraGame.Ulti
 {
@@ -16,6 +17,9 @@ namespace RoraGame.Ulti
         //Show window even Minimize
         [DllImport("User32.dll")]
         public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+        [DllImport("user32.dll")]
+        public static extern bool GetAsyncKeyState(Keys vKeys);
 
         //Kill Platform
         public static void killPlatform(string platform)
@@ -81,5 +85,15 @@ namespace RoraGame.Ulti
                 dir.Delete(true); 
             }
         }
+
+        //Prompt Cant Press Control Key
+        //public static bool controlKeyPress(object sender, KeyEventArgs e)
+        //{
+        //    if (Control.ModifierKeys == Keys.Shift)
+        //    {
+        //        return true;
+        //    }
+        //    return false;
+        //}
     }
 }

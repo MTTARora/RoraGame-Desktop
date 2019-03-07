@@ -11,7 +11,6 @@ namespace RoraGame.Views.UserControls.GameList
 {
     class GameListUCViewModel
     {
-
         string platform = "upc";
         string killGame = "csgo";
         //string GameName = "PlayerUnknown's Battlegrounds";
@@ -26,7 +25,7 @@ namespace RoraGame.Views.UserControls.GameList
         //string folderPlatform = @"C:\Program Files (x86)\Steam\steam.exe";
         string folderPlatform = @"C:\Program Files (x86)\Ubisoft\Ubisoft Game Launcher\upc.exe";
         string pathSettingPlatform = @"C:\Users\Sky\AppData\Local\Ubisoft Game Launcher";
-
+        string killTaskmngr = "Taskmgr";
 
         public async Task<(List<Game> gameList, string errMsg)> getGameList()
         {
@@ -48,14 +47,13 @@ namespace RoraGame.Views.UserControls.GameList
             //Check Wallet
             //Get Data form Server
             //If Uplay, Origin, Battle, Epic Check Admin Right
-            //Kill Game Platform
-            AppHandler.killPlatform(platform);
+            
+            AppHandler.killPlatform(platform); //Kill Game Platform
             System.Threading.Thread.Sleep(500);
-
             switch (platform)
             {
                 //Login Steam
-                case "steam":
+                case "steam": 
                     AppHandler.startPlaform(folderPlatform, gameUsername, gamePasswords);
 
                     // Handle result
@@ -67,12 +65,12 @@ namespace RoraGame.Views.UserControls.GameList
                     //    //Code Kill Game if lose connect to server
                     //    //Code kill Game if log out
                     return true;
-                //}
-                //else
-                //{
-                //    MessageBox.Show(errors, "Lỗi");
-                //    return false;
-                //}
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show(errors, "Lỗi");
+                    //    return false;
+                    //}
 
                 //Login Epic
                 case "Epic":
@@ -80,19 +78,14 @@ namespace RoraGame.Views.UserControls.GameList
 
                 //Login Uplay
                 case "upc":
-                    //Delete Setting Platform
-                    AppHandler.deleteFileSetting(pathSettingPlatform);
-                    
-                    //Login Platform
-                    AppHandler.startPlaform(folderPlatform, null, null);
-                    
+                    AppHandler.deleteFileSetting(pathSettingPlatform);//Delete Setting Platform
+                    AppHandler.startPlaform(folderPlatform, null, null); //Login Platform
                     for (int z = 0; z < 33; z++)
                     {
-                        System.Threading.Thread.Sleep(300);
                         IntPtr hWnd = IntPtr.Zero;
                         hWnd = Process.GetProcessesByName(platform)[0].MainWindowHandle;
-                        
-                        if (hWnd != IntPtr.Zero)
+                        System.Threading.Thread.Sleep(300);
+                        if (hWnd != IntPtr.Zero) //Check Uplay Started
                         {
                             for (int i = 0; i < 100; i++)
                             {
@@ -100,6 +93,7 @@ namespace RoraGame.Views.UserControls.GameList
                                 AppHandler.SetForegroundWindow(hWnd);
                                 if(AppHandler.sceenScan(imageLoginPlatform)) //Scan Login
                                 {
+                                    AppHandler.killPlatform(killTaskmngr);
                                     AppHandler.InputBlocker.BlockInput(true); //Lock keyboard
                                     System.Threading.Thread.Sleep(300);
                                     AppHandler.ShowWindow(hWnd, 9);
@@ -108,13 +102,18 @@ namespace RoraGame.Views.UserControls.GameList
                                     {
                                         AutoControl.SendClickOnPosition(hWnd, 220, 270); //Click Remember
                                     }
-                                    AutoControl.SendClickOnPosition(hWnd, 225, 150);
+                                    AutoControl.SendClickOnPosition(hWnd, 225, 225);
                                     AppHandler.ShowWindow(hWnd, 0); //Hide Window
-                                    System.Threading.Thread.Sleep(50);
+                                    System.Threading.Thread.Sleep(20);
+                                    AppHandler.killPlatform(killTaskmngr);
+                                    AppHandler.InputBlocker.BlockInput(true); //Lock keyboard
+                                    SendKeys.SendWait("+{TAB}");
                                     SendKeys.SendWait(gameUsername); //Send Username
                                     SendKeys.SendWait("{TAB}");
                                     Clipboard.SetText(gamePasswordf); //Clipboard Password Fake
                                     AutoControl.SendStringFocus(gamePasswords); //Send Password Start
+                                    System.Threading.Thread.Sleep(50);
+                                    AppHandler.InputBlocker.BlockInput(true); //Lock keyboard
                                     AutoControl.SendTextKeyBoard(hWnd, gamePassworde); //Send Password End
                                     SendKeys.SendWait("{ENTER}");
                                     AppHandler.ShowWindow(hWnd, 9); //Show Window
