@@ -28,7 +28,14 @@
                     <RowDefinition Height="35"></RowDefinition>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Nhập mã tin nhắn xác thực</TextBlock>
-                <TextBox Grid.Row="1" materialDesign:HintAssist.Hint="Mã xác thực" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox Grid.Row="1" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                    <materialDesign:HintAssist.Hint>
+                        <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
+                            <materialDesign:PackIcon Kind="Verified"  Margin="0 0 5 0"/>
+                            <TextBlock> Mã xác thực</TextBlock>
+                        </StackPanel>
+                    </materialDesign:HintAssist.Hint>
+                </TextBox>
                 <Button Grid.Row="2" VerticalAlignment="Bottom" Width="100" Style="{StaticResource MaterialDesignRaisedDarkButton}">Nhập mã</Button>
                 <TextBlock Grid.Row="3" HorizontalAlignment="Center" Margin="0 20 0 0">Bạn không nhận được tin nhắn? <Hyperlink>Gửi lại mã</Hyperlink></TextBlock>
                 <TextBlock Grid.Row="4" HorizontalAlignment="Center" Margin="0 15 0 0">Đăng nhập tài khoản? <Hyperlink>Đăng nhập</Hyperlink></TextBlock>

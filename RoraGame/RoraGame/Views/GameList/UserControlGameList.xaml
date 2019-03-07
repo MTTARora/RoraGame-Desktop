@@ -42,7 +42,7 @@
         <!--Filter Bar-->
         <Grid Grid.Row="3">
             <DockPanel VerticalAlignment="Top" >
-                <ListBox Style="{StaticResource MaterialDesignToolToggleListBox}" SelectedIndex="0" Margin="30 0 0 0">
+                <ListBox Style="{StaticResource MaterialDesignToolToggleListBox}" SelectedIndex="0" Margin="25 0 0 0">
                     <ListBoxItem ToolTip="Tất cả" >
                         <materialDesign:PackIcon Kind="SelectAll" Foreground="DarkGreen"/>
                     </ListBoxItem>
@@ -81,11 +81,18 @@
                 <ToggleButton Style="{StaticResource MaterialDesignFlatToggleButton}" ToolTip="Xóa"  HorizontalAlignment="Left" Height="25" Width="25" Click="Xoa_Click" Margin="0 2 15 5">
                     <materialDesign:PackIcon Kind="Close" Height="12" Width="12"/>
                 </ToggleButton>
-                <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth1" Background="WhiteSmoke" materialDesign:ShadowAssist.ShadowEdges="All" VerticalAlignment="Top" Padding="7" HorizontalAlignment="Left" >
+                <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth1" Margin="0 0 0 0" Background="WhiteSmoke" materialDesign:ShadowAssist.ShadowEdges="All" VerticalAlignment="Top" Padding="7" HorizontalAlignment="Left" >
                     <DockPanel>
-                        <materialDesign:PackIcon Kind="ClockOutline" Margin="5 0 0 0"/>
-                        <TextBlock Margin="5 0 0 0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Thuê bao tháng :</TextBlock>
-                        <TextBlock Margin="5 0 5 0" Foreground="Red" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Còn 30 ngày</TextBlock>
+                        <materialDesign:PackIcon Kind="TimerSandEmpty" Margin="5 0 0 0" Foreground="#FF555555"/>
+                        <TextBlock Margin="5 0 0 0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Thuê tháng :</TextBlock>
+                        <TextBlock Margin="5 0 5 0" Foreground="Red" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">25 ngày</TextBlock>
+                    </DockPanel>
+                </materialDesign:Card>
+                <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth1" Margin="15 0 0 0" Background="WhiteSmoke" materialDesign:ShadowAssist.ShadowEdges="All" VerticalAlignment="Top" Padding="7" HorizontalAlignment="Left" >
+                    <DockPanel>
+                        <materialDesign:PackIcon Kind="SwordCross" Margin="5 0 0 0" Foreground="#FF555555"/>
+                        <TextBlock Margin="5 0 0 0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Giới hạn :</TextBlock>
+                        <TextBlock Margin="5 0 5 0" Foreground="Red" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">3 Game</TextBlock>
                     </DockPanel>
                 </materialDesign:Card>
             </DockPanel>
@@ -113,8 +120,8 @@
             </ListView>
         </Grid>-->
         <Grid Grid.Row="4">
-            <DataGrid x:Name="LsGames" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True"
-                          materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="8">
+            <DataGrid x:Name="LsGames" Margin="8 5 0 0" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True"
+                          materialDesign:DataGridAssist.CellPadding="8 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="5">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Id}" Header="#"/>
                     <materialDesign:MaterialDataGridTextColumn Binding="{Binding Name}" Header="GAME" />
@@ -123,7 +130,7 @@
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Tag="{Binding GameCode}" Click="ThueGame_Click" Content="Chơi ngay" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="20" FontSize="13" Margin="0 -3 0 -3" Padding="10 0 10 0" Background="WhiteSmoke" Foreground="Black" BorderBrush="#FF939292" Opacity="0.9" BorderThickness="0.5" />
+                                <Button Tag="{Binding GameCode}" Click="ThueGame_Click" Content="Chơi ngay" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="20" FontSize="13" Margin="0 -3 0 -3" Padding="10 0 10 0" Background="WhiteSmoke" Foreground="Black" BorderBrush="#FF939292" BorderThickness="0.5" Opacity="0.9"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

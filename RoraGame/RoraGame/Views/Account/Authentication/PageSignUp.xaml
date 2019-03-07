@@ -30,11 +30,46 @@
                 <RowDefinition Height="33"></RowDefinition>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Hãy điền thông tin để đăng ký</TextBlock>
-            <TextBox Name="SignUpUsername" Grid.Row="1" materialDesign:HintAssist.Hint="Tài khoản" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-            <TextBox  Grid.Row="2" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-            <TextBox Grid.Row="3" materialDesign:HintAssist.Hint="Số điện thoại xác nhận" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-            <PasswordBox Grid.Row="4" materialDesign:HintAssist.Hint="Mật khẩu" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
-            <PasswordBox Grid.Row="5" materialDesign:HintAssist.Hint="Nhập lại mật khẩu" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+            <TextBox Name="SignUpUsername" Grid.Row="1" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                <materialDesign:HintAssist.Hint>
+                    <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
+                        <materialDesign:PackIcon Kind="Account"  Margin="0 0 5 0"/>
+                        <TextBlock> Tài khoản</TextBlock>
+                    </StackPanel>
+                </materialDesign:HintAssist.Hint>
+            </TextBox>
+            <TextBox  Grid.Row="2" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                <materialDesign:HintAssist.Hint>
+                    <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
+                        <materialDesign:PackIcon Kind="Email"  Margin="0 0 5 0"/>
+                        <TextBlock> Email</TextBlock>
+                    </StackPanel>
+                </materialDesign:HintAssist.Hint>
+            </TextBox>
+            <TextBox Grid.Row="3" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                <materialDesign:HintAssist.Hint>
+                    <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
+                        <materialDesign:PackIcon Kind="Phone"  Margin="0 0 5 0"/>
+                        <TextBlock> Số điện thoại xác nhận</TextBlock>
+                    </StackPanel>
+                </materialDesign:HintAssist.Hint>
+            </TextBox>
+            <PasswordBox Grid.Row="4" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}">
+                <materialDesign:HintAssist.Hint>
+                    <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
+                        <materialDesign:PackIcon Kind="Key" Margin="0 0 5 0"/>
+                        <TextBlock> Mật khẩu</TextBlock>
+                    </StackPanel>
+                </materialDesign:HintAssist.Hint>
+            </PasswordBox>
+            <PasswordBox Grid.Row="5" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}">
+                <materialDesign:HintAssist.Hint>
+                    <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
+                        <materialDesign:PackIcon Kind="Key" Margin="0 0 5 0"/>
+                        <TextBlock> Nhập lại mật khẩu</TextBlock>
+                    </StackPanel>
+                </materialDesign:HintAssist.Hint>
+            </PasswordBox>
             <Button Grid.Row="6" Style="{StaticResource MaterialDesignRaisedDarkButton}" VerticalAlignment="Bottom">Đăng ký</Button>
             <TextBlock Grid.Row="7" HorizontalAlignment="Center" Margin="0 20 0 0">Bạn đã có tài khoản? <Hyperlink>Đăng nhập</Hyperlink></TextBlock>
             <TextBlock Grid.Row="8" HorizontalAlignment="Center" Margin="0 15 0 0">Bạn quên mật khẩu? <Hyperlink>Lấy mật khẩu</Hyperlink></TextBlock>

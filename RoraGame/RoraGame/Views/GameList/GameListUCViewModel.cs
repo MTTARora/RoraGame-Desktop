@@ -11,20 +11,20 @@ namespace RoraGame.Views.UserControls.GameList
 {
     class GameListUCViewModel
     {
-        string platform = "upc";
+        string platform = "Steam";
         string killGame = "csgo";
         //string GameName = "PlayerUnknown's Battlegrounds";
-        //string gameUsername = @"pubgvna_2875";
-        //string gamePassword = @"Pubgvna123123";
-        string gameUsername = "truonghoangha002@gmail.com";
-        string gamePasswordf = "Ha9"; //Fake Password
-        string gamePasswords = "Ha9"; //Password Start
-        string gamePassworde = "Ha9"; //Password End
-        string imageLoginPlatform = "uplay_login_screen.PNG"; //Getting form Server
-        string imageRememberPlatform = "uplay_remember_screen.PNG"; //Getting form Server
-        //string folderPlatform = @"C:\Program Files (x86)\Steam\steam.exe";
-        string folderPlatform = @"C:\Program Files (x86)\Ubisoft\Ubisoft Game Launcher\upc.exe";
-        string pathSettingPlatform = @"C:\Users\Sky\AppData\Local\Ubisoft Game Launcher";
+        string gameUsername = @"pubgvna_2875"; //Steam
+        string gamePasswords = @"Pubgvna123123"; //Steam
+        //string gameUsername = @"truonghoangha002@gmail.com";
+        string gamePasswordf = @"Ha9"; //Fake Password
+        //string gamePasswords = @"Ha916022"; //Uplay //Password Start
+        string gamePassworde = @""; //Uplay //Password End
+        string imageLoginPlatform = "uplay_login_screen.PNG"; //Getting form Server //Uplay
+        string imageRememberPlatform = "uplay_remember_screen.PNG"; //Getting form Server //Uplay
+        string folderPlatform = @"C:\Program Files (x86)\Steam\steam.exe"; //Steam
+        //string folderPlatform = @"C:\Program Files (x86)\Ubisoft\Ubisoft Game Launcher\upc.exe"; //Uplay
+        string pathSettingPlatform = @"C:\Users\Sky\AppData\Local\Ubisoft Game Launcher"; //Uplay
         string killTaskmngr = "Taskmgr";
 
         public async Task<(List<Game> gameList, string errMsg)> getGameList()
@@ -53,7 +53,7 @@ namespace RoraGame.Views.UserControls.GameList
             switch (platform)
             {
                 //Login Steam
-                case "steam": 
+                case "Steam": 
                     AppHandler.startPlaform(folderPlatform, gameUsername, gamePasswords);
 
                     // Handle result
@@ -146,7 +146,7 @@ namespace RoraGame.Views.UserControls.GameList
             switch (platform)
             {
                 //Quit Steam
-                case "steam":
+                case "Steam":
                     AppHandler.killPlatform(platform);
                     AppHandler.killPlatform(killGame);
                     return true;

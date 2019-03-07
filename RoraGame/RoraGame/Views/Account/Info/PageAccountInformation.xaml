@@ -45,9 +45,30 @@
             <materialDesign:Card Margin="0 20 20 0" Width="350" Height="auto" materialDesign:ShadowAssist.ShadowDepth="Depth1" >
                 <StackPanel Margin="15 0 15 0">
                     <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0">Đổi mật khẩu</TextBlock>
-                    <PasswordBox Margin="0 3 0 0" materialDesign:HintAssist.Hint="Mật khẩu hiện tại" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
-                    <PasswordBox Margin="0 3 0 0" materialDesign:HintAssist.Hint="Mật khẩu mới" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
-                    <PasswordBox Margin="0 3 0 0" materialDesign:HintAssist.Hint="Nhập lại mật khẩu mới" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                    <PasswordBox Margin="0 3 0 0" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}">
+                        <materialDesign:HintAssist.Hint>
+                            <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
+                                <materialDesign:PackIcon Kind="Key" Margin="0 0 5 0"/>
+                                <TextBlock> Mật khẩu hiện tại</TextBlock>
+                            </StackPanel>
+                        </materialDesign:HintAssist.Hint>
+                    </PasswordBox>
+                    <PasswordBox Margin="0 3 0 0" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}">
+                        <materialDesign:HintAssist.Hint>
+                            <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
+                                <materialDesign:PackIcon Kind="Key" Margin="0 0 5 0"/>
+                                <TextBlock> Mật khẩu mới</TextBlock>
+                            </StackPanel>
+                        </materialDesign:HintAssist.Hint>
+                    </PasswordBox>
+                    <PasswordBox Margin="0 3 0 0" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}">
+                        <materialDesign:HintAssist.Hint>
+                            <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
+                                <materialDesign:PackIcon Kind="Key" Margin="0 0 5 0"/>
+                                <TextBlock> Nhập lại mật khẩu mới</TextBlock>
+                            </StackPanel>
+                        </materialDesign:HintAssist.Hint>
+                    </PasswordBox>
                     <Button Width="120" Margin="0 19 0 19" Style="{StaticResource MaterialDesignRaisedDarkButton}">Thay đổi</Button>
                 </StackPanel>
             </materialDesign:Card>
