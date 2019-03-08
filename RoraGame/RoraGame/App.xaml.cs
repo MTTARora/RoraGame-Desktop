@@ -58,4 +58,3 @@ namespace RoraGame
         #endregion Kill App Before Exit
     }
 }
-

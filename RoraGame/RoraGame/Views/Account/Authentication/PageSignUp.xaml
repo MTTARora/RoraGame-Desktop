@@ -70,7 +70,7 @@
                     </StackPanel>
                 </materialDesign:HintAssist.Hint>
             </PasswordBox>
-            <Button Grid.Row="6" Style="{StaticResource MaterialDesignRaisedDarkButton}" VerticalAlignment="Bottom">Đăng ký</Button>
+            <Button Grid.Row="6" Style="{StaticResource MaterialDesignRaisedButton}" VerticalAlignment="Bottom">Đăng ký</Button>
             <TextBlock Grid.Row="7" HorizontalAlignment="Center" Margin="0 20 0 0">Bạn đã có tài khoản? <Hyperlink>Đăng nhập</Hyperlink></TextBlock>
             <TextBlock Grid.Row="8" HorizontalAlignment="Center" Margin="0 15 0 0">Bạn quên mật khẩu? <Hyperlink>Lấy mật khẩu</Hyperlink></TextBlock>
         </Grid>

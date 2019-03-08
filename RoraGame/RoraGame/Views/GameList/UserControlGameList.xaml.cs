@@ -129,7 +129,6 @@ namespace RoraGame
         {
             return gameListViewModel.filterGame(txtFilter.Text) ? true : ((item as Game).Name.IndexOf(txtFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0);
         }
-
         #endregion
     }
 }

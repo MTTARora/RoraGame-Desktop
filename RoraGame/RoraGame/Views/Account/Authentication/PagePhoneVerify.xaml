@@ -36,7 +36,7 @@
                         </StackPanel>
                     </materialDesign:HintAssist.Hint>
                 </TextBox>
-                <Button Grid.Row="2" VerticalAlignment="Bottom" Width="100" Style="{StaticResource MaterialDesignRaisedDarkButton}">Nhập mã</Button>
+                <Button Grid.Row="2" VerticalAlignment="Bottom" Width="100" Style="{StaticResource MaterialDesignRaisedButton}">Nhập mã</Button>
                 <TextBlock Grid.Row="3" HorizontalAlignment="Center" Margin="0 20 0 0">Bạn không nhận được tin nhắn? <Hyperlink>Gửi lại mã</Hyperlink></TextBlock>
                 <TextBlock Grid.Row="4" HorizontalAlignment="Center" Margin="0 15 0 0">Đăng nhập tài khoản? <Hyperlink>Đăng nhập</Hyperlink></TextBlock>
             </Grid>

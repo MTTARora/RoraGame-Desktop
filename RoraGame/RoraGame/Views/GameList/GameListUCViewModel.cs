@@ -80,7 +80,7 @@ namespace RoraGame.Views.UserControls.GameList
                 case "upc":
                     AppHandler.deleteFileSetting(pathSettingPlatform);//Delete Setting Platform
                     AppHandler.startPlaform(folderPlatform, null, null); //Login Platform
-                    for (int z = 0; z < 33; z++)
+                    for (int z = 0; z < 33; z++) //Wait for Login Screen 10 Second
                     {
                         IntPtr hWnd = IntPtr.Zero;
                         hWnd = Process.GetProcessesByName(platform)[0].MainWindowHandle;

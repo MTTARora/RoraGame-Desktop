@@ -14,8 +14,8 @@
         TextElement.FontSize="13"
         TextOptions.TextFormattingMode="Ideal" 
         TextOptions.TextRenderingMode="Auto"        
-        FontFamily="{DynamicResource MaterialDesignFont}"
-      >
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    
     <Grid Margin="0 30 0 0">
         <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">
             <materialDesign:Card Margin="0 20 20 0" MinWidth="350" Height="auto" materialDesign:ShadowAssist.ShadowDepth="Depth1" >
@@ -38,7 +38,7 @@
                     <TextBox Grid.Row="2" Grid.Column="1" MaxWidth="220">099 999 9999</TextBox>
                     <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Bottom" FontWeight="SemiBold" Style="{StaticResource MaterialDesignBody1TextBlock}">Email:</TextBlock>
                     <TextBox Grid.Row="3" Grid.Column="1" MaxWidth="220">emaildai@gmail.com</TextBox>
-                    <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Width="100" Style="{StaticResource MaterialDesignRaisedDarkButton}">Cập nhật</Button>
+                    <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Width="100" Style="{StaticResource MaterialDesignRaisedButton}">Cập nhật</Button>
                     <materialDesign:PackIcon Kind="Account" Margin="163,-5,-13,0" Width="70" Height="70" Grid.Column="1" Foreground="Gray"/>
                 </Grid>
             </materialDesign:Card>
@@ -69,14 +69,32 @@
                             </StackPanel>
                         </materialDesign:HintAssist.Hint>
                     </PasswordBox>
-                    <Button Width="120" Margin="0 19 0 19" Style="{StaticResource MaterialDesignRaisedDarkButton}">Thay đổi</Button>
+                    <Button Width="120" Margin="0 19 0 19" Style="{StaticResource MaterialDesignRaisedButton}">Thay đổi</Button>
                 </StackPanel>
             </materialDesign:Card>
             <materialDesign:Card Margin="0 20 20 0" MinWidth="350" Height="auto" materialDesign:ShadowAssist.ShadowDepth="Depth1" >
-                <StackPanel Margin="15 0 15 0">
-                    <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0">Thông tin ví tiền</TextBlock>
-                    <TextBlock Margin="0 10 0 8" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}" FontWeight="Bold" Foreground="#FFC70606">999.999.999 vnđ</TextBlock>
-                    <DockPanel HorizontalAlignment="Center">
+                <Grid Margin="15 0 15 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="122"></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="27"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0">Thông tin ví tiền</TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="SemiBold" Style="{StaticResource MaterialDesignBody1TextBlock}">Số dư khả dụng:</TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlock}" Foreground="red" FontWeight="Medium">123,456,789 VNĐ</TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="0" FontWeight="SemiBold" Style="{StaticResource MaterialDesignBody1TextBlock}">Thuê bao Game:</TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlock}" Foreground="red" FontWeight="Medium">278 Ngày</TextBlock>
+                    <TextBlock Grid.Row="3" Grid.Column="0" FontWeight="SemiBold" Style="{StaticResource MaterialDesignBody1TextBlock}">Uy tín:</TextBlock>
+                    <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlock}" Foreground="red" FontWeight="Medium">1 Điểm</TextBlock>
+                    <DockPanel Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center">
                         <ComboBox Width="55" materialDesign:HintAssist.Hint="Tháng" IsEditable="True" materialDesign:HintAssist.HintOpacity=".26">
                             <ComboBoxItem>1</ComboBoxItem>
                             <ComboBoxItem>2</ComboBoxItem>
@@ -93,28 +111,68 @@
                             <ComboBoxItem>13</ComboBoxItem>
                             <ComboBoxItem>14</ComboBoxItem>
                             <ComboBoxItem>15</ComboBoxItem>
+                            <ComboBoxItem>16</ComboBoxItem>
+                            <ComboBoxItem>17</ComboBoxItem>
+                            <ComboBoxItem>18</ComboBoxItem>
+                            <ComboBoxItem>19</ComboBoxItem>
+                            <ComboBoxItem>20</ComboBoxItem>
+                            <ComboBoxItem>21</ComboBoxItem>
+                            <ComboBoxItem>22</ComboBoxItem>
+                            <ComboBoxItem>23</ComboBoxItem>
+                            <ComboBoxItem>24</ComboBoxItem>
+                            <ComboBoxItem>25</ComboBoxItem>
+                            <ComboBoxItem>26</ComboBoxItem>
+                            <ComboBoxItem>27</ComboBoxItem>
+                            <ComboBoxItem>28</ComboBoxItem>
+                            <ComboBoxItem>29</ComboBoxItem>
+                            <ComboBoxItem>30</ComboBoxItem>
+                            <ComboBoxItem>31</ComboBoxItem>
+                            <ComboBoxItem>32</ComboBoxItem>
+                            <ComboBoxItem>33</ComboBoxItem>
+                            <ComboBoxItem>34</ComboBoxItem>
                         </ComboBox>
-                        <Button Width="150" Margin="20 10 20 4" Style="{StaticResource MaterialDesignRaisedDarkButton}">Mua gói tháng</Button>
-                        <Button BorderBrush="Azure" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" ToolTip="Thông tin gói tháng" VerticalAlignment="Bottom">
+                        <Button Width="150" Margin="20 10 20 4" Style="{StaticResource MaterialDesignRaisedButton}">Mua gói tháng</Button>
+                        <Button BorderBrush="Azure" Style="{StaticResource MaterialDesignFloatingActionMiniButton}" ToolTip="Thông tin gói tháng" VerticalAlignment="Bottom">
                             <materialDesign:PackIcon Kind="QuestionMarkCircle" Height="20" Width="20" />
                         </Button>
                     </DockPanel>
-                    <TextBox Margin="0 3 0 0" MaxWidth="350" materialDesign:HintAssist.Hint="Code" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <Button Width="120" Margin="0 19 0 15" Style="{StaticResource MaterialDesignRaisedDarkButton}">Nhập Code</Button>
-                </StackPanel>
+                    <TextBox Grid.Row="5" Grid.ColumnSpan="2" Margin="0 3 0 0" MaxWidth="350" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                        <materialDesign:HintAssist.Hint>
+                            <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
+                                <materialDesign:PackIcon Kind="TargetVariant" Margin="0 0 5 0"/>
+                                <TextBlock> Code</TextBlock>
+                            </StackPanel>
+                        </materialDesign:HintAssist.Hint>
+                    </TextBox>
+                    <Button Grid.Row="6" Grid.ColumnSpan="2" Width="120" Margin="0 19 0 15" Style="{StaticResource MaterialDesignRaisedButton}">Nhập Code</Button>
+                </Grid>
             </materialDesign:Card>
             <materialDesign:Card Margin="0 20 20 0" Width="350" Height="auto" materialDesign:ShadowAssist.ShadowDepth="Depth1" >
                 <StackPanel Margin="15 0 15 0">
                     <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0">Nạp tiền</TextBlock>
-                    <TextBox Margin="0 3 0 0" materialDesign:HintAssist.Hint="Mã thẻ" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <TextBox Margin="0 3 0 0" materialDesign:HintAssist.Hint="Số Seri" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <ComboBox Margin="0 3 0 0" materialDesign:HintAssist.Hint="Nhà mạng" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                    <TextBox Margin="0 3 0 0" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                        <materialDesign:HintAssist.Hint>
+                            <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
+                                <materialDesign:PackIcon Kind="CardTextOutline" Margin="0 0 5 0"/>
+                                <TextBlock> Mã thẻ</TextBlock>
+                            </StackPanel>
+                        </materialDesign:HintAssist.Hint>
+                    </TextBox>
+                    <TextBox Margin="0 3 0 0" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                        <materialDesign:HintAssist.Hint>
+                            <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
+                                <materialDesign:PackIcon Kind="Equal" Margin="0 0 5 0"/>
+                                <TextBlock> Số Seri</TextBlock>
+                            </StackPanel>
+                        </materialDesign:HintAssist.Hint>
+                    </TextBox>
+                    <ComboBox Margin="0 12 0 0" materialDesign:HintAssist.Hint="Nhà mạng" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                         <ComboBoxItem IsSelected="True">Viettel</ComboBoxItem>
                         <ComboBoxItem>Vinaphone</ComboBoxItem>
                         <ComboBoxItem>Mobiphone</ComboBoxItem>
                         <ComboBoxItem>Vietnammobile</ComboBoxItem>
                     </ComboBox>
-                    <Button Width="120" Margin="0 19 0 15" Style="{StaticResource MaterialDesignRaisedDarkButton}">Nạp tiền</Button>
+                    <Button Width="120" Margin="0 19 0 15" Style="{StaticResource MaterialDesignRaisedButton}">Nạp tiền</Button>
                 </StackPanel>
             </materialDesign:Card>
         </WrapPanel>
