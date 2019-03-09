@@ -89,11 +89,13 @@
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0">Thông tin ví tiền</TextBlock>
                     <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="SemiBold" Style="{StaticResource MaterialDesignBody1TextBlock}">Số dư khả dụng:</TextBlock>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlock}" Foreground="red" FontWeight="Medium">123,456,789 VNĐ</TextBlock>
-                    <TextBlock Grid.Row="2" Grid.Column="0" FontWeight="SemiBold" Style="{StaticResource MaterialDesignBody1TextBlock}">Thuê bao Game:</TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlock}" Foreground="red" FontWeight="Medium">123,456,789 VNĐ                         
+                        <!--<materialDesign:PackIcon Kind="Help" Height="12" Width="12"/>-->
+                    </TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="0" FontWeight="SemiBold" Style="{StaticResource MaterialDesignBody1TextBlock}">Thuê bao tháng:</TextBlock>
                     <TextBlock Grid.Row="2" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlock}" Foreground="red" FontWeight="Medium">278 Ngày</TextBlock>
                     <TextBlock Grid.Row="3" Grid.Column="0" FontWeight="SemiBold" Style="{StaticResource MaterialDesignBody1TextBlock}">Uy tín:</TextBlock>
-                    <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlock}" Foreground="red" FontWeight="Medium">1 Điểm</TextBlock>
+                    <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlock}" Foreground="red" FontWeight="Medium">33 Điểm</TextBlock>
                     <DockPanel Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center">
                         <ComboBox Width="55" materialDesign:HintAssist.Hint="Tháng" IsEditable="True" materialDesign:HintAssist.HintOpacity=".26">
                             <ComboBoxItem>1</ComboBoxItem>

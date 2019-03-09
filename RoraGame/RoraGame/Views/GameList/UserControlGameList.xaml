@@ -43,7 +43,7 @@
         <Grid Grid.Row="3">
             <DockPanel VerticalAlignment="Top" >
                 <ListBox Style="{StaticResource MaterialDesignToolToggleListBox}" SelectedIndex="0" Margin="25 0 0 0">
-                    <ListBoxItem ToolTip="Tất cả" >
+                    <ListBoxItem ToolTip="Tất cả">
                         <materialDesign:PackIcon Kind="SelectAll" Foreground="DarkGreen"/>
                     </ListBoxItem>
                     <ListBoxItem ToolTip="Steam">
@@ -81,20 +81,20 @@
                 <Button Style="{StaticResource MaterialDesignToolButton}" ToolTip="Xóa" materialDesign:RippleAssist.IsCentered="True" HorizontalAlignment="Left" Height="25" Width="25" Click="Xoa_Click" Margin="0 2 15 5">
                     <materialDesign:PackIcon Kind="Close" Height="12" Width="12"/>
                 </Button>
-                <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth1" Margin="0 0 0 0" Background="{DynamicResource PrimaryHueDarkBrush}" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" materialDesign:ShadowAssist.ShadowEdges="All" VerticalAlignment="Top" Padding="7" HorizontalAlignment="Left" UniformCornerRadius="3">
+                <Button materialDesign:ShadowAssist.ShadowDepth="Depth1" Margin="0 0 0 0" Style="{StaticResource MaterialDesignRaisedDarkButton}" materialDesign:ShadowAssist.ShadowEdges="All" VerticalAlignment="Top" Padding="7" HorizontalAlignment="Left">
                     <DockPanel>
                         <materialDesign:PackIcon Kind="TimerSandEmpty" Margin="5 0 0 0" Foreground="White"/>
                         <TextBlock Margin="5 0 0 0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Thuê tháng :</TextBlock>
                         <TextBlock Margin="5 0 5 0" Foreground="#FFF20D" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">25 ngày</TextBlock>
                     </DockPanel>
-                </materialDesign:Card>
-                <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth1" Margin="15 0 0 0" Background="{DynamicResource PrimaryHueDarkBrush}"  Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" materialDesign:ShadowAssist.ShadowEdges="All" VerticalAlignment="Top" Padding="7" HorizontalAlignment="Left" UniformCornerRadius="3">
+                </Button>
+                <Button materialDesign:ShadowAssist.ShadowDepth="Depth1" Margin="15 0 0 0" Style="{StaticResource MaterialDesignRaisedDarkButton}" materialDesign:ShadowAssist.ShadowEdges="All" VerticalAlignment="Top" Padding="7" HorizontalAlignment="Left">
                     <DockPanel>
                         <materialDesign:PackIcon Kind="SwordCross" Margin="5 0 0 0"/>
-                        <TextBlock Margin="5 0 0 0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Giới hạn :</TextBlock>
-                        <TextBlock Margin="5 0 5 0" Foreground="#FFF20D" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">3 Game</TextBlock>
+                        <TextBlock Margin="5 0 0 0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Uy tín :</TextBlock>
+                        <TextBlock Margin="5 0 5 0" Foreground="#FFF20D" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">3 Điểm</TextBlock>
                     </DockPanel>
-                </materialDesign:Card>
+                </Button>
             </DockPanel>
         </Grid>
 

@@ -29,9 +29,7 @@
             </Grid>
             <WrapPanel>
                 <StackPanel HorizontalAlignment="Left">
-                    <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,0,0">
-                Game mới cập nhật
-                    </TextBlock>
+                    <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,0,0">Game mới</TextBlock>
                     <ListView Name ="GameNew" Margin="10,0,15,0">
                         <ListView.View>
                             <GridView>
@@ -45,7 +43,7 @@
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Left">
                     <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,0,0">
-                Tin tức mới
+                Tin tức
                     </TextBlock>
                     <ListView Name ="GameNews" Margin="10,0,15,0">
                         <ListView.View>
@@ -107,9 +105,6 @@
             <StackPanel>
                 <Button ToolTipService.Placement="Left" ToolTip="Hỗ trợ - Messenger" Margin="0,0,0,10" Background="#FF0084FF" BorderBrush="#FF0084FF" Click="Websiteroragame_Click" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
                     <materialDesign:PackIcon Kind="FacebookMessenger" Height="24" Width="24" />
-                </Button>
-                <Button ToolTipService.Placement="Left" ToolTip="Hỗ trợ - Zalo" Margin="0,0,0,10" Background="#FF0EA8E1" BorderBrush="#FF0EA8E1" Click="Websiteroragame_Click" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
-                    <Image Source="/Resources/Zalo.png" Height="37" Width="37" />
                 </Button>
                 <Button ToolTipService.Placement="Left" ToolTip="Facebook Fanpage" Margin="0,0,0,10" Background="#3b5998" BorderBrush="#3b5998" Click="Facebookroragame_Click"  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
                     <materialDesign:PackIcon Kind="Facebook" Height="24" Width="24" />

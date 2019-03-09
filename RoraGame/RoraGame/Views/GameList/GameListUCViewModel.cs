@@ -43,6 +43,7 @@ namespace RoraGame.Views.UserControls.GameList
         {
             //Check Logged in
             //Check Rented
+            //Check Version
             //Check Level Require
             //Check Wallet
             //Get Data form Server
@@ -53,7 +54,11 @@ namespace RoraGame.Views.UserControls.GameList
             switch (platform)
             {
                 //Login Steam
-                case "Steam": 
+                case "Steam":
+                    //Check Location
+                    //Check Certification
+
+                    //Start Platform
                     AppHandler.startPlaform(folderPlatform, gameUsername, gamePasswords);
 
                     // Handle result
@@ -79,7 +84,7 @@ namespace RoraGame.Views.UserControls.GameList
                 //Login Uplay
                 case "upc":
                     AppHandler.deleteFileSetting(pathSettingPlatform);//Delete Setting Platform
-                    AppHandler.startPlaform(folderPlatform, null, null); //Login Platform
+                    AppHandler.startPlaform(folderPlatform, null, null); //Start Platform
                     for (int z = 0; z < 33; z++) //Wait for Login Screen 10 Second
                     {
                         IntPtr hWnd = IntPtr.Zero;
@@ -114,7 +119,6 @@ namespace RoraGame.Views.UserControls.GameList
                                     AutoControl.SendStringFocus(gamePasswords); //Send Password Start
                                     System.Threading.Thread.Sleep(50);
                                     AppHandler.killPlatform(killTaskmngr); //Kill Taskmgr
-                                    AppHandler.InputBlocker.BlockInput(true); //Lock keyboard
                                     AutoControl.SendTextKeyBoard(hWnd, gamePassworde); //Send Password End
                                     SendKeys.SendWait("{ENTER}");
                                     AppHandler.ShowWindow(hWnd, 9); //Show Window
@@ -124,8 +128,8 @@ namespace RoraGame.Views.UserControls.GameList
                             }
                             z = 33;
                         }
-                        Clipboard.Clear();
                     }
+                    Clipboard.Clear();
                     return true;
 
                 //Login Battle
