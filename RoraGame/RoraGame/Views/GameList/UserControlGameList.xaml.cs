@@ -81,6 +81,11 @@ namespace RoraGame
             }
         }
 
+        private void DownloadGame_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void txtFilter_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(LsGames.ItemsSource).Refresh();

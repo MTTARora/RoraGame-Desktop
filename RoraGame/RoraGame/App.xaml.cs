@@ -37,7 +37,7 @@ namespace RoraGame
             //Kill Platform
             foreach (System.Diagnostics.Process myProc in System.Diagnostics.Process.GetProcesses())
             {
-                if (myProc.ProcessName == "upc")
+                if (myProc.ProcessName == "Steam")
                 {
                     myProc.Kill();
                 }

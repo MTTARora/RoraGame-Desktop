@@ -23,7 +23,7 @@
                 <TextBlock Margin="10 0 0 0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Đang thuê game</TextBlock>
                 <TextBlock Margin="10 0 0 0" VerticalAlignment="Center" Foreground="Red" Style="{StaticResource MaterialDesignSubheadingTextBlock}">PlayerUnknown's Battlegrounds</TextBlock>
                 <Grid Width="150" Margin="10 0 0 0">
-                    <Button Click="DungThueGame_Click" Height="30" Background="Red" Style="{StaticResource MaterialDesignRaisedButton}" materialDesign:ButtonProgressAssist.Value="-1" materialDesign:ButtonProgressAssist.IsIndicatorVisible="True" materialDesign:ButtonProgressAssist.IsIndeterminate="True" Content="Dừng thuê game" Margin="2,0" BorderBrush="#FFA63C61" />
+                    <Button Click="DungThueGame_Click" Height="30" Background="Red" Style="{StaticResource MaterialDesignRaisedButton}"  Content="Dừng thuê game" Margin="2,0" BorderBrush="Red" />
                 </Grid>
                 <TextBlock Margin="10 0 0 0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Thời gian thuê :</TextBlock>
                 <TextBlock Margin="5 0 0 0" Foreground="Red" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}">1:45</TextBlock>
@@ -80,7 +80,7 @@
                 </TextBox>
                 <Button Style="{StaticResource MaterialDesignToolButton}" ToolTip="Xóa" materialDesign:RippleAssist.IsCentered="True" HorizontalAlignment="Left" Height="25" Width="25" Click="Xoa_Click" Margin="0 2 15 5">
                     <materialDesign:PackIcon Kind="Close" Height="12" Width="12"/>
-                </Button>
+                </Button>                
                 <Button materialDesign:ShadowAssist.ShadowDepth="Depth1" Margin="0 0 0 0" Style="{StaticResource MaterialDesignRaisedDarkButton}" materialDesign:ShadowAssist.ShadowEdges="All" VerticalAlignment="Top" Padding="7" HorizontalAlignment="Left">
                     <DockPanel>
                         <materialDesign:PackIcon Kind="TimerSandEmpty" Margin="5 0 0 0" Foreground="White"/>
@@ -124,16 +124,29 @@
                           materialDesign:DataGridAssist.CellPadding="8 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="5">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Id}" Header="#"/>
-                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding Name}" Header="GAME" />
                     <materialDesign:MaterialDataGridTextColumn Binding="{Binding Platform}" Header="NỀN" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
-                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding RequiredLvl}" Header="UY TÍN" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+
+
+                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding Name}" Header="GAME" />
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Tag="{Binding GameCode}" Click="ThueGame_Click" Content="Chơi ngay" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="20" FontSize="13" Margin="0 -3 0 -3" Padding="10 0 10 0" Background="WhiteSmoke" Foreground="Black" BorderBrush="#FF939292" BorderThickness="0.5" Opacity="0.9"/>
+                                <Button Tag="{Binding GameCode}" Click="ThueGame_Click" Content="Chơi Game" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="20" FontSize="13" Margin="0 -3 0 -3" Padding="10 0 10 0" Background="WhiteSmoke" Foreground="Black" BorderBrush="#FF939292" BorderThickness="0.5" Opacity="0.9"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Tag="{Binding GameCode}" Click="DownloadGame_Click" ToolTip="Tải Game" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="20" FontSize="13" Margin="0 -3 0 -3" Padding="10 0 10 0" Background="WhiteSmoke" Foreground="Black" BorderBrush="#FF939292" BorderThickness="0.5" Opacity="0.9">
+                                    <DockPanel>
+                                        <materialDesign:PackIcon Kind="Download"/>
+                                    </DockPanel>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding RequiredLvl}" Header="UY TÍN" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
                     <materialDesign:MaterialDataGridTextColumn Binding="{Binding Description}" Header="THÔNG TIN" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
                 </DataGrid.Columns>
             </DataGrid>

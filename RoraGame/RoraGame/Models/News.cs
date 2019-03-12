@@ -1,25 +1,52 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Net.Http;
+using RoraGame.Network;
+using RoraGame.Ulti;
 
 namespace RoraGame.Models
 {
     class News
     {
+        public int date { get; set; }
+        public string categories { get; set; }
+        public string title { get; set; }
+        public string excerpt { get; set; }
+        public string url { get; set; }
 
-        public static List<Games> getNews()
+
+        #region METHOD
+
+
+
+        #endregion
+
+
+        #region API SERVICES
+
+        public async static Task<(List<News> newsList, string errMsg)> GetNewsList()
         {
-            List<Games> items = new List<Games>();
-            items.Add(new Games() { Dates = "29/12/1999", Name = "Assassin's Creed", RequiredLvl = "Level 6", Description = "https://www.assassinscreed.com" });
-            items.Add(new Games() { Dates = "29/12/1999", Name = "Call Of Duty", RequiredLvl = "Level 6", Description = "https://www.assassinscreed.com" });
-            items.Add(new Games() { Dates = "29/12/1999", Name = "Fornite", RequiredLvl = "Level 6", Description = "https://www.assassinscreed.com" });
-            items.Add(new Games() { Dates = "29/12/1999", Name = "Battlefield", RequiredLvl = "Level 6", Description = "qweqwádfádf ăè ăè adfăè ăe ăè" });
-            items.Add(new Games() { Dates = "29/12/1999", Name = "Dota", RequiredLvl = "Level 6", Description = "qweqwádfádf ăè ăè adfăè ăe ăè " });
-            items.Add(new Games() { Dates = "29/12/1999", Name = "Counter-Strike : Global Offensive", RequiredLvl = "Level 6", Description = "qweqwádfádf ăè ăè adfăè ăe ăè " });
+            var result = await APIServices.Instance.GETRequest(URLStorage.getNewsList);
 
-            return items;
+            if (result.err != null)
+            {
+                return (null, result.err);
+            }
+
+            HttpResponseMessage data = result.response;
+
+            if (data.IsSuccessStatusCode)
+            {
+                var newsList = data.Content.ReadAsAsync<List<News>>().Result;
+                return (newsList, null);
+            }
+            else
+            {
+                return (null, "Can't get data");
+            }
+
         }
+
+        #endregion
     }
 }

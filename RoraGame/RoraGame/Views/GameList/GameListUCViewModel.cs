@@ -44,7 +44,7 @@ namespace RoraGame.Views.UserControls.GameList
             //Check Logged in
             //Check Rented
             //Check Version
-            //Check Level Require
+            //Check Require
             //Check Wallet
             //Get Data form Server
             //If Uplay, Origin, Battle, Epic Check Admin Right
@@ -172,6 +172,95 @@ namespace RoraGame.Views.UserControls.GameList
                     return true;
 
                 //Quit Origin
+                case "Origin":
+                    return true;
+
+                default:
+                    return true;
+            }
+        }
+
+        public bool downloadGame()
+        {
+            //Check Logged in
+            //Check Rented
+            //Check Version
+            //Check Require
+            //Get Data form Server
+            //If Uplay, Origin, Battle, Epic Check Admin Right
+
+            AppHandler.killPlatform(platform); //Kill Game Platform
+            System.Threading.Thread.Sleep(500);
+            switch (platform)
+            {
+                //Login Steam
+                case "Steam":
+                    //Check Location
+                    //Check Certification
+
+                    //Start Platform
+                    AppHandler.startPlaform(folderPlatform, gameUsername, gamePasswords);
+                    return true;
+
+                case "Epic":
+                    return true;
+
+                //Login Uplay
+                case "upc":
+                    AppHandler.deleteFileSetting(pathSettingPlatform);//Delete Setting Platform
+                    AppHandler.startPlaform(folderPlatform, null, null); //Start Platform
+                    for (int z = 0; z < 33; z++) //Wait for Login Screen 10 Second
+                    {
+                        IntPtr hWnd = IntPtr.Zero;
+                        hWnd = Process.GetProcessesByName(platform)[0].MainWindowHandle;
+                        System.Threading.Thread.Sleep(300);
+                        if (hWnd != IntPtr.Zero) //Check Uplay Started
+                        {
+                            for (int i = 0; i < 100; i++)
+                            {
+                                AppHandler.ShowWindow(hWnd, 9);
+                                AppHandler.SetForegroundWindow(hWnd);
+                                if (AppHandler.sceenScan(imageLoginPlatform)) //Scan Login
+                                {
+                                    AppHandler.killPlatform(killTaskmngr); //Kill Taskmgr
+                                    AppHandler.InputBlocker.BlockInput(true); //Lock keyboard
+                                    System.Threading.Thread.Sleep(300);
+                                    AppHandler.ShowWindow(hWnd, 9);
+                                    AppHandler.SetForegroundWindow(hWnd);
+                                    if (AppHandler.sceenScan(imageRememberPlatform)) //Scan Remember
+                                    {
+                                        AutoControl.SendClickOnPosition(hWnd, 220, 270); //Click Remember
+                                    }
+                                    AutoControl.SendClickOnPosition(hWnd, 225, 225);
+                                    AppHandler.ShowWindow(hWnd, 0); //Hide Window
+                                    System.Threading.Thread.Sleep(20);
+                                    AppHandler.killPlatform(killTaskmngr); //Kill Taskmgr
+                                    AppHandler.InputBlocker.BlockInput(true); //Lock keyboard
+                                    SendKeys.SendWait("+{TAB}");
+                                    SendKeys.SendWait(gameUsername); //Send Username
+                                    SendKeys.SendWait("{TAB}");
+                                    Clipboard.SetText(gamePasswordf); //Clipboard Password Fake
+                                    AutoControl.SendStringFocus(gamePasswords); //Send Password Start
+                                    System.Threading.Thread.Sleep(50);
+                                    AppHandler.killPlatform(killTaskmngr); //Kill Taskmgr
+                                    AutoControl.SendTextKeyBoard(hWnd, gamePassworde); //Send Password End
+                                    SendKeys.SendWait("{ENTER}");
+                                    AppHandler.ShowWindow(hWnd, 9); //Show Window
+                                    AppHandler.InputBlocker.BlockInput(false); //Unlock keyboard
+                                    i = 100;
+                                }
+                            }
+                            z = 33;
+                        }
+                    }
+                    Clipboard.Clear();
+                    return true;
+
+                //Login Battle
+                case "Battle":
+                    return true;
+
+                //Login Origin
                 case "Origin":
                     return true;
 

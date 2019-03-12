@@ -96,6 +96,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\GameNew.cs" />
     <Compile Include="Models\News.cs" />
     <Compile Include="Network\APIServices.cs" />
     <Compile Include="Models\Game.cs" />

@@ -34,9 +34,9 @@
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn DisplayMemberBinding="{Binding Dates}" Header="Ngày" />
+                                <GridViewColumn DisplayMemberBinding="{Binding Platform}" Header="Nền" />
                                 <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Tên" />
-                                <GridViewColumn DisplayMemberBinding="{Binding RequiredLvl}" Header="Yêu cầu" />
-                                <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Thông tin" />
+                                <GridViewColumn DisplayMemberBinding="{Binding RequiredLvl}" Header="Uy tín" />
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -45,11 +45,14 @@
                     <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,0,0">
                 Tin tức
                     </TextBlock>
-                    <ListView Name ="GameNews" Margin="10,0,15,0">
+                    <ListView Name ="News" Margin="10,0,15,0">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn DisplayMemberBinding="{Binding Dates}" Header="Ngày" />
-                                <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Tin tức" />
+                                <GridViewColumn DisplayMemberBinding="{Binding date}" Header="Ngày" />
+                                <GridViewColumn DisplayMemberBinding="{Binding categories}" Header="Loại" />
+                                <GridViewColumn DisplayMemberBinding="{Binding title}" Header="Tiêu đề" />
+                                <GridViewColumn DisplayMemberBinding="{Binding excerpt}" Header="Nội dung" />
+
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -106,7 +109,7 @@
                 <Button ToolTipService.Placement="Left" ToolTip="Hỗ trợ - Messenger" Margin="0,0,0,10" Background="#FF0084FF" BorderBrush="#FF0084FF" Click="Websiteroragame_Click" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
                     <materialDesign:PackIcon Kind="FacebookMessenger" Height="24" Width="24" />
                 </Button>
-                <Button ToolTipService.Placement="Left" ToolTip="Facebook Fanpage" Margin="0,0,0,10" Background="#3b5998" BorderBrush="#3b5998" Click="Facebookroragame_Click"  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
+                <Button ToolTipService.Placement="Left" ToolTip="Fanpage" Margin="0,0,0,10" Background="#3b5998" BorderBrush="#3b5998" Click="Facebookroragame_Click"  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
                     <materialDesign:PackIcon Kind="Facebook" Height="24" Width="24" />
                 </Button>
                 <Button ToolTipService.Placement="Left" ToolTip="Website RoraGame" Margin="0,0,0,10" Background="DarkOliveGreen" BorderBrush="DarkOliveGreen" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
