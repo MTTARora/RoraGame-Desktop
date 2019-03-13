@@ -279,5 +279,14 @@
   <ItemGroup>
     <Resource Include="Resources\zalo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\battlefield-4_gdp-bg.jpg" />
+    <Resource Include="Resources\battlefieldv_standard-edition_gdp_header_2400x600_en_US.jpg" />
+    <Resource Include="Resources\bebjjep.large.jpg" />
+    <Resource Include="Resources\crysis-trilogy_gdp_header_1920x480_en_US.png" />
+    <Resource Include="Resources\games-hero-2-1920x480.jpg" />
+    <Resource Include="Resources\original.jpg" />
+    <Resource Include="Resources\ultima-i-the-first-age-of-darkness_gdp-bg.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

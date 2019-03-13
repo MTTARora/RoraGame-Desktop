@@ -72,9 +72,11 @@ namespace RoraGame
 
         #region Left Side Menu
         int i = 0;
+        int h = 0;
         UserControl usc = null;
         UserControl uscc = null;
-        
+        UserControl usch = null;
+
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {            
             GridMain.Children.Clear();
@@ -83,8 +85,12 @@ namespace RoraGame
             switch (((ListViewItem)((ListView)sender).SelectedItem).Name)
             {
                 case "ItemHome":
-                    usc = new UserControlHome();
-                    GridMain.Children.Add(usc);
+                    if (h < 1)
+                    {
+                        usch = new UserControlHome();
+                        h++;
+                    }
+                    GridMain.Children.Add(usch);
                     break;
                 case "ItemAccount":
                     usc = new UserControlAccount();

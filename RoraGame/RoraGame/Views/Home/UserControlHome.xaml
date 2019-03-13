@@ -23,9 +23,9 @@
     </UserControl.Triggers>
     <Grid HorizontalAlignment="Center">
         <StackPanel>
-            <Grid>              
-                <Image x:Name="Banner1" VerticalAlignment="Top" Source="/Resources/splashBanner_magic.jpg"></Image>
-                <Image x:Name="Banner2" VerticalAlignment="Top" Source="/Resources/billboard_IAB_kaladesh.jpg"></Image>
+            <Grid>
+                <Image x:Name="Banner1" VerticalAlignment="Top" Source="/Resources/games-hero-2-1920x480.jpg"></Image>
+                <Image x:Name="Banner2" VerticalAlignment="Top" Source="/Resources/crysis-trilogy_gdp_header_1920x480_en_US.png"></Image>
             </Grid>
             <WrapPanel>
                 <StackPanel HorizontalAlignment="Left">
