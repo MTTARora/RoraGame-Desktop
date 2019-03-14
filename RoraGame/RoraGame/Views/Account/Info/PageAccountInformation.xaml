@@ -32,8 +32,8 @@
                         <RowDefinition Height="70"></RowDefinition>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0">Thông tin tài khoản</TextBlock>
-                    <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="SemiBold" Style="{StaticResource MaterialDesignBody1TextBlock}">Tên tài khoản:</TextBlock>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlock}">Usernamedaithatladai</TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="SemiBold" Style="{StaticResource MaterialDesignBody1TextBlock}">ID:</TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlock}">0123456498</TextBlock>
                     <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom" FontWeight="SemiBold" Style="{StaticResource MaterialDesignBody1TextBlock}">Số điện thoại:</TextBlock>
                     <TextBox Grid.Row="2" Grid.Column="1" MaxWidth="220">099 999 9999</TextBox>
                     <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Bottom" FontWeight="SemiBold" Style="{StaticResource MaterialDesignBody1TextBlock}">Email:</TextBlock>
@@ -77,9 +77,10 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="122"></ColumnDefinition>
                         <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="70"></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
                         <RowDefinition Height="30"></RowDefinition>
                         <RowDefinition Height="30"></RowDefinition>
                         <RowDefinition Height="27"></RowDefinition>
@@ -88,15 +89,16 @@
                         <RowDefinition Height="auto"></RowDefinition>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,20,20,0">Thông tin ví tiền</TextBlock>
-                    <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="SemiBold" Style="{StaticResource MaterialDesignBody1TextBlock}">Tài khoản Gold:</TextBlock>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlock}" Foreground="Red" FontWeight="Medium">123,456,789                         
+                    <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontWeight="SemiBold" Style="{StaticResource MaterialDesignBody1TextBlock}">Tài khoản Gold:</TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlock}" Foreground="Red" FontWeight="Medium">123,456,789                         
                         <!--<materialDesign:PackIcon Kind="Help" Height="12" Width="12"/>-->
                     </TextBlock>
-                    <TextBlock Grid.Row="2" Grid.Column="0" FontWeight="SemiBold" Style="{StaticResource MaterialDesignBody1TextBlock}">Thuê bao tháng:</TextBlock>
-                    <TextBlock Grid.Row="2" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlock}" Foreground="red" FontWeight="Medium">278 Ngày</TextBlock>
-                    <TextBlock Grid.Row="3" Grid.Column="0" FontWeight="SemiBold" Style="{StaticResource MaterialDesignBody1TextBlock}">Uy tín:</TextBlock>
-                    <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlock}" Foreground="red" FontWeight="Medium">33 Điểm</TextBlock>
-                    <DockPanel Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+                    <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" FontWeight="SemiBold" Style="{StaticResource MaterialDesignBody1TextBlock}">Thuê bao tháng:</TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlock}" Foreground="red" FontWeight="Medium">278 Ngày</TextBlock>
+                    <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" FontWeight="SemiBold" Style="{StaticResource MaterialDesignBody1TextBlock}">Uy tín:</TextBlock>
+                    <TextBlock Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlock}" Foreground="red" FontWeight="Medium">33 Điểm</TextBlock>
+                    <Button Grid.Row="3" Grid.Column="2" Height="25" Width="25" FontSize="22" Style="{StaticResource MaterialDesignFloatingActionMiniButton}" ToolTip="Thông tin gói tháng" VerticalAlignment="Center">?</Button>
+                    <DockPanel Grid.Row="4" Grid.ColumnSpan="3" HorizontalAlignment="Center">
                         <ComboBox Width="55" materialDesign:HintAssist.Hint="Tháng" IsEditable="True" materialDesign:HintAssist.HintOpacity=".26">
                             <ComboBoxItem>1</ComboBoxItem>
                             <ComboBoxItem>2</ComboBoxItem>
@@ -138,7 +140,7 @@
                             <materialDesign:PackIcon Kind="QuestionMarkCircle" Height="20" Width="20" />
                         </Button>
                     </DockPanel>
-                    <TextBox Grid.Row="5" Grid.ColumnSpan="2" Margin="0 3 0 0" MaxWidth="350" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                    <TextBox Grid.Row="5" Grid.ColumnSpan="3" Margin="0 3 0 0" MaxWidth="350" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
                         <materialDesign:HintAssist.Hint>
                             <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
                                 <materialDesign:PackIcon Kind="TargetVariant" Margin="0 0 5 0"/>
@@ -146,7 +148,7 @@
                             </StackPanel>
                         </materialDesign:HintAssist.Hint>
                     </TextBox>
-                    <Button Grid.Row="6" Grid.ColumnSpan="2" Width="120" Margin="0 19 0 15" Style="{StaticResource MaterialDesignRaisedButton}">Nhập Code</Button>
+                    <Button Grid.Row="6" Grid.ColumnSpan="3" Width="120" Margin="0 19 0 15" Style="{StaticResource MaterialDesignRaisedButton}">Nhập Code</Button>
                 </Grid>
             </materialDesign:Card>
             <materialDesign:Card Margin="0 20 20 0" Width="350" Height="auto" materialDesign:ShadowAssist.ShadowDepth="Depth1" >
@@ -173,6 +175,8 @@
                         <ComboBoxItem>Vinaphone</ComboBoxItem>
                         <ComboBoxItem>Mobiphone</ComboBoxItem>
                         <ComboBoxItem>Vietnammobile</ComboBoxItem>
+                        <ComboBoxItem>Gate</ComboBoxItem>
+                        <ComboBoxItem>Vcoin</ComboBoxItem>
                     </ComboBox>
                     <Button Width="120" Margin="0 19 0 15" Style="{StaticResource MaterialDesignRaisedButton}">Nạp tiền</Button>
                 </StackPanel>
