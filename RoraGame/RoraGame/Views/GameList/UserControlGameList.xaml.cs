@@ -132,7 +132,7 @@ namespace RoraGame
         //Listview Search
         private bool UserFilter(object item)
         {
-            return gameListViewModel.filterGame(txtFilter.Text) ? true : ((item as Game).Name.IndexOf(txtFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+            return gameListViewModel.filterGame(txtFilter.Text) ? true : ((item as Game).name.IndexOf(txtFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0);
         }
         #endregion
     }

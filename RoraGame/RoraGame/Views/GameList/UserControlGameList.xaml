@@ -127,7 +127,7 @@
                     <materialDesign:MaterialDataGridTextColumn Binding="{Binding Platform}" Header="NỀN" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
 
 
-                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding Name}" Header="GAME" />
+                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding name}" Header="GAME" />
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -146,8 +146,8 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding RequiredLvl}" Header="UY TÍN" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
-                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding Description}" Header="THÔNG TIN" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding creditRequired}" Header="UY TÍN" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding desc}" Header="THÔNG TIN" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

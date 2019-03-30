@@ -8,12 +8,29 @@ namespace RoraGame.Models
 {
     class Game
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Platform { get; set; }
-        public string RequiredLvl { get; set; }
-        public string GameCode { get; set; }
-        public string Description { get; set; }
+        public string Id { get; set; }
+        public string name { get; set; }
+        public string desc { get; set; }
+        public string trailer { get; set; }
+        public string releaseDate { get; set; }
+        public double? rating { get; set; }
+        public string share { get; set; }
+        public int? totalPlaytime { get; set; }
+        public bool? pay { get; set; }
+        public int? levelRequired { get; set; }
+        public int? numberOfPlayer { get; set; }
+        public int? nowPlaying { get; set; }
+        public int? creditRequired { get; set; }
+        public string fileName { get; set; }
+        public string extensionPackage { get; set; }
+        public string PlatformId { get; set; }
+        public Platform Platforms { get; set; }
+        public List<GameAccount> GameAccounts { get; set; }
+        public List<Tag> Tags { get; set; }
+        public List<Screenshot> Screenshots { get; set; }
+        public List<Picture> Pictures { get; set; }
+        //public List<object> SupportPlayType { get; set; }
+        //public List<object> NumberOfPlayers { get; set; }
 
         #region METHOD
 
@@ -26,19 +43,27 @@ namespace RoraGame.Models
 
         public async static Task<(List<Game> gameList, string errMsg)> GetGameList()
         {
-            var result = await APIServices.Instance.GETRequest(URLStorage.getGameList);
+            var response = await APIServices.Instance.GETRequest(URLStorage.getGameList);
 
-            if(result.err != null)
+            if(response.err != null)
             {
-                return (null, result.err);
+                return (null, response.err);
             }
 
-            HttpResponseMessage data = result.response;
+            HttpResponseMessage data = response.response;
 
             if (data.IsSuccessStatusCode)
             {   
-                var gameList = data.Content.ReadAsAsync<List<Game>>().Result;
-                return (gameList, null);
+                //var gameList = data.Content.ReadAsAsync<List<Game>>().Result;
+
+                var result = data.Content.ReadAsAsync<Response<Game>>().Result;
+                if(result.statusCode == 200)
+                {
+                    return (result.data, null);
+                } else
+                {
+                    return (null, result.message);
+                }
             }
             else
             {

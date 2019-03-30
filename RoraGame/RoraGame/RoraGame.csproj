@@ -96,10 +96,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\GameAccount.cs" />
     <Compile Include="Models\GameNew.cs" />
     <Compile Include="Models\News.cs" />
+    <Compile Include="Models\Picture.cs" />
+    <Compile Include="Models\Platform.cs" />
+    <Compile Include="Models\Screenshot.cs" />
+    <Compile Include="Models\Tag.cs" />
     <Compile Include="Network\APIServices.cs" />
     <Compile Include="Models\Game.cs" />
+    <Compile Include="Network\Response.cs" />
     <Compile Include="NotifyIconViewModel.cs" />
     <Compile Include="Ulti\AppHandler.cs" />
     <Compile Include="Ulti\URLStorage.cs" />

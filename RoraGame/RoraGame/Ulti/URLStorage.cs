@@ -8,7 +8,7 @@ namespace RoraGame.Ulti
 {
     class URLStorage
     {
-        public static string baseURL = "http://localhost:57677/";
+        public static string baseURL = "http://localhost:52315/";
         public static string baseURLNews = "http://roragame.ddns.net/";
 
         #region USER
@@ -23,7 +23,7 @@ namespace RoraGame.Ulti
         #region GAME
 
         public static string getGameByID = baseURL + "";
-        public static string getGameList = baseURL + "api/GameList";
+        public static string getGameList = baseURL + "api/games";
         public static string getGameAccount = baseURL + "";
 
         #endregion
