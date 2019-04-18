@@ -124,7 +124,7 @@
                           materialDesign:DataGridAssist.CellPadding="8 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="5">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Id}" Header="#"/>
-                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding Platform}" Header="NỀN" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
+                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding platformName}" Header="NỀN" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
 
 
                     <materialDesign:MaterialDataGridTextColumn Binding="{Binding name}" Header="GAME" />

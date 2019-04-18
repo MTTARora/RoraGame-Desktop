@@ -23,9 +23,9 @@ namespace RoraGame.Models
         public int? creditRequired { get; set; }
         public string fileName { get; set; }
         public string extensionPackage { get; set; }
-        public string PlatformId { get; set; }
-        public Platform Platforms { get; set; }
-        public List<GameAccount> GameAccounts { get; set; }
+        public string platformId { get; set; }
+        public string platformName { get; set; }
+        public List<string> GameAccounts { get; set; }
         public List<Tag> Tags { get; set; }
         public List<Screenshot> Screenshots { get; set; }
         public List<Picture> Pictures { get; set; }
