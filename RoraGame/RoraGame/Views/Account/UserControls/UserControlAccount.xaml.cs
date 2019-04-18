@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 
 namespace RoraGame
 {
+
     /// <summary>
     /// Interaction logic for UserControlAccount.xaml
     /// </summary>
@@ -23,32 +24,57 @@ namespace RoraGame
         public UserControlAccount()
         {
             InitializeComponent();
+            configView();
         }
+
+        #region Configs
+
+        private void configView()
+        {
+            var userToken = Properties.Settings.Default.Token;
+            if(string.IsNullOrEmpty(userToken))
+            {
+                Main.Content = new LoginPage();
+            } else
+            {
+                Main.Content = new AccountInformationPage();
+            }
+        }
+
+        #endregion
+
+        #region Actions
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new PageLogIn();
+            Main.Content = new LoginPage();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Main.Content = new PageSignUp();
+            Main.Content = new SignUpPage();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            Main.Content = new PageAccountInformation();
+            Main.Content = new AccountInformationPage();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            Main.Content = new PageLostPassword();
+            Main.Content = new ForgotPasswordPage();
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            Main.Content = new PagePhoneVerify();
+            Main.Content = new PhoneVerifyPage();
         }
+
+        #endregion
+
+        #region CALLBACK
+
+        #endregion
 
     }
 }

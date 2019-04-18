@@ -1,4 +1,4 @@
-﻿<Page x:Class="RoraGame.PageLogIn"
+﻿<Page x:Class="RoraGame.LoginPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -52,9 +52,9 @@
                 <ToggleButton Style="{StaticResource MaterialDesignSwitchToggleButton}" ToolTip="Default ToggleButton Style" ></ToggleButton>
                 <TextBlock Margin="5 0 0 0" Style="{StaticResource MaterialDesignBody1TextBlock}">Duy trì đăng nhập</TextBlock>
             </DockPanel>
-            <Button Grid.Row="5" Width="150" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignRaisedButton}">Đăng nhập</Button>
-            <TextBlock Grid.Row="6" HorizontalAlignment="Center" Margin="0 20 0 0">Bạn chưa có tài khoản? <Hyperlink>Tạo tài khoản</Hyperlink></TextBlock>
-            <TextBlock Grid.Row="7" HorizontalAlignment="Center" Margin="0 15 0 0">Bạn quên mật khẩu? <Hyperlink>Lấy mật khẩu</Hyperlink></TextBlock>
+            <Button Grid.Row="5" Width="150" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignRaisedButton}" Click="SigninClick">Đăng nhập</Button>
+            <TextBlock Grid.Row="6" HorizontalAlignment="Center" Margin="0 20 0 0">Bạn chưa có tài khoản? <Hyperlink Click="SignupClick">Tạo tài khoản</Hyperlink></TextBlock>
+            <TextBlock Grid.Row="7" HorizontalAlignment="Center" Margin="0 15 0 0">Bạn quên mật khẩu? <Hyperlink Click="ForgotPasswordClick">Lấy mật khẩu</Hyperlink></TextBlock>
         </Grid>
     </materialDesign:Card>
 </Page>

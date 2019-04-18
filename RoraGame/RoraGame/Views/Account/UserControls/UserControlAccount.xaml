@@ -7,13 +7,13 @@
              mc:Ignorable="d" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
     <Grid>
-        <DockPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20">
+        <!--<DockPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20">
             <Button Content="Login" Width="100" Click="Button_Click" Margin="0 0 20 0"></Button>
             <Button Content="Sign Up" Width="100" Click="Button_Click_1" Margin="0 0 20 0"></Button>
             <Button Content="Phone verify" Width="130" Click="Button_Click_4" Margin="0 0 20 0"></Button>
             <Button Content="Lost Password" Width="130" Click="Button_Click_3" Margin="0 0 20 0"></Button>
             <Button Content="Account Information" Width="180" Click="Button_Click_2"/>
-        </DockPanel>
-            <Frame x:Name="Main" Margin="10" NavigationUIVisibility="Hidden"></Frame>
+        </DockPanel>-->
+        <Frame x:Name="Main" Margin="10" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 </UserControl>

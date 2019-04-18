@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace RoraGame
 {
     /// <summary>
-    /// Interaction logic for PageSignUp.xaml
+    /// Interaction logic for PageAccountInformation.xaml
     /// </summary>
-    public partial class PageSignUp : Page
+    public partial class AccountInformationPage : Page
     {
-        public PageSignUp()
+        public AccountInformationPage()
         {
             InitializeComponent();
-
         }
     }
 }

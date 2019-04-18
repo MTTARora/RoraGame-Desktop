@@ -1,4 +1,4 @@
-﻿<Page x:Class="RoraGame.PageSignUp"
+﻿<Page x:Class="RoraGame.SignUpPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -62,9 +62,9 @@
                     </StackPanel>
                 </materialDesign:HintAssist.Hint>
             </PasswordBox>
-            <Button Grid.Row="6" Style="{StaticResource MaterialDesignRaisedButton}" VerticalAlignment="Bottom">Đăng ký</Button>
-            <TextBlock Grid.Row="7" HorizontalAlignment="Center" Margin="0 20 0 0">Bạn đã có tài khoản? <Hyperlink>Đăng nhập</Hyperlink></TextBlock>
-            <TextBlock Grid.Row="8" HorizontalAlignment="Center" Margin="0 15 0 0">Bạn quên mật khẩu? <Hyperlink>Lấy mật khẩu</Hyperlink></TextBlock>
+            <Button Grid.Row="6" Style="{StaticResource MaterialDesignRaisedButton}" VerticalAlignment="Bottom" Click="SignupClick">Đăng ký</Button>
+            <TextBlock Grid.Row="7" HorizontalAlignment="Center" Margin="0 20 0 0">Bạn đã có tài khoản? <Hyperlink Click="SigninClick">Đăng nhập</Hyperlink></TextBlock>
+            <TextBlock Grid.Row="8" HorizontalAlignment="Center" Margin="0 15 0 0">Bạn quên mật khẩu? <Hyperlink Click="ForgotPasswordClick">Lấy mật khẩu</Hyperlink></TextBlock>
         </Grid>
     </materialDesign:Card>
 </Page>
