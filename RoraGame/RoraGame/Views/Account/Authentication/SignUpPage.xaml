@@ -29,24 +29,27 @@
                 <RowDefinition Height="35"></RowDefinition>
                 <RowDefinition Height="33"></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Hãy điền thông tin để đăng ký</TextBlock>
-            <TextBox  Grid.Row="2" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+            <TextBlock Grid.Row="0" Style="{StaticResource MaterialDesignSubheadingTextBlock}" TextAlignment="Center">Thông tin đăng ký</TextBlock>
+            <!--Email-->
+            <TextBox x:Name="tbEmail" Grid.Row="2" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
                 <materialDesign:HintAssist.Hint>
                     <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
-                        <materialDesign:PackIcon Kind="Email"  Margin="0 0 5 0"/>
+                        <materialDesign:PackIcon Kind="Email" Margin="0 0 5 0"/>
                         <TextBlock> Email</TextBlock>
                     </StackPanel>
                 </materialDesign:HintAssist.Hint>
             </TextBox>
-            <TextBox Grid.Row="3" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+            <!--Phone-->
+            <TextBox x:Name="tbPhone" Grid.Row="3" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
                 <materialDesign:HintAssist.Hint>
                     <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
-                        <materialDesign:PackIcon Kind="Phone"  Margin="0 0 5 0"/>
+                        <materialDesign:PackIcon Kind="Phone" Margin="0 0 5 0"/>
                         <TextBlock> Số điện thoại xác nhận</TextBlock>
                     </StackPanel>
                 </materialDesign:HintAssist.Hint>
             </TextBox>
-            <PasswordBox Grid.Row="4" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}">
+            <!--Password-->
+            <PasswordBox x:Name="pbPassword" Grid.Row="4" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}">
                 <materialDesign:HintAssist.Hint>
                     <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
                         <materialDesign:PackIcon Kind="Key" Margin="0 0 5 0"/>
@@ -54,7 +57,8 @@
                     </StackPanel>
                 </materialDesign:HintAssist.Hint>
             </PasswordBox>
-            <PasswordBox Grid.Row="5" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}">
+            <!--ConfirmPassword-->
+            <PasswordBox x:Name="pbConfirmPassword" Grid.Row="5" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}">
                 <materialDesign:HintAssist.Hint>
                     <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
                         <materialDesign:PackIcon Kind="Key" Margin="0 0 5 0"/>

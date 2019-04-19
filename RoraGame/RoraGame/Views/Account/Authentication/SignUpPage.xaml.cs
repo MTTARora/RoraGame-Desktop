@@ -1,4 +1,7 @@
-﻿using System;
+﻿using RoraGame.Resources.langs;
+using RoraGame.Ulti;
+using RoraGame.Views.Account;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,20 +23,36 @@ namespace RoraGame
     /// </summary>
     public partial class SignUpPage : Page
     {
+        private UserUCViewModel userUCViewModel;
+
         public SignUpPage()
         {
             InitializeComponent();
+            userUCViewModel = new UserUCViewModel();
         }
 
         #region ACTIONS
 
         private void SignupClick(object sender, RoutedEventArgs e)
         {
-            var phoneVerifyPage = new PhoneVerifyPage();
-            NavigationService.Navigate(phoneVerifyPage);
+            if(!isValidInfo())
+            {
+                return;
+            }
 
-            //var signInPage = new PageLogIn();
-            //NavigationService.Navigate(signInPage);
+            var result = userUCViewModel.register(tbEmail.Text, pbPassword.Password, pbConfirmPassword.Password, tbPhone.Text).Result;
+
+            if(!string.IsNullOrEmpty(result.errMsg)) {
+                MessageBox.Show(result.errMsg);
+                return;
+            }
+
+            //var phoneVerifyPage = new PhoneVerifyPage();
+            //NavigationService.Navigate(phoneVerifyPage);
+
+            var signInPage = new LoginPage();
+            signInPage.registerdEmail = tbEmail.Text;
+            NavigationService.Navigate(signInPage);
 
         }
 
@@ -47,6 +66,39 @@ namespace RoraGame
         {
             var forgotPasswordPage = new ForgotPasswordPage();
             NavigationService.Navigate(forgotPasswordPage);
+        }
+
+        #endregion
+
+        #region SUPPORT FUNCS
+
+        private bool isValidInfo()
+        {
+            if (!Validator.isValidEmail(tbEmail.Text))
+            {
+                MessageBox.Show(StringResource_vn_VN.inValidEmailMsg);
+                return false;
+            }
+
+            if (!Validator.IsValidPhoneNumber(tbPhone.Text))
+            {
+                MessageBox.Show(StringResource_vn_VN.inValidPhoneNumberMsg);
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(pbPassword.Password))
+            {
+                MessageBox.Show(StringResource_vn_VN.isMissingPasswordMsg);
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(pbConfirmPassword.Password))
+            {
+                MessageBox.Show(StringResource_vn_VN.isMissingConfirmPasswordMsg);
+                return false;
+            }
+
+            return true;
         }
 
         #endregion

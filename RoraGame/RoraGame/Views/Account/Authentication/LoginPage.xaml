@@ -28,7 +28,8 @@
                 <RowDefinition Height="35"></RowDefinition>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Style="{StaticResource MaterialDesignSubheadingTextBlock}">Hãy đăng nhập để truy cập</TextBlock>
-            <TextBox Grid.Row="1" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+            <!--Email-->
+            <TextBox x:Name="tbEmail" Grid.Row="1" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
                 <materialDesign:HintAssist.Hint>
                     <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
                         <materialDesign:PackIcon Kind="Email"  Margin="0 0 5 0"/>
@@ -36,7 +37,7 @@
                     </StackPanel>
                 </materialDesign:HintAssist.Hint>
             </TextBox>
-            <PasswordBox Grid.Row="2" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}">
+            <PasswordBox x:Name="pbPassword" Grid.Row="2" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}">
                 <materialDesign:HintAssist.Hint>
                     <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
                         <materialDesign:PackIcon Kind="Key" Margin="0 0 5 0"/>

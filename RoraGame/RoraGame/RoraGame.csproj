@@ -69,6 +69,9 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="RestSharp, Version=106.6.9.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.6.9\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -78,6 +81,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -104,27 +108,33 @@
     <Compile Include="Models\Platform.cs" />
     <Compile Include="Models\Screenshot.cs" />
     <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Network\APIServices.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Network\Response.cs" />
+    <Compile Include="Network\ResponseModels.cs" />
     <Compile Include="NotifyIconViewModel.cs" />
+    <Compile Include="Resources\langs\StringResource_vn_VN.cs" />
+    <Compile Include="Resources\langs\StringResourece_en_US.cs" />
     <Compile Include="Ulti\AppHandler.cs" />
-    <Compile Include="Ulti\URLStorage.cs" />
-    <Compile Include="Views\Account\Info\PageAccountInformation.xaml.cs">
-      <DependentUpon>PageAccountInformation.xaml</DependentUpon>
+    <Compile Include="Ulti\Validator.cs" />
+    <Compile Include="Ulti\URLHelper.cs" />
+    <Compile Include="Views\Account\Info\AccountInformationPage.xaml.cs">
+      <DependentUpon>AccountInformationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Account\Authentication\PageLogIn.xaml.cs">
-      <DependentUpon>PageLogIn.xaml</DependentUpon>
+    <Compile Include="Views\Account\Authentication\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Account\Authentication\PageLostPassword.xaml.cs">
-      <DependentUpon>PageLostPassword.xaml</DependentUpon>
+    <Compile Include="Views\Account\Authentication\ForgotPasswordPage.xaml.cs">
+      <DependentUpon>ForgotPasswordPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Account\Authentication\PagePhoneVerify.xaml.cs">
-      <DependentUpon>PagePhoneVerify.xaml</DependentUpon>
+    <Compile Include="Views\Account\Authentication\PhoneVerifyPage.xaml.cs">
+      <DependentUpon>PhoneVerifyPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Account\Authentication\PageSignUp.xaml.cs">
-      <DependentUpon>PageSignUp.xaml</DependentUpon>
+    <Compile Include="Views\Account\Authentication\SignUpPage.xaml.cs">
+      <DependentUpon>SignUpPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Account\UserUCViewModel.cs" />
     <Compile Include="Views\GameList\GameListUCViewModel.cs" />
     <Compile Include="Views\Account\UserControls\UserControlAccount.xaml.cs">
       <DependentUpon>UserControlAccount.xaml</DependentUpon>
@@ -164,23 +174,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Account\Info\PageAccountInformation.xaml">
+    <Page Include="Views\Account\Info\AccountInformationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Account\Authentication\PageLogIn.xaml">
+    <Page Include="Views\Account\Authentication\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Account\Authentication\PageLostPassword.xaml">
+    <Page Include="Views\Account\Authentication\ForgotPasswordPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Account\Authentication\PagePhoneVerify.xaml">
+    <Page Include="Views\Account\Authentication\PhoneVerifyPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Account\Authentication\PageSignUp.xaml">
+    <Page Include="Views\Account\Authentication\SignUpPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

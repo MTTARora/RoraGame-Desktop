@@ -26,24 +26,24 @@ namespace RoraGame.Models
 
         public async static Task<(List<News> newsList, string errMsg)> GetNewsList()
         {
-            var result = await APIServices.Instance.GETRequest(URLStorage.getNewsList);
+            var result = await APIServices.Instance.GETRequest(URLHelper.getNewsList);
 
             if (result.err != null)
             {
                 return (null, result.err);
             }
 
-            HttpResponseMessage data = result.response;
+            //HttpResponseMessage data = result.response;
 
-            if (data.IsSuccessStatusCode)
-            {
-                var newsList = data.Content.ReadAsAsync<List<News>>().Result;
-                return (newsList, null);
-            }
-            else
-            {
+            //if (data.IsSuccessStatusCode)
+            //{
+            //    var newsList = data.Content.ReadAsAsync<List<News>>().Result;
+            //    return (newsList, null);
+            //}
+            //else
+            //{
                 return (null, "Can't get data");
-            }
+            //}
 
         }
 

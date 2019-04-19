@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using RoraGame.Network;
 using RoraGame.Ulti;
+using RestSharp;
 
 namespace RoraGame.Models
 {
@@ -43,32 +44,32 @@ namespace RoraGame.Models
 
         public async static Task<(List<Game> gameList, string errMsg)> GetGameList()
         {
-            var response = await APIServices.Instance.GETRequest(URLStorage.getGameList);
+            var response = await APIServices.Instance.GETRequest(URLHelper.getGameList);
 
             if(response.err != null)
             {
                 return (null, response.err);
             }
 
-            HttpResponseMessage data = response.response;
+            IRestResponse data = response.response;
 
-            if (data.IsSuccessStatusCode)
-            {   
+            //if (data.IsSuccessful)
+            //{   
                 //var gameList = data.Content.ReadAsAsync<List<Game>>().Result;
 
-                var result = data.Content.ReadAsAsync<Response<Game>>().Result;
-                if(result.statusCode == 200)
-                {
-                    return (result.data, null);
-                } else
-                {
-                    return (null, result.message);
-                }
-            }
-            else
-            {
+                //var result = data.Content..ReadAsAsync<ListResponse<Game>>().Result;
+            //    if(result.statusCode == 200)
+            //    {
+            //        return (result.data, null);
+            //    } else
+            //    {
+            //        return (null, result.message);
+            //    }
+            //}
+            //else
+            //{
                 return (null, "Can't get data");
-            }
+            //}
 
         }
 

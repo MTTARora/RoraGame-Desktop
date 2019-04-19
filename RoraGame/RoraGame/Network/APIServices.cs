@@ -1,10 +1,5 @@
-﻿using RoraGame.Ulti;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
+﻿using RestSharp;
+using RoraGame.Ulti;
 using System.Threading.Tasks;
 
 namespace RoraGame.Network
@@ -12,7 +7,7 @@ namespace RoraGame.Network
     class APIServices
     {
         private static readonly APIServices instance = new APIServices();
-        private static HttpClient client;
+        private static RestClient client;
 
         // Explicit static constructor to tell C# compiler
         // not to mark type as beforefieldinit
@@ -22,10 +17,7 @@ namespace RoraGame.Network
 
         private APIServices()
         {
-            client = new HttpClient();
-            client.BaseAddress = new Uri(URLStorage.baseURL);
-            client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));
+            client = new RestClient(URLHelper.baseURL);
         }
 
         public static APIServices Instance
@@ -43,21 +35,29 @@ namespace RoraGame.Network
         /// <param name="param">This param is nullable</param>
         /// <returns></returns>
 
-        public async Task<(HttpResponseMessage response, string err)> GETRequest(string url, string param = null)
+        public async Task<(IRestResponse response, string err)> GETRequest(string url, string param = null)
         {
-            try
-            {
-                HttpResponseMessage response = await client.GetAsync(url);
+            var request = new RestRequest(url);
+            request.AddParameter(param, ParameterType.QueryString);
 
-                response.EnsureSuccessStatusCode();
+            var response = client.Post(request);
+            var content = response.Content;
+            return (response, null);
 
-                return (response, null);
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
-                return (null, ex.Message + "\n" + ex.InnerException.Message ?? "");
-            }
+            //try
+            //{
+            //    var response = await url.GetAsync();
+            //    //HttpResponseMessage response = await client.GetAsync(url);
+
+            //    response.EnsureSuccessStatusCode();
+
+            //    return (response, null);
+            //}
+            //catch (Exception ex)
+            //{
+            //    System.Diagnostics.Debug.WriteLine(ex.Message);
+            //    return (null, ex.Message + "\n" + ex.InnerException.Message ?? "");
+            //}
         }
 
         /// <summary>
@@ -68,19 +68,14 @@ namespace RoraGame.Network
         /// <param name="data"></param>
         /// <returns></returns>
 
-        public async Task<(HttpResponseMessage response, string err)> POSTRequest<T>(string url, T data)
+        public async Task<(IRestResponse response, string err)> POSTRequest<T>(string url, T data)
         {
-            try
-            {
-                HttpResponseMessage response = await client.PostAsJsonAsync(url, data);
+                var request = new RestRequest(url);
+                request.AddJsonBody(data);
+            
+                var response = client.Post(request);
+                var content = response.Content;
                 return (response, null);
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
-                return (null, ex.Message + "\n" + ex.InnerException.Message ?? "");
-            }
         }
-
     }
 }
